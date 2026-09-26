@@ -88,6 +88,7 @@ main { min-width:0; }
 .kbd { border:1px solid var(--line); background:var(--panel-2); border-radius:7px; padding:2px 6px; font-size:12px; }
 .theme-toggle { position:fixed; z-index:30; right:20px; top:18px; display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:50%; padding:0; font-size:23px; line-height:1; box-shadow:var(--shadow); cursor:pointer; }
 .theme-toggle:focus-visible, button:focus-visible, a:focus-visible { outline:3px solid var(--accent-2); outline-offset:3px; }
+.mobile-shortcuts { display:none; }
 .back-link { border:0; background:none; color:var(--accent); padding:0; cursor:pointer; margin-bottom:28px; }
 .lesson-layout { display:grid; grid-template-columns:minmax(0,760px) minmax(190px,240px); gap:42px; align-items:start; }
 .lesson-main { min-width:0; }
@@ -130,3 +131,15 @@ footer { color:var(--muted); font-size:13px; margin-top:24px; }
   .lesson-toc { position:static; grid-row:1; border:1px solid var(--line); border-radius:12px; }
 }
 @media (max-width:600px) { .topbar { padding:76px 20px 12px; } .topbar h2 { font-size:24px; } .progress-pill { font-size:11px; } .hero { background:linear-gradient(90deg,var(--panel),rgba(18,26,46,.72)),url('hero.webp') center / cover; } :root[data-theme="light"] .hero { background:linear-gradient(90deg,rgba(255,254,250,.97),rgba(255,254,250,.78)),url('hero.webp') center / cover; } .stage-chart,.region-grid { grid-template-columns:repeat(2,1fr); } .gate-bars div { grid-template-columns:1fr; gap:3px; } }
+@media (max-width:600px) and (orientation:portrait) {
+  .sidebar { display:none; }
+  .mobile-shortcuts { display:flex; margin-bottom:10px; }
+  .mobile-shortcuts button { display:none; min-height:44px; border:0; padding:0 4px; background:transparent; color:var(--accent); cursor:pointer; font-weight:700; }
+  body[data-view="dashboard"] .mobile-references-link,
+  body:not([data-view="dashboard"]) .mobile-dashboard-link { display:inline-flex; align-items:center; }
+  #dashboard-view .grid { gap:8px; }
+  #dashboard-view .grid > .card:nth-child(-n+3) { grid-column:span 4; padding:12px 8px; }
+  #dashboard-view .grid > .card:nth-child(-n+3) .eyebrow { font-size:9px; letter-spacing:.05em; }
+  #dashboard-view .grid > .card:nth-child(-n+3) .stat { font-size:22px; margin:3px 0 0; }
+  #dashboard-view .grid > .card:nth-child(-n+3) .muted { display:none; }
+}

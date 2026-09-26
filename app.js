@@ -28,6 +28,7 @@ function navigate(type,id){
   if(location.hash !== hash) history.pushState(null,'',hash);
 }
 function setView(name){
+  document.body.dataset.view=name;
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   el(name+'-view').classList.add('active');
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
