@@ -313,7 +313,7 @@ function renderReferences(){
   renderNav(); document.querySelector('[data-nav="references"]').classList.add('active');
 }
 const themeButton=el('theme-toggle');
-function updateThemeButton(){const dark=document.documentElement.dataset.theme==='dark';themeButton.textContent=dark?'☀ Light mode':'☾ Dark mode';themeButton.setAttribute('aria-pressed',String(dark));}
+function updateThemeButton(){const dark=document.documentElement.dataset.theme==='dark';themeButton.textContent=dark?'☀':'☾';themeButton.setAttribute('aria-label',dark?'Switch to light mode':'Switch to dark mode');themeButton.setAttribute('aria-pressed',String(dark));}
 themeButton.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('caio-theme',next);updateThemeButton();});
 updateThemeButton();
 function route(){const [type,id]=decodeURIComponent(location.hash.slice(1)).split('/');if(type==='lesson'&&id)openLesson(id,false);else if(type==='module'&&course.modules.some(m=>m.id===id))renderModule(id);else if(type==='references')renderReferences();else renderDashboard();}
