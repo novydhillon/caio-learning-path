@@ -224,12 +224,13 @@ function renderNav(){
 }
 function updateOverall(){ el('overall-progress-text').textContent=`${pct()}% complete`; }
 function renderDashboard(){
+  history.replaceState(null,'',location.pathname+location.search+'#dashboard');
   setView('dashboard'); el('page-title').textContent='Dashboard'; updateOverall();
   const done=allLessons.filter(l=>state.completed[l.id]).length;
   const homeworkDone=course.modules.filter(m=>state.homework[m.id]).length;
   const quizzesDone=course.modules.filter(m=>state.quiz[m.id]!==undefined).length;
   el('dashboard-view').innerHTML=`
-    <div class="hero"><p class="eyebrow">FROM TECHNICAL LEADER TO ENTERPRISE AI EXECUTIVE</p><h3>Build the judgment, evidence, and operating toolkit to lead AI at company scale.</h3><p>This path is designed for an experienced technical leader. It skips beginner programming material and concentrates on the areas that differentiate a Chief AI Officer: business strategy, AI portfolio value, architecture fluency, governance, economics, organizational change, and executive leadership.</p><div class="progress-track"><div class="progress-fill" style="width:${pct()}%"></div></div></div>
+    <div class="hero"><div class="hero-copy"><p class="eyebrow">FROM TECHNICAL LEADER TO ENTERPRISE AI EXECUTIVE</p><h3>Learn to lead AI across the whole company.</h3><p>A 26-week course for experienced technical leaders. Read original lessons, work through decisions and examples, then build a portfolio you can defend with executives.</p><div class="progress-track"><div class="progress-fill" style="width:${pct()}%"></div></div></div></div>
     <div class="grid">
       <div class="card span-4"><p class="eyebrow">LESSONS</p><div class="stat">${done}/${allLessons.length}</div><p class="muted">Completed and always available for review.</p></div>
       <div class="card span-4"><p class="eyebrow">HOMEWORK</p><div class="stat">${homeworkDone}/${course.modules.length}</div><p class="muted">Executive artifacts and applied practice.</p></div>
@@ -241,15 +242,55 @@ function renderDashboard(){
   renderNav(); document.querySelector('[data-nav="dashboard"]').classList.add('active');
 }
 function renderModule(id){
+  history.replaceState(null,'',location.pathname+location.search+'#module/'+id);
   const m=course.modules.find(x=>x.id===id); setView('section'); el('page-title').textContent=m.title; updateOverall();
   el('section-view').innerHTML=`
     <div class="section-head"><p class="eyebrow">WEEKS ${m.weeks} · MODULE ${course.modules.indexOf(m)+1}</p><h3>${m.title}</h3><p>${m.summary}</p><div class="objectives">${m.objectives.map(x=>`<span class="objective">${x}</span>`).join('')}</div></div>
     <div class="card summary-box"><h4>Section summary</h4><p>${m.summary}</p><p class="muted">Use this as your review anchor after completing the section.</p></div>
-    ${m.lessons.map((l,i)=>`<div class="card lesson"><div class="lesson-top"><div><p class="eyebrow">LESSON ${i+1} · ${l.duration}</p><h4>${l.title}</h4></div><span class="badge ${state.completed[l.id]?'done':''}">${state.completed[l.id]?'Completed':'Open'}</span></div><p>${l.body}</p>${l.resources.length?`<h5>Reference material</h5><ul class="resources">${l.resources.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener">${r[0]} ↗</a></li>`).join('')}</ul>`:''}<label class="checkline"><input type="checkbox" ${state.completed[l.id]?'checked':''} onchange="toggleLesson('${l.id}',this.checked)"> Mark lesson complete</label></div>`).join('')}
+    ${m.lessons.map((l,i)=>`<div class="card lesson"><div class="lesson-top"><div><p class="eyebrow">LESSON ${i+1} · ${l.duration}</p><h4>${l.title}</h4></div><span class="badge ${state.completed[l.id]?'done':''}">${state.completed[l.id]?'Completed':'Ready to read'}</span></div><p>${l.body}</p><button class="primary" onclick="openLesson('${l.id}')">Open lesson →</button><label class="checkline"><input type="checkbox" ${state.completed[l.id]?'checked':''} onchange="toggleLesson('${l.id}',this.checked)"> Mark lesson complete</label></div>`).join('')}
     <div class="card homework"><p class="eyebrow">APPLIED PRACTICE</p><h3>Homework</h3><p>${m.homework}</p><label class="checkline"><input type="checkbox" ${state.homework[m.id]?'checked':''} onchange="toggleHomework('${m.id}',this.checked)"> I completed this artifact</label></div>
     <div class="card"><p class="eyebrow">RETRIEVAL PRACTICE</p><h3>Module quiz</h3><form id="quiz-form">${m.quiz.map((q,qi)=>`<div class="quiz-q"><strong>${qi+1}. ${q.q}</strong>${q.options.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"> ${o}</label>`).join('')}</div>`).join('')}<button type="button" class="primary" onclick="gradeQuiz('${m.id}')">Submit quiz</button><div id="quiz-result" class="quiz-result">${state.quiz[m.id]!==undefined?`Last score: ${state.quiz[m.id]}%`:''}</div></form></div>
     <footer>Review suggestion: return to this section after 7 days and explain the core ideas without notes before rereading.</footer>`;
   renderNav(); const b=document.querySelector(`[data-nav="${id}"]`); if(b)b.classList.add('active');
+}
+const regionalSources = {
+  m5: [
+    ['EU AI Act official overview','https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai'],
+    ['Canada Directive on Automated Decision-Making (federal government)','https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592'],
+    ['Canadian privacy regulators: principles for generative AI','https://www.priv.gc.ca/en/privacy-topics/technology/artificial-intelligence/gd_principles_ai/']
+  ],
+  m6: [
+    ['Office of the Privacy Commissioner of Canada: PIPEDA','https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/'],
+    ['European Data Protection Board: AI model opinion','https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en']
+  ]
+};
+function visualFor(moduleId){
+  if(moduleId==='meval') return `<figure class="learning-visual"><figcaption>Illustrative release gate: several checks must pass together</figcaption><div class="gate-bars"><div><span>Task success</span><b style="--w:87%">87% / target 85%</b></div><div><span>Grounded answers</span><b style="--w:91%">91% / target 90%</b></div><div><span>Permission safety</span><b class="fail" style="--w:98%">98% / target 100%</b></div></div><small>Example values for teaching only. The permission failure blocks this sample launch despite the other passes.</small></figure>`;
+  if(moduleId==='m7'||moduleId==='m3') return `<figure class="learning-visual"><figcaption>Illustrative investment path</figcaption><div class="stage-chart"><span>Discovery<small>Low spend</small></span><span>Prototype<small>Feasibility</small></span><span>Pilot<small>Measured value</small></span><span>Scale<small>Proven controls</small></span></div><small>At each step, evidence determines whether funding grows.</small></figure>`;
+  if(moduleId==='m5'||moduleId==='m6') return `<figure class="learning-visual"><figcaption>Jurisdiction check for one AI use case</figcaption><div class="region-grid"><div><strong>Canada</strong><p>Identify applicable federal or provincial privacy law. Public-sector automation may trigger additional directives.</p></div><div><strong>European Union</strong><p>Assess AI Act role and risk category. Review GDPR separately when personal data is used.</p></div><div><strong>United States</strong><p>Review relevant federal, state, and sector requirements for the particular use.</p></div></div><small>Confirm current rules and applicability with legal and privacy specialists.</small></figure>`;
+  return `<figure class="learning-visual"><figcaption>From an idea to an accountable decision</figcaption><div class="stage-chart"><span>Business need<small>Owner</small></span><span>System design<small>Boundaries</small></span><span>Evidence<small>Evaluation</small></span><span>Decision<small>Review date</small></span></div></figure>`;
+}
+function openLesson(id, updateHash=true){
+  const m=course.modules.find(x=>x.lessons.some(l=>l.id===id));
+  if(!m) return;
+  const l=m.lessons.find(x=>x.id===id), index=m.lessons.indexOf(l), parts=lessonContent[id];
+  if(!parts) return;
+  setView('lesson'); el('page-title').textContent=l.title;
+  const links=[...l.resources,...(regionalSources[m.id]||[])];
+  el('lesson-view').innerHTML=`<div class="lesson-layout"><div class="lesson-main">
+    <button class="back-link" onclick="renderModule('${m.id}');location.hash='module/${m.id}'">← ${m.title}</button>
+    <div class="section-head"><p class="eyebrow">MODULE ${course.modules.indexOf(m)+1} · LESSON ${index+1} · ${l.duration}</p><h3>${l.title}</h3><p>${l.body}</p></div>
+    ${m.id==='meval'?'<img class="lesson-banner" src="eval-lesson.webp" alt="An evaluator comparing AI responses with source material and review signals" loading="lazy">':''}
+    ${visualFor(m.id)}
+    <article class="reading-part" id="part-1"><p class="eyebrow">PART 01 · UNDERSTAND</p><h3>${parts[0]}</h3><p>${parts[1]}</p></article>
+    <article class="reading-part" id="part-2"><p class="eyebrow">PART 02 · APPLY</p><h3>${parts[2]}</h3><p>${parts[3]}</p></article>
+    <div class="card practice-card"><p class="eyebrow">YOUR TURN</p><h3>Make it yours</h3><p>Write a short decision or artifact based on the example. State the owner, the evidence you would collect, and the condition that would change your decision. Keep it for the module homework.</p></div>
+    <div class="card"><h3>Further reading</h3><p class="muted">The lesson above stands on its own. Use these sources to check details and go deeper.</p>${links.length?`<ul class="resources">${links.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul>`:'<p class="muted">Use the module reference library for more background.</p>'}</div>
+    <label class="checkline completion"><input type="checkbox" ${state.completed[id]?'checked':''} onchange="toggleLesson('${id}',this.checked)"> I finished this lesson</label>
+    <div class="lesson-actions"><button class="secondary" onclick="renderModule('${m.id}');location.hash='module/${m.id}'">Back to module</button>${m.lessons[index+1]?`<button class="primary" onclick="openLesson('${m.lessons[index+1].id}')">Next lesson →</button>`:''}</div>
+  </div><aside class="lesson-toc"><p class="eyebrow">IN THIS LESSON</p><button onclick="document.getElementById('part-1').scrollIntoView({behavior:'smooth'})">01 · ${parts[0]}</button><button onclick="document.getElementById('part-2').scrollIntoView({behavior:'smooth'})">02 · ${parts[2]}</button><p class="muted">${l.duration} · Self paced</p></aside></div>`;
+  renderNav(); document.querySelector(`[data-nav="${m.id}"]`)?.classList.add('active');
+  if(updateHash) history.pushState(null,'',location.pathname+location.search+'#lesson/'+id);
 }
 function toggleLesson(id,v){state.completed[id]=v;save();updateOverall();renderNav();}
 function toggleHomework(id,v){state.homework[id]=v;save();}
@@ -261,8 +302,16 @@ function gradeQuiz(id){
   el('quiz-result').textContent=`Score: ${p}% — ${p>=80?'Pass. Explain each answer aloud before moving on.':'Review the lessons and retry; target 80% or higher.'}`;
 }
 function renderReferences(){
+  history.replaceState(null,'',location.pathname+location.search+'#references');
   setView('references'); el('page-title').textContent='Reference Library'; updateOverall();
   el('references-view').innerHTML=`<div class="section-head"><p class="eyebrow">CURATED EXTERNAL MATERIAL</p><h3>Reference library</h3><p>Use these sources for deeper study and to keep the program connected to current standards, regulation, technology, and executive practice.</p></div><div class="refs">${course.references.map(r=>`<div class="ref"><strong><a href="${r[1]}" target="_blank" rel="noopener">${r[0]} ↗</a></strong><small>${r[2]}</small></div>`).join('')}</div>`;
   renderNav(); document.querySelector('[data-nav="references"]').classList.add('active');
 }
-renderDashboard();
+const themeButton=el('theme-toggle');
+function updateThemeButton(){const dark=document.documentElement.dataset.theme==='dark';themeButton.textContent=dark?'☀ Light mode':'☾ Dark mode';themeButton.setAttribute('aria-pressed',String(dark));}
+themeButton.addEventListener('click',()=>{const next=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=next;localStorage.setItem('caio-theme',next);updateThemeButton();});
+updateThemeButton();
+function route(){const [type,id]=decodeURIComponent(location.hash.slice(1)).split('/');if(type==='lesson'&&id)openLesson(id,false);else if(type==='module'&&course.modules.some(m=>m.id===id))renderModule(id);else if(type==='references')renderReferences();else renderDashboard();}
+window.addEventListener('hashchange',route);
+window.addEventListener('popstate',route);
+route();
