@@ -39,7 +39,7 @@ test('legacy progress migrates and a sublesson loads without a page reload', asy
   const storage = new Map([['caio-learning-progress-v1',JSON.stringify({completed:{m1l1:true,mevall4:true},homework:{m3:true},quiz:{m6:80}})]]);
   const requests=[];
   const context = {
-    document:{documentElement:{dataset:{theme:'dark'}},getElementById:node,querySelectorAll:()=>[],querySelector:()=>node('selection')},
+    document:{body:{dataset:{}},documentElement:{dataset:{theme:'dark'}},getElementById:node,querySelectorAll:()=>[],querySelector:()=>node('selection')},
     localStorage:{getItem:key=>storage.get(key)||null,setItem:(key,value)=>storage.set(key,value)},
     location:{hash:'#lesson/m1.1.1',pathname:'/',search:''},
     history:{pushState(){},replaceState(){}},window:{scrollTo(){},addEventListener(){}},
