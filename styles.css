@@ -85,7 +85,7 @@ main { min-width:0; }
 .summary-box { border-left:3px solid var(--accent-2); }
 .callout { border-left:3px solid var(--warn); padding:10px 14px; background:rgba(242,196,109,.06); color:var(--muted); }
 .kbd { border:1px solid var(--line); background:var(--panel-2); border-radius:7px; padding:2px 6px; font-size:12px; }
-.theme-toggle { position:fixed; z-index:30; right:20px; top:18px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:999px; padding:9px 15px; font-weight:700; box-shadow:var(--shadow); cursor:pointer; }
+.theme-toggle { position:fixed; z-index:30; right:20px; top:18px; display:grid; place-items:center; width:44px; height:44px; border:1px solid var(--line); background:var(--panel); color:var(--text); border-radius:50%; padding:0; font-size:23px; line-height:1; box-shadow:var(--shadow); cursor:pointer; }
 .theme-toggle:focus-visible, button:focus-visible, a:focus-visible { outline:3px solid var(--accent-2); outline-offset:3px; }
 .back-link { border:0; background:none; color:var(--accent); padding:0; cursor:pointer; margin-bottom:28px; }
 .lesson-layout { display:grid; grid-template-columns:minmax(0,760px) minmax(190px,240px); gap:42px; align-items:start; }
