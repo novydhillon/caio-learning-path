@@ -1,0 +1,18 @@
+{
+  "id": "m10.3",
+  "moduleId": "m10",
+  "parts": [
+    {
+      "id": "m10.3.1",
+      "title": "Report a balanced set",
+      "body": "Group measures into realized value, adoption, delivery, reliability, risk, and organizational capability. Each measure needs an owner, numerator and denominator, cadence, and threshold. Pair leading signals with results; an increase in usage is useful only if quality and business outcomes hold.",
+      "label": "Understand"
+    },
+    {
+      "id": "m10.3.2",
+      "title": "Spot a false positive",
+      "body": "Monthly active users rose 40%, but escalations and manual corrections doubled. Write the executive explanation, investigation owner, and temporary action. A green adoption measure must not hide a red quality measure.",
+      "label": "Apply"
+    }
+  ]
+}

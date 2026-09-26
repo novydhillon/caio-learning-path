@@ -1,0 +1,18 @@
+{
+  "id": "m10.2",
+  "moduleId": "m10",
+  "parts": [
+    {
+      "id": "m10.2.1",
+      "title": "Write for a real decision",
+      "body": "Put the decision request first. Then give context, options, recommendation, economics, risk, assumptions, and the next checkpoint. Use a small table when options differ on cost, control, and reversibility. State what evidence would change your mind. A memo should let an executive disagree with the assumptions without guessing what they are.",
+      "label": "Understand"
+    },
+    {
+      "id": "m10.2.2",
+      "title": "Draft a vendor memo",
+      "body": "Compare buying an enterprise assistant, building on a model API, and waiting one quarter. Include a 12-month cost range, data exposure, time to pilot, and integration burden. Recommend one route for a limited scope and name the checkpoint that authorizes expansion.",
+      "label": "Apply"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "id": "m8",
+  "weeks": "16–17",
+  "title": "AI Economics & Investment",
+  "subtitle": "Make AI a disciplined capital-allocation problem",
+  "summary": "Build business cases, unit economics, benefit-realization models, portfolio funding approaches, and vendor economics for AI investments.",
+  "lessons": [
+    {
+      "id": "m8.1",
+      "title": "From pilot metrics to enterprise value",
+      "duration": "60 min",
+      "body": "Distinguish activity metrics from value metrics. Measure revenue, margin, cycle time, quality, risk reduction, capacity released, and strategic option value. Define baseline and counterfactual before deployment.",
+      "resources": [
+        [
+          "Deloitte — Beyond Pilots: Transforming IT for AI at Scale",
+          "https://www.deloitte.com/ca/en/services/consulting/perspectives/transforming-it-ai.html"
+        ]
+      ]
+    },
+    {
+      "id": "m8.2",
+      "title": "AI unit economics",
+      "duration": "75 min",
+      "body": "Calculate cost per task, per user, per decision, or per workflow. Include inference, retrieval, storage, platform overhead, human review, support, security, compliance, and change costs.",
+      "resources": []
+    },
+    {
+      "id": "m8.3",
+      "title": "Stage-gated investment",
+      "duration": "60 min",
+      "body": "Fund uncertainty deliberately: discovery, prototype, controlled production, scale. Increase investment only as technical feasibility, adoption, and value evidence improve.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Model AI ROI",
+    "Calculate unit economics",
+    "Design funding gates",
+    "Challenge vendor claims"
+  ],
+  "quiz": [
+    {
+      "q": "A strong AI business case should measure:",
+      "options": [
+        "Only model accuracy",
+        "Business outcome change versus a baseline",
+        "Number of prompts sent",
+        "Executive enthusiasm"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why use stage gates?",
+      "options": [
+        "To guarantee every project scales",
+        "To increase investment as uncertainty is retired",
+        "To prevent experimentation",
+        "To avoid measuring value"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Build a 3-year financial model for an AI customer-service program with adoption, deflection, staffing impact, model cost, platform cost, change cost, and downside scenarios.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "Illustrative investment path",
+    "stages": [
+      [
+        "Discovery",
+        "Low spend"
+      ],
+      [
+        "Prototype",
+        "Feasibility"
+      ],
+      [
+        "Pilot",
+        "Measured value"
+      ],
+      [
+        "Scale",
+        "Proven controls"
+      ]
+    ],
+    "note": "At each step, evidence determines whether funding grows."
+  }
+}

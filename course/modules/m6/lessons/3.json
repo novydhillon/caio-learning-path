@@ -1,0 +1,18 @@
+{
+  "id": "m6.3",
+  "moduleId": "m6",
+  "parts": [
+    {
+      "id": "m6.3.1",
+      "title": "Translate principles into checks",
+      "body": "Terms such as fairness and transparency need concrete behavior in a particular setting. Ask who could be harmed, what explanation a user needs, how an outcome can be challenged, and which evidence will show a control works. Match oversight to impact. Human review is meaningful only when reviewers have enough time, information, and authority to change the result.",
+      "label": "Understand"
+    },
+    {
+      "id": "m6.3.2",
+      "title": "Test a loan assistance tool",
+      "body": "If an assistant drafts explanations for declined applications, require it to use verified decision reasons, disclose its role to staff, and avoid invented factors. Audit a sample for accuracy and clarity. Name the person who handles a customer's challenge.",
+      "label": "Apply"
+    }
+  ]
+}

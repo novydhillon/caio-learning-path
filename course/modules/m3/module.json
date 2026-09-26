@@ -1,0 +1,169 @@
+{
+  "id": "m3",
+  "weeks": "5–6",
+  "title": "AI Evaluation & Assurance",
+  "subtitle": "Measure quality, safety, reliability, and business readiness",
+  "summary": "Build an enterprise evaluation discipline for models, RAG systems, agents, and AI-enabled workflows. Learn how to translate business expectations into testable criteria, combine automated and human grading, validate agent behavior end to end, and connect pre-launch evals to production monitoring.",
+  "lessons": [
+    {
+      "id": "m3.1",
+      "title": "Evaluation as an executive control system",
+      "duration": "60 min",
+      "body": "Treat evaluation as the mechanism that converts vague expectations into measurable release criteria. Separate capability, quality, safety, compliance, cost, latency, and business-outcome measures. Define what must be true before a pilot, controlled launch, or enterprise scale-up is approved. A CAIO should be able to ask not just whether a model is impressive, but whether the complete system is reliable enough for its intended risk tier.",
+      "resources": [
+        [
+          "OpenAI — How evals drive AI for businesses",
+          "https://openai.com/index/evals-drive-next-chapter-of-ai/"
+        ],
+        [
+          "Google Cloud — GenAI evaluation overview",
+          "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/evaluation-overview"
+        ]
+      ]
+    },
+    {
+      "id": "m3.2",
+      "title": "Datasets, tasks, and success criteria",
+      "duration": "75 min",
+      "body": "Build evaluation sets from representative user tasks, known production failures, high-risk edge cases, and adversarial scenarios. Keep held-out cases for regression testing, watch for contamination, and use domain experts to validate task realism. Document the claim each eval supports, the tested system configuration, and known limitations so leaders do not overgeneralize from a benchmark score.",
+      "resources": [
+        [
+          "OpenAI — Measuring performance on real-world tasks (GDPval)",
+          "https://openai.com/index/gdpval/"
+        ],
+        [
+          "OpenAI — Trustworthy third-party evaluations",
+          "https://openai.com/index/trustworthy-third-party-evaluations-foundations/"
+        ]
+      ]
+    },
+    {
+      "id": "m3.3",
+      "title": "Metrics, graders, and human calibration",
+      "duration": "75 min",
+      "body": "Use deterministic checks where correctness can be mechanically verified, rubric-based or model graders for subjective dimensions, and expert human review for calibration and high-stakes judgments. Learn pairwise comparison, partial credit, pass/fail launch thresholds, confidence intervals, and error taxonomies. Model judges should be periodically calibrated against trusted human judgments rather than treated as ground truth.",
+      "resources": [
+        [
+          "Anthropic — Demystifying evals for AI agents",
+          "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+        ],
+        [
+          "Google Cloud — Develop and evaluate a generative AI application",
+          "https://docs.cloud.google.com/docs/ai-ml/generative-ai/develop-generative-ai-application"
+        ]
+      ]
+    },
+    {
+      "id": "m3.4",
+      "title": "Evaluating RAG and agentic systems",
+      "duration": "90 min",
+      "body": "Evaluate the whole system, not only the base model. For RAG, distinguish retrieval failure from generation failure and measure groundedness, citation quality, completeness, and permission correctness. For agents, test task completion, tool selection, side effects, recovery, permission boundaries, cost, latency, and robustness across multiple valid solution paths. Avoid brittle evals that require one exact tool-call sequence when several correct approaches exist.",
+      "resources": [
+        [
+          "Anthropic — Demystifying evals for AI agents",
+          "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+        ],
+        [
+          "Google Cloud — Master GenAI evaluation from prompts to agents",
+          "https://cloud.google.com/blog/topics/developers-practitioners/master-generative-ai-evaluation-from-single-prompts-to-complex-agents"
+        ]
+      ]
+    },
+    {
+      "id": "m3.5",
+      "title": "Eval-driven development and production assurance",
+      "duration": "75 min",
+      "body": "Make evals part of the AI delivery lifecycle: define acceptance criteria before implementation, run regression suites on prompt/model/tool changes, use red-team and safety testing before launch, and combine production monitoring, user feedback, transcript sampling, A/B tests, and incident analysis after launch. Establish ownership, review cadence, escalation thresholds, and an executive quality-and-risk scorecard.",
+      "resources": [
+        [
+          "Anthropic — Demystifying evals for AI agents",
+          "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+        ],
+        [
+          "OpenAI — Trustworthy third-party evaluations",
+          "https://openai.com/index/trustworthy-third-party-evaluations-foundations/"
+        ]
+      ]
+    }
+  ],
+  "objectives": [
+    "Define an enterprise AI evaluation strategy",
+    "Design representative eval datasets and rubrics",
+    "Select deterministic, model-based, and human graders",
+    "Evaluate agents and production systems end to end",
+    "Set launch gates and continuous monitoring thresholds"
+  ],
+  "quiz": [
+    {
+      "q": "Why should a CAIO care about evaluation beyond model benchmarks?",
+      "options": [
+        "Benchmarks already determine production readiness",
+        "Enterprise outcomes depend on the complete system, workflow, risk tier, and real user distribution",
+        "Evaluation is primarily an ML engineering concern",
+        "Only regulators need evaluation evidence"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Which grading strategy is strongest for an enterprise eval suite?",
+      "options": [
+        "Use an LLM judge for every test",
+        "Use human reviewers for every test",
+        "Combine deterministic graders, calibrated model graders, and targeted human expert review",
+        "Use only user satisfaction surveys"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "For an agentic workflow, a robust eval should usually prioritize:",
+      "options": [
+        "The exact sequence of tool calls",
+        "The final outcome, important intermediate constraints, side effects, and safety boundaries",
+        "The largest possible benchmark dataset regardless of relevance",
+        "Only average latency"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "After deployment, the evaluation program should:",
+      "options": [
+        "Stop once launch criteria are met",
+        "Run only when a vendor releases a new model",
+        "Continue through production monitoring, feedback, regression tests, and periodic human calibration",
+        "Be replaced by quarterly business reviews"
+      ],
+      "answer": 2
+    }
+  ],
+  "homework": "Design an evaluation and assurance plan for an enterprise AI assistant or agent. Define the business task and risk tier; create at least 25 representative and edge-case eval tasks; define quality, safety, cost, and latency metrics; specify deterministic/model/human graders; establish launch gates; add a red-team plan; and design a production monitoring scorecard with escalation thresholds. Include a one-page executive summary explaining what evidence would justify scaling, pausing, or rolling back the system.",
+  "regionalResources": [],
+  "visual": {
+    "type": "gates",
+    "title": "Illustrative release gate: several checks must pass together",
+    "bars": [
+      [
+        "Task success",
+        87,
+        "87% / target 85%",
+        false
+      ],
+      [
+        "Grounded answers",
+        91,
+        "91% / target 90%",
+        false
+      ],
+      [
+        "Permission safety",
+        98,
+        "98% / target 100%",
+        true
+      ]
+    ],
+    "note": "Example values for teaching only. The permission failure blocks this sample launch despite the other passes."
+  },
+  "banner": {
+    "src": "eval-lesson.webp",
+    "alt": "An evaluator comparing AI responses with source material and review signals"
+  }
+}

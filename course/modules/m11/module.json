@@ -1,0 +1,94 @@
+{
+  "id": "m11",
+  "weeks": "23–26",
+  "title": "CAIO Capstone",
+  "subtitle": "Produce evidence that you can do the job",
+  "summary": "Integrate the course into an interview- and board-ready Chief AI Officer portfolio that demonstrates strategy, architecture, governance, economics, operating model, and executive leadership.",
+  "lessons": [
+    {
+      "id": "m11.1",
+      "title": "Choose the enterprise",
+      "duration": "45 min",
+      "body": "Select a real or realistic company. Document business model, strategic priorities, data constraints, regulatory exposure, technology estate, AI maturity, and competitive pressures.",
+      "resources": [
+        [
+          "Stanford AI Index 2026",
+          "https://hai.stanford.edu/ai-index/2026-ai-index-report"
+        ]
+      ]
+    },
+    {
+      "id": "m11.2",
+      "title": "Build the transformation plan",
+      "duration": "4–6 hr",
+      "body": "Create an 18-month AI transformation roadmap containing use-case portfolio, platform architecture, operating model, governance, security, workforce plan, budget, financial outcomes, KPIs, and decision cadence.",
+      "resources": []
+    },
+    {
+      "id": "m11.3",
+      "title": "Executive defense",
+      "duration": "2 hr",
+      "body": "Prepare to defend the plan against CEO, CFO, CIO, CISO, legal, and board questions. For each major decision, explain alternatives, assumptions, trade-offs, and signals that would cause you to change direction.",
+      "resources": []
+    },
+    {
+      "id": "m11.4",
+      "title": "Career evidence package",
+      "duration": "2 hr",
+      "body": "Convert the capstone into interview material: a 2-page AI strategy memo, board deck, architecture one-pager, governance model, value scorecard, and 6 leadership stories demonstrating CAIO competencies.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Build an enterprise AI plan",
+    "Defend trade-offs",
+    "Demonstrate executive judgment",
+    "Create career evidence"
+  ],
+  "quiz": [
+    {
+      "q": "The capstone is strongest when it demonstrates:",
+      "options": [
+        "Only technical depth",
+        "Integrated business, technical, financial, risk, and leadership judgment",
+        "Only knowledge of current vendors",
+        "Only regulatory knowledge"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A CAIO-ready portfolio should make trade-offs:",
+      "options": [
+        "Invisible",
+        "Explicit, evidence-based, and reversible where possible",
+        "Vendor-defined",
+        "Purely technical"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Final deliverable: an executive-ready Enterprise AI Transformation Plan and a 30-minute board presentation. Have a peer or mentor challenge the plan using CEO, CFO, CISO, and legal perspectives; revise based on the critique.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "From an idea to an accountable decision",
+    "stages": [
+      [
+        "Business need",
+        "Owner"
+      ],
+      [
+        "System design",
+        "Boundaries"
+      ],
+      [
+        "Evidence",
+        "Evaluation"
+      ],
+      [
+        "Decision",
+        "Review date"
+      ]
+    ]
+  }
+}

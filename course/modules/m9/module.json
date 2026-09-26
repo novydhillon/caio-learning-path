@@ -1,0 +1,89 @@
+{
+  "id": "m9",
+  "weeks": "18–20",
+  "title": "Operating Model, Talent & Change",
+  "subtitle": "Rewire how the company works, not just what technology it buys",
+  "summary": "Design the AI organization, federated delivery model, skills strategy, workforce transformation, adoption system, and responsible incentives needed for sustained change.",
+  "lessons": [
+    {
+      "id": "m9.1",
+      "title": "Centralize, federate, or hybrid?",
+      "duration": "75 min",
+      "body": "Define which capabilities belong in a central AI platform/enablement function and which belong in business units. Common central responsibilities include standards, platform, governance, high-leverage expertise, and portfolio visibility.",
+      "resources": []
+    },
+    {
+      "id": "m9.2",
+      "title": "Talent architecture",
+      "duration": "60 min",
+      "body": "Plan for AI product leaders, data/ML engineers, platform engineers, security, risk, UX, evaluation, domain experts, and change leaders. Upskill existing teams while selectively hiring scarce roles.",
+      "resources": []
+    },
+    {
+      "id": "m9.3",
+      "title": "AI literacy and workforce redesign",
+      "duration": "75 min",
+      "body": "Move beyond tool training. Redesign workflows, roles, incentives, quality controls, manager expectations, and human accountability. Treat adoption as an operating-model transformation.",
+      "resources": []
+    },
+    {
+      "id": "m9.4",
+      "title": "Communities of practice",
+      "duration": "45 min",
+      "body": "Create champions, reusable patterns, office hours, internal showcases, and peer learning. Scale organizational learning faster than a central team can deliver projects.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Design an AI operating model",
+    "Build a talent plan",
+    "Lead workforce change",
+    "Create adoption mechanisms"
+  ],
+  "quiz": [
+    {
+      "q": "AI transformation fails most often when adoption is treated as:",
+      "options": [
+        "An operating-model change",
+        "A technology deployment only",
+        "A leadership priority",
+        "A measurable business program"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A federated model works best when:",
+      "options": [
+        "Standards are optional",
+        "Central capabilities enable business-owned outcomes",
+        "Business units cannot build AI",
+        "The CAIO approves every prompt"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Design the first 18 months of an AI organization for a 5,000-person enterprise: org chart, central vs federated responsibilities, hiring sequence, upskilling plan, and adoption KPIs.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "From an idea to an accountable decision",
+    "stages": [
+      [
+        "Business need",
+        "Owner"
+      ],
+      [
+        "System design",
+        "Boundaries"
+      ],
+      [
+        "Evidence",
+        "Evaluation"
+      ],
+      [
+        "Decision",
+        "Review date"
+      ]
+    ]
+  }
+}

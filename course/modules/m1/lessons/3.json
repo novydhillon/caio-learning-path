@@ -1,0 +1,18 @@
+{
+  "id": "m1.3",
+  "moduleId": "m1",
+  "parts": [
+    {
+      "id": "m1.3.1",
+      "title": "Map influence and accountability",
+      "body": "List the CEO, board, CIO, CTO, CDO, CISO, CFO, legal, privacy, HR, and business leaders. Next to each, write the decision they own, the information they need, and the conflict they might raise. The CAIO should make decisions legible across this group. A stakeholder map that only lists names does not tell you how work will move.",
+      "label": "Understand"
+    },
+    {
+      "id": "m1.3.2",
+      "title": "Rehearse a disagreement",
+      "body": "Suppose sales wants to upload call transcripts into a new vendor tool. Sales sees immediate value; privacy wants a purpose and retention review; security needs vendor assurance. Draft a meeting agenda that resolves data boundaries, a limited pilot, its success measure, and who can stop it. Record unresolved decisions rather than calling them alignment.",
+      "label": "Apply"
+    }
+  ]
+}

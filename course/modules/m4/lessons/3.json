@@ -1,0 +1,18 @@
+{
+  "id": "m4.3",
+  "moduleId": "m4",
+  "parts": [
+    {
+      "id": "m4.3.1",
+      "title": "Score with visible assumptions",
+      "body": "Use a common 1 to 5 scale for strategic fit, expected value, feasibility, data readiness, adoption effort, and risk. Keep raw measures beside the score: annual volume, expected time saved, error cost, and confidence in the estimate. Weights make priorities explicit; sensitivity checks show when a ranking is fragile.",
+      "label": "Understand"
+    },
+    {
+      "id": "m4.3.2",
+      "title": "Run a portfolio review",
+      "body": "Compare a customer service copilot with a fraud alert system. The copilot may have faster payback; fraud may protect a smaller number of much more consequential cases. Vary the risk weight and show how the ranking changes. Fund discovery on uncertain candidates before claiming a precise ROI.",
+      "label": "Apply"
+    }
+  ]
+}

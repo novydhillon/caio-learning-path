@@ -1,0 +1,99 @@
+{
+  "id": "m2",
+  "weeks": "3–4",
+  "title": "AI & GenAI Technical Fluency",
+  "subtitle": "Know enough to make architecture and investment decisions",
+  "summary": "Build executive-level fluency in modern ML, transformers, foundation models, embeddings, RAG, fine-tuning, agents, evaluation, inference, and model economics.",
+  "lessons": [
+    {
+      "id": "m2.1",
+      "title": "ML to foundation models",
+      "duration": "75 min",
+      "body": "Review supervised learning, deep learning, transformers, pretraining, instruction tuning, inference, multimodality, and the practical limits of foundation models. Focus on the questions an executive must ask rather than implementation detail.",
+      "resources": [
+        [
+          "Hugging Face LLM Course",
+          "https://huggingface.co/learn/llm-course/chapter1/1"
+        ]
+      ]
+    },
+    {
+      "id": "m2.2",
+      "title": "Enterprise GenAI patterns",
+      "duration": "75 min",
+      "body": "Learn prompt orchestration, embeddings, vector retrieval, RAG, tool use, structured outputs, guardrails, fine-tuning, and evaluation. For each pattern, identify the business problem it solves and its operational failure modes.",
+      "resources": [
+        [
+          "Full Stack Deep Learning — LLM Bootcamp",
+          "https://fullstackdeeplearning.com/llm-bootcamp/"
+        ]
+      ]
+    },
+    {
+      "id": "m2.3",
+      "title": "Agentic systems",
+      "duration": "75 min",
+      "body": "Study systems that plan, invoke tools, maintain state, and act across workflows. Pay particular attention to permission boundaries, human-in-the-loop design, observability, rollback, and the difference between a demo and a production control system.",
+      "resources": []
+    },
+    {
+      "id": "m2.4",
+      "title": "Model economics",
+      "duration": "60 min",
+      "body": "Model the cost stack: tokens/inference, embeddings, retrieval, data pipelines, GPU/accelerator usage, evaluation, observability, human review, and vendor margin. Learn to translate model choices into unit economics.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Explain modern AI systems",
+    "Compare RAG vs fine-tuning",
+    "Understand agents",
+    "Reason about cost/latency/quality trade-offs"
+  ],
+  "quiz": [
+    {
+      "q": "RAG is primarily used to:",
+      "options": [
+        "Change model weights",
+        "Ground generation in retrieved context",
+        "Reduce all hallucinations to zero",
+        "Replace evaluation"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A critical production concern for agents is:",
+      "options": [
+        "Only prompt length",
+        "Tool permissions and action boundaries",
+        "Whether the UI has a chatbot",
+        "Using the largest model available"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Create an architecture decision record comparing three approaches for an enterprise knowledge assistant: hosted API + RAG, private hosted model + RAG, and fine-tuned model. Include security, quality, latency, cost, lock-in, and operational complexity.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "From an idea to an accountable decision",
+    "stages": [
+      [
+        "Business need",
+        "Owner"
+      ],
+      [
+        "System design",
+        "Boundaries"
+      ],
+      [
+        "Evidence",
+        "Evaluation"
+      ],
+      [
+        "Decision",
+        "Review date"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "m9.3",
+  "moduleId": "m9",
+  "parts": [
+    {
+      "id": "m9.3.1",
+      "title": "Redesign the job around the tool",
+      "body": "Show where AI enters a task, what the worker checks, how exceptions are handled, and who remains accountable. Train managers on quality review and realistic workload changes. Adoption measures should include repeat use on suitable cases and outcomes, not account activations or prompt counts.",
+      "label": "Understand"
+    },
+    {
+      "id": "m9.3.2",
+      "title": "Rewrite a workflow",
+      "body": "An analyst currently spends 30 minutes assembling a weekly report. The assistant can draft a summary in five minutes, but the analyst must verify figures and explain unusual movements. Document the revised steps, expected time, error checks, and escalation for missing data.",
+      "label": "Apply"
+    }
+  ]
+}

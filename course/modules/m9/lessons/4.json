@@ -1,0 +1,18 @@
+{
+  "id": "m9.4",
+  "moduleId": "m9",
+  "parts": [
+    {
+      "id": "m9.4.1",
+      "title": "Create a route for shared learning",
+      "body": "Champions and office hours help teams share evaluated patterns, failed experiments, and practical constraints. Keep a searchable library of use cases with owners, approval status, reusable prompts or components, and evidence. Reward reporting an issue early. Do not turn informal champions into an unaccountable approval chain.",
+      "label": "Understand"
+    },
+    {
+      "id": "m9.4.2",
+      "title": "Run a monthly clinic",
+      "body": "Ask one team to present a successful workflow and one to present a failure. Require the baseline, evaluation result, user feedback, and next decision from both. Publish reusable lessons with names and dates, then revisit whether another team actually adopted them.",
+      "label": "Apply"
+    }
+  ]
+}

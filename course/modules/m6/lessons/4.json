@@ -1,0 +1,18 @@
+{
+  "id": "m6.4",
+  "moduleId": "m6",
+  "parts": [
+    {
+      "id": "m6.4.1",
+      "title": "Classify by use and role",
+      "body": "The EU AI Act assigns obligations according to the use case and whether an organization provides or deploys a system. Inventory each EU use, check prohibited practices, possible high-risk categories, transparency duties, and any general-purpose model role. Review the European Commission's live implementation page before setting dates because applicability and proposed amendments evolve. Keep GDPR analysis separate where personal data is processed.",
+      "label": "Understand"
+    },
+    {
+      "id": "m6.4.2",
+      "title": "Do a cross-region review",
+      "body": "A recruitment tool used in Paris and Toronto needs an EU AI Act role and risk assessment for the EU deployment. Its personal data use also needs a GDPR review. For Canada, identify applicable federal or provincial privacy law and whether a public-sector automated decision directive applies. Log each jurisdiction and the accountable counsel; do not apply the Canadian federal government directive to all private employers.",
+      "label": "Apply"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "m10.1",
+  "moduleId": "m10",
+  "parts": [
+    {
+      "id": "m10.1.1",
+      "title": "Give the board a decision",
+      "body": "A board update should connect AI investment to company strategy and material risk. Show value delivered against baselines, major programs, risk exposure, control health, and choices requiring oversight. Separate observed results from forecasts. Give the board enough detail to ask whether management can detect a failure and respond.",
+      "label": "Understand"
+    },
+    {
+      "id": "m10.1.2",
+      "title": "Build a four-slide briefing",
+      "body": "Use one slide each for strategic thesis, portfolio performance, material risks and controls, and decisions requested. Include a Canada and EU exposure note if the company operates there. Ask the board to choose an investment envelope or risk appetite, not a model vendor.",
+      "label": "Apply"
+    }
+  ]
+}

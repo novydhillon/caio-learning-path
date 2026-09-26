@@ -1,0 +1,18 @@
+{
+  "id": "m5.3",
+  "moduleId": "m5",
+  "parts": [
+    {
+      "id": "m5.3.1",
+      "title": "Version the whole system",
+      "body": "A release depends on more than model name: data snapshot, prompts, retrieval settings, tools, policy configuration, and evaluation suite all affect behavior. Record these versions together. Monitor quality and costs after deployment, and keep a route back to the last acceptable configuration. Retraining or changing providers without this record makes incidents hard to diagnose.",
+      "label": "Understand"
+    },
+    {
+      "id": "m5.3.2",
+      "title": "Plan a rollback",
+      "body": "A new embedding model lowers answer quality. Specify the signal that catches it, the owner who decides to revert, the prior index or configuration to restore, and the test cases run after rollback. Include a way to tell users when prior answers may need review.",
+      "label": "Apply"
+    }
+  ]
+}

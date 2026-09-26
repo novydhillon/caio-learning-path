@@ -1,0 +1,87 @@
+{
+  "id": "m10",
+  "weeks": "21–22",
+  "title": "Executive & Board Leadership",
+  "subtitle": "Communicate AI as strategy, risk, capital, and organizational change",
+  "summary": "Learn to communicate with CEOs and boards using business language, decision memos, scenario planning, governance reporting, and concise executive narratives.",
+  "lessons": [
+    {
+      "id": "m10.1",
+      "title": "Board-level AI narrative",
+      "duration": "60 min",
+      "body": "A board needs clarity on strategic stakes, investment, material risks, governance, capability maturity, competitors, and key decisions—not a model architecture tutorial.",
+      "resources": [
+        [
+          "Deloitte — AI Board Governance Roadmap",
+          "https://www.deloitte.com/us/en/programs/center-for-board-effectiveness/articles/board-of-directors-governance-framework-artificial-intelligence.html"
+        ]
+      ]
+    },
+    {
+      "id": "m10.2",
+      "title": "Decision memos",
+      "duration": "60 min",
+      "body": "Use a one- or two-page format: decision required, context, options, recommendation, economics, risk, assumptions, reversibility, and next checkpoint. Make uncertainty explicit.",
+      "resources": []
+    },
+    {
+      "id": "m10.3",
+      "title": "AI maturity reporting",
+      "duration": "45 min",
+      "body": "Create a balanced executive scorecard covering business value, adoption, delivery, platform health, governance, incidents, talent, and pipeline. Avoid vanity metrics such as raw prompt counts.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Brief a board on AI",
+    "Write decision memos",
+    "Communicate uncertainty",
+    "Report value and risk together"
+  ],
+  "quiz": [
+    {
+      "q": "A board AI update should emphasize:",
+      "options": [
+        "Transformer internals",
+        "Strategic value, risk, investment, governance, and decisions",
+        "Prompt-writing tips",
+        "A full engineering backlog"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Good executive communication about uncertainty should:",
+      "options": [
+        "Hide uncertainty to build confidence",
+        "Quantify assumptions and define checkpoints",
+        "Avoid scenarios",
+        "Promise deterministic outcomes"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Prepare a 10-slide board update on enterprise AI: market context, strategy, portfolio, value realized, material risks, governance, platform, workforce, 12-month roadmap, and 3 decisions requested from the board.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "From an idea to an accountable decision",
+    "stages": [
+      [
+        "Business need",
+        "Owner"
+      ],
+      [
+        "System design",
+        "Boundaries"
+      ],
+      [
+        "Evidence",
+        "Evaluation"
+      ],
+      [
+        "Decision",
+        "Review date"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "m11.4",
+  "moduleId": "m11",
+  "parts": [
+    {
+      "id": "m11.4.1",
+      "title": "Turn work into career evidence",
+      "body": "Prepare a concise strategy memo, board briefing, architecture diagram, governance record, value scorecard, and leadership stories. Explain what you personally decided, what others owned, and what changed as a result. Label hypothetical capstone work clearly so it cannot be mistaken for a shipped company outcome.",
+      "label": "Understand"
+    },
+    {
+      "id": "m11.4.2",
+      "title": "Practice the interview",
+      "body": "Choose six stories across strategy, investment, cross-functional conflict, technical judgment, risk response, and organizational change. For each, write the situation, your decision, evidence used, result, and what you would do differently. Rehearse a two-minute version and a deeper follow-up.",
+      "label": "Apply"
+    }
+  ]
+}

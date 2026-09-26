@@ -1,0 +1,18 @@
+{
+  "id": "m9.2",
+  "moduleId": "m9",
+  "parts": [
+    {
+      "id": "m9.2.1",
+      "title": "Hire around missing capabilities",
+      "body": "Inventory existing product, data, engineering, security, privacy, evaluation, domain, and change skills. Match roles to the first portfolio, not an idealized org chart. A team building internal knowledge tools may need an evaluation lead and data stewards sooner than a model training group. Pair specialists with existing teams so knowledge stays inside the organization.",
+      "label": "Understand"
+    },
+    {
+      "id": "m9.2.2",
+      "title": "Sequence three hires",
+      "body": "Given two funded pilots and one shared platform, choose the first three roles and explain why. For each, write the decision or output only that person can own, the skill that can be trained internally, and how success will be assessed after six months.",
+      "label": "Apply"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "m3.2",
+  "moduleId": "m3",
+  "parts": [
+    {
+      "id": "m3.2.1",
+      "title": "Build a realistic test set",
+      "body": "Sample tasks from actual workflow categories. Include common requests, rare but costly failures, ambiguous inputs, outdated sources, multilingual cases, and adversarial attempts. Keep development cases separate from held-out cases. Record the input, expected behavior, policy context, and why the case belongs in the set. Refresh cases when products and users change.",
+      "label": "Understand"
+    },
+    {
+      "id": "m3.2.2",
+      "title": "Audit the coverage",
+      "body": "For a customer support assistant, make a table with task type and risk level. Put refunds, account access, routine status, and complaints in it. Count cases in each cell and compare those counts with production traffic and possible harm. A set of 100 easy status questions and two account-access cases will produce a misleading overall score.",
+      "label": "Apply"
+    }
+  ]
+}

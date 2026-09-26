@@ -1,0 +1,18 @@
+{
+  "id": "m11.3",
+  "moduleId": "m11",
+  "parts": [
+    {
+      "id": "m11.3.1",
+      "title": "Defend trade-offs under pressure",
+      "body": "Prepare questions from CEO, CFO, CIO, CISO, legal, privacy, and a business owner. Answer with an assumption, evidence, and decision rule. Be candid about what is unknown. A strong defense shows how a plan changes when its assumptions fail, especially around value, data rights, and incident response.",
+      "label": "Understand"
+    },
+    {
+      "id": "m11.3.2",
+      "title": "Run a red-team review",
+      "body": "Ask one reviewer to challenge financial assumptions and another to probe security or regulatory exposure. Record each objection, your answer, the evidence that would resolve it, and the resulting edit. Keep this decision log with the capstone.",
+      "label": "Apply"
+    }
+  ]
+}

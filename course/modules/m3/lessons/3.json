@@ -1,0 +1,18 @@
+{
+  "id": "m3.3",
+  "moduleId": "m3",
+  "parts": [
+    {
+      "id": "m3.3.1",
+      "title": "Use the right grader",
+      "body": "Use exact checks for parseable fields, authorized tool calls, and known facts. Use a rubric for nuanced writing or reasoning, with examples for each score. Ask domain experts to review uncertain or consequential cases. A model grader can scale judgment, but first compare its verdicts with trusted human labels and inspect disagreements. Preserve error categories instead of hiding everything inside one average.",
+      "label": "Understand"
+    },
+    {
+      "id": "m3.3.2",
+      "title": "Calibrate a judge",
+      "body": "Have two experts and a model grader score 30 answers for factual support on a 0 to 2 rubric. Review cases where they disagree; tighten the rubric and repeat on fresh cases. Report agreement and the types of disagreement. If the grader consistently rewards polished but unsupported answers, it should not control the release gate.",
+      "label": "Apply"
+    }
+  ]
+}

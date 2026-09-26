@@ -1,0 +1,18 @@
+{
+  "id": "m9.1",
+  "moduleId": "m9",
+  "parts": [
+    {
+      "id": "m9.1.1",
+      "title": "Divide central and local work",
+      "body": "A central group can maintain policy, a model gateway, evaluation methods, specialist support, and portfolio visibility. Business teams own their workflows, user research, adoption, and benefits. Write interfaces so teams know when they can act alone and when they need review. A central team that approves every small change will become a bottleneck.",
+      "label": "Understand"
+    },
+    {
+      "id": "m9.1.2",
+      "title": "Design an ownership table",
+      "body": "For a customer-facing assistant, assign one owner each for product outcome, data access, platform service, security review, model quality, and incident response. Define who can approve a new data source and who can disable the assistant after an incident.",
+      "label": "Apply"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "m7.3",
+  "moduleId": "m7",
+  "parts": [
+    {
+      "id": "m7.3.1",
+      "title": "Prepare for failure before scale",
+      "body": "Define incident categories: data leak, harmful or incorrect advice, unauthorized action, provider outage, cost runaway, and compromised integration. Name the detection signal, on-call owner, containment action, customer communication route, and recovery test. Keep a kill switch for tools that can change records or send messages.",
+      "label": "Understand"
+    },
+    {
+      "id": "m7.3.2",
+      "title": "Run a tabletop",
+      "body": "A model update causes an agent to send duplicate customer emails. Who pauses the agent, identifies affected recipients, restores the previous configuration, and checks whether personal data was exposed? Measure the time from first signal to containment and revise the runbook after the exercise.",
+      "label": "Apply"
+    }
+  ]
+}

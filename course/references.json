@@ -1,0 +1,92 @@
+[
+  [
+    "NIST AI Risk Management Framework",
+    "https://www.nist.gov/itl/ai-risk-management-framework",
+    "Core enterprise AI risk framework; AI RMF 1.0 is under revision as of 2026."
+  ],
+  [
+    "NIST Generative AI Profile",
+    "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf",
+    "GenAI-specific companion to the NIST AI RMF."
+  ],
+  [
+    "ISO/IEC 42001",
+    "https://www.iso.org/standard/42001",
+    "International AI management system standard."
+  ],
+  [
+    "OECD AI Principles",
+    "https://www.oecd.org/en/topics/ai-principles.html",
+    "Intergovernmental principles for trustworthy AI."
+  ],
+  [
+    "EU AI Act implementation timeline",
+    "https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline",
+    "Official implementation milestones and applicability dates."
+  ],
+  [
+    "Stanford AI Index 2026",
+    "https://hai.stanford.edu/ai-index/2026-ai-index-report",
+    "Annual data-driven view of AI capability, adoption, economics, governance, and societal impact."
+  ],
+  [
+    "Anthropic — Demystifying evals for AI agents",
+    "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents",
+    "Practical 2026 guidance for designing, grading, maintaining, and productionizing agent evaluations."
+  ],
+  [
+    "OpenAI — How evals drive AI for businesses",
+    "https://openai.com/index/evals-drive-next-chapter-of-ai/",
+    "Executive framing for using evaluation to specify, measure, and improve AI systems."
+  ],
+  [
+    "OpenAI — Trustworthy third-party evaluations",
+    "https://openai.com/index/trustworthy-third-party-evaluations-foundations/",
+    "Guidance on claims, system configuration, elicitation, budgets, and validity checks for modern evaluations."
+  ],
+  [
+    "Google Cloud — GenAI evaluation overview",
+    "https://docs.cloud.google.com/gemini-enterprise-agent-platform/models/evaluation-overview",
+    "Rubrics, metrics, and model-based evaluation patterns for generative AI systems."
+  ],
+  [
+    "Hugging Face LLM Course",
+    "https://huggingface.co/learn/llm-course/chapter1/1",
+    "Hands-on technical grounding in transformers and LLMs."
+  ],
+  [
+    "Full Stack Deep Learning — LLM Bootcamp",
+    "https://fullstackdeeplearning.com/llm-bootcamp/",
+    "Applied LLM product and production concepts."
+  ],
+  [
+    "OWASP Top 10 for LLM Applications",
+    "https://owasp.org/www-project-top-10-for-large-language-model-applications/",
+    "Security risks and mitigations for LLM-enabled applications."
+  ],
+  [
+    "Google Cloud Generative AI Learning",
+    "https://cloud.google.com/learn/training/generative-ai",
+    "Current cloud-based GenAI learning resources."
+  ],
+  [
+    "McKinsey Global Tech Agenda 2026",
+    "https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-global-tech-agenda-2026",
+    "Executive perspective on AI, data, operating models, and technology strategy."
+  ],
+  [
+    "Deloitte — AI at Scale",
+    "https://www.deloitte.com/ca/en/services/consulting/perspectives/transforming-it-ai.html",
+    "Enterprise operating, governance, and value realization considerations."
+  ],
+  [
+    "Deloitte — AI Board Governance Roadmap",
+    "https://www.deloitte.com/us/en/programs/center-for-board-effectiveness/articles/board-of-directors-governance-framework-artificial-intelligence.html",
+    "Board oversight structure and governance questions."
+  ],
+  [
+    "IBM — What is a Chief AI Officer?",
+    "https://www.ibm.com/think/topics/chief-ai-officer",
+    "Overview of the CAIO role and responsibilities."
+  ]
+]

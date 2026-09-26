@@ -1,0 +1,18 @@
+{
+  "id": "m8.1",
+  "moduleId": "m8",
+  "parts": [
+    {
+      "id": "m8.1.1",
+      "title": "Measure changed outcomes",
+      "body": "Start with a baseline, comparison group or defensible counterfactual, and a named business metric. Time saved is not always money saved; say whether capacity will be redeployed, demand absorbed, or spending reduced. Track quality and downstream effects so faster work that creates rework is visible.",
+      "label": "Understand"
+    },
+    {
+      "id": "m8.1.2",
+      "title": "Evaluate a service pilot",
+      "body": "Two similar support teams handle comparable tickets, one with an assistant. Compare resolution time, reopen rate, customer satisfaction, and total labour over several weeks. Explain differences in ticket mix and adoption. Report the range of plausible benefit rather than a single precise number.",
+      "label": "Apply"
+    }
+  ]
+}

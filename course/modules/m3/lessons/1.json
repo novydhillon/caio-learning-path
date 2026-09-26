@@ -1,0 +1,18 @@
+{
+  "id": "m3.1",
+  "moduleId": "m3",
+  "parts": [
+    {
+      "id": "m3.1.1",
+      "title": "Turn a promise into a gate",
+      "body": "A claim such as 'helpful and safe' cannot approve a launch. Define the task population, reference outcomes, failure severity, and thresholds before building. Measure task success, unsupported statements, privacy violations, latency, cost, and the business outcome separately. A pilot can allow human review on every answer; a broad launch may require much stronger evidence because exposure grows.",
+      "label": "Understand"
+    },
+    {
+      "id": "m3.1.2",
+      "title": "Write a release decision",
+      "body": "For a knowledge assistant, specify a representative held-out test set, an acceptable rate of unsupported answers, a zero-tolerance list for cross-user data leaks, and a review owner. Report sample size and uncertainty with every percentage. Decide in advance whether a failed safety case blocks launch even if average quality looks good.",
+      "label": "Apply"
+    }
+  ]
+}

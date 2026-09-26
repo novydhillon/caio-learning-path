@@ -1,0 +1,18 @@
+{
+  "id": "m6.2",
+  "moduleId": "m6",
+  "parts": [
+    {
+      "id": "m6.2.1",
+      "title": "Make governance repeatable",
+      "body": "ISO/IEC 42001 describes an AI management system: scope, leadership, policy, objectives, risk treatment, operations, performance review, and improvement. A useful implementation has an AI inventory, named owners, documented controls, evidence, and a review cadence. Certification, if pursued, is a separate decision; the standard itself does not guarantee a system is safe.",
+      "label": "Understand"
+    },
+    {
+      "id": "m6.2.2",
+      "title": "Build a control record",
+      "body": "Choose an internal support chatbot. Record owner, intended use, excluded uses, data sources, model supplier, evaluation results, review date, and incidents. If the owner changes or a new connector is added, specify who updates the record and what must be retested.",
+      "label": "Apply"
+    }
+  ]
+}

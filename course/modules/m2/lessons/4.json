@@ -1,0 +1,18 @@
+{
+  "id": "m2.4",
+  "moduleId": "m2",
+  "parts": [
+    {
+      "id": "m2.4.1",
+      "title": "Calculate cost per completed task",
+      "body": "Model cost is only one line. Include input and output tokens, repeated calls, retrieval, hosting, review, retries, evaluation, observability, and support. Divide total operating cost by successfully completed tasks, not raw requests. Track quality and latency alongside cost so cheaper responses that need more human repair do not look like savings.",
+      "label": "Understand"
+    },
+    {
+      "id": "m2.4.2",
+      "title": "Work a simple example",
+      "body": "Suppose 10,000 monthly requests cost $2,000 in model calls, $700 in platform charges, and $3,300 in human review. If 8,000 finish successfully, cost per completed task is $0.75. Now estimate what happens if a cheaper model saves $500 but completion falls to 7,000. The denominator matters as much as the token price.",
+      "label": "Apply"
+    }
+  ]
+}

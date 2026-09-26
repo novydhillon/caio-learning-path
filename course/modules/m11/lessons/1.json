@@ -1,0 +1,18 @@
+{
+  "id": "m11.1",
+  "moduleId": "m11",
+  "parts": [
+    {
+      "id": "m11.1.1",
+      "title": "Choose a credible setting",
+      "body": "Select an organization you can describe without inventing privileged facts. State its business model, customers, operating regions, data sensitivity, technology constraints, and AI maturity. Make a short assumption register. When a fact is unknown, identify it as an assumption and show how you would validate it.",
+      "label": "Understand"
+    },
+    {
+      "id": "m11.1.2",
+      "title": "Write the case brief",
+      "body": "For a Canadian insurer serving EU customers, specify which products, jurisdictions, and processes the capstone covers. List three constraints that would shape use-case selection, such as personal data, legacy claims systems, and regulated decisions. Keep the scope narrow enough to make choices visible.",
+      "label": "Apply"
+    }
+  ]
+}
