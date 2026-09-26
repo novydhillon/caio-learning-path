@@ -6,9 +6,13 @@ A self-paced 26-week course for experienced technical leaders moving toward Chie
 
 - 11 sequenced modules across technical fluency, AI evaluation and assurance, AI strategy, data/platform, governance, security, economics, operating model, executive leadership, and a capstone.
 - Section summaries and reusable review pages.
+- 39 original lessons, each with concept and application sub-lessons, examples, and practice prompts.
+- Light and dark appearance modes with a fixed switch and saved preference.
+- Original illustrations and explanatory diagrams, including illustrative charts labelled as examples.
 - Progress tracking stored locally in the browser with `localStorage`.
 - Quizzes and applied homework.
 - Curated links to current primary/reference material.
+- Canadian and EU privacy, AI governance, and security considerations alongside US material.
 - Responsive static site suitable for GitHub Pages.
 
 ## Run locally

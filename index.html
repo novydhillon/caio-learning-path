@@ -5,9 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="A 26-week Chief AI Officer learning path with lessons, quizzes, homework, references, and progress tracking." />
   <title>Chief AI Officer Learning Path</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <script>document.documentElement.dataset.theme = localStorage.getItem('caio-theme') || (matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');</script>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false"></button>
   <div class="shell">
     <aside class="sidebar">
       <div class="brand">
@@ -36,10 +39,12 @@
 
       <section id="dashboard-view" class="view active"></section>
       <section id="section-view" class="view"></section>
+      <section id="lesson-view" class="view"></section>
       <section id="references-view" class="view"></section>
     </main>
   </div>
 
+  <script src="lesson-content.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
