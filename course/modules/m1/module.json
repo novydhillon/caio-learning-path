@@ -62,6 +62,26 @@
         "A procurement function inside IT"
       ],
       "answer": 2
+    },
+    {
+      "q": "A business team proposes an AI customer assistant. Which division of responsibility is clearest?",
+      "options": [
+        "The CAIO writes every answer and operates support",
+        "Product owns the customer workflow; shared teams own standards and controls; the CAIO oversees portfolio and release evidence",
+        "The CISO owns the customer journey",
+        "The model vendor decides whether to launch"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "You know how to design an AI governance process but have never led one. What belongs in your transition map?",
+      "options": [
+        "A knowledge gap only",
+        "No gap because you know the terminology",
+        "An evidence gap with a plan to produce a reviewed governance artifact",
+        "A reason to omit governance from your charter"
+      ],
+      "answer": 2
     }
   ],
   "homework": "Write a 2-page CAIO charter for a 5,000-person company. Include mission, decision rights, interfaces with CIO/CTO/CDO/CISO, first-year outcomes, and what the CAIO explicitly does not own.",
@@ -87,5 +107,6 @@
         "Review date"
       ]
     ]
-  }
+  },
+  "quizVersion": 2
 }

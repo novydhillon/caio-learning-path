@@ -1,5 +1,6 @@
 const progressKey = 'caio-learning-progress-v1';
 const state = JSON.parse(localStorage.getItem(progressKey) || '{"completed":{},"homework":{},"quiz":{}}');
+state.quizRevision ||= {};
 const save = () => localStorage.setItem(progressKey, JSON.stringify(state));
 const el = id => document.getElementById(id);
 const dataRoot = 'course/';
@@ -47,7 +48,7 @@ function renderDashboard(updateHash=true){
   setView('dashboard'); el('page-title').textContent='Dashboard'; updateOverall();
   const done=allLessons().filter(l=>state.completed[l.id]).length;
   const homeworkDone=catalog.modules.filter(m=>state.homework[m.id]).length;
-  const quizzesDone=catalog.modules.filter(m=>state.quiz[m.id]!==undefined).length;
+  const quizzesDone=catalog.modules.filter(m=>state.quiz[m.id]!==undefined && state.quizRevision[m.id]===m.quizVersion).length;
   const d=catalog.dashboard;
   el('dashboard-view').innerHTML=`
     <div class="hero"><div class="hero-copy"><p class="eyebrow">${d.eyebrow}</p><h3>${d.headline}</h3><p>${d.intro}</p><div class="progress-track"><div class="progress-fill" style="width:${pct()}%"></div></div></div></div>
@@ -83,7 +84,7 @@ async function renderModule(id,updateHash=true){
       <div class="card summary-box"><h4>Section summary</h4><p>${m.summary}</p><p class="muted">Use this as your review anchor after completing the section.</p></div>
       ${m.lessons.map((l,i)=>`<div class="card lesson"><div class="lesson-top"><div><p class="eyebrow">LESSON ${i+1} · ${l.duration}</p><h4>${l.title}</h4></div><span class="badge ${state.completed[l.id]?'done':''}">${state.completed[l.id]?'Completed':'Ready to read'}</span></div><p>${l.body}</p><button class="primary" onclick="openLesson('${l.id}')">Open lesson →</button><label class="checkline"><input type="checkbox" ${state.completed[l.id]?'checked':''} onchange="toggleLesson('${l.id}',this.checked)"> Mark lesson complete</label></div>`).join('')}
       <div class="card homework"><p class="eyebrow">APPLIED PRACTICE</p><h3>Homework</h3><p>${m.homework}</p><label class="checkline"><input type="checkbox" ${state.homework[m.id]?'checked':''} onchange="toggleHomework('${m.id}',this.checked)"> I completed this artifact</label></div>
-      <div class="card"><p class="eyebrow">RETRIEVAL PRACTICE</p><h3>Module quiz</h3><form id="quiz-form">${m.quiz.map((q,qi)=>`<div class="quiz-q"><strong>${qi+1}. ${q.q}</strong>${q.options.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"> ${o}</label>`).join('')}</div>`).join('')}<button type="button" class="primary" onclick="gradeQuiz('${m.id}')">Submit quiz</button><div id="quiz-result" class="quiz-result">${state.quiz[m.id]!==undefined?`Last score: ${state.quiz[m.id]}%`:''}</div></form></div>
+      <div class="card"><p class="eyebrow">RETRIEVAL PRACTICE</p><h3>Module quiz</h3><form id="quiz-form">${m.quiz.map((q,qi)=>`<div class="quiz-q"><strong>${qi+1}. ${q.q}</strong>${q.options.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"> ${o}</label>`).join('')}</div>`).join('')}<button type="button" class="primary" onclick="gradeQuiz('${m.id}')">Submit quiz</button><div id="quiz-result" class="quiz-result">${state.quiz[m.id]===undefined?'':state.quizRevision[m.id]===m.quizVersion?`Last score: ${state.quiz[m.id]}%`:`Previous score: ${state.quiz[m.id]}% (earlier quiz)`}</div></form></div>
       <div class="card"><h3>Module references</h3>${refs.length?`<ul class="resources">${refs.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul>`:'<p class="muted">No external references are listed for this module.</p>'}<p><a href="#references">View the full reference library →</a></p></div>
       <footer>${catalog.reviewSuggestion}</footer>`;
   }catch(error){if(request===requestNumber) showLoadError('section',`renderModule('${id}',false)`);console.error(error);}
@@ -133,7 +134,12 @@ async function gradeQuiz(id){
     let score=0,answered=0;
     m.quiz.forEach((q,qi)=>{const choice=form.querySelector(`input[name="q${qi}"]:checked`);if(choice){answered++;if(Number(choice.value)===q.answer)score++;}});
     if(answered<m.quiz.length){el('quiz-result').textContent='Answer every question before submitting.';return;}
-    const result=Math.round(score/m.quiz.length*100);state.quiz[id]=result;save();
+    const result=Math.round(score/m.quiz.length*100);
+    if(state.quiz[id]!==undefined && state.quizRevision[id]!==m.quizVersion){
+      state.quizHistory ||= {};
+      (state.quizHistory[id] ||= []).push({revision:state.quizRevision[id]||1,score:state.quiz[id]});
+    }
+    state.quiz[id]=result;state.quizRevision[id]=m.quizVersion;save();
     el('quiz-result').textContent=`Score: ${result}% — ${result>=80?'Pass. Explain each answer aloud before moving on.':'Review the lessons and retry; target 80% or higher.'}`;
   }catch(error){el('quiz-result').textContent='Could not load the quiz. Please retry.';console.error(error);}
 }

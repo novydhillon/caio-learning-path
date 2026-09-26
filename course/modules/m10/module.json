@@ -58,6 +58,26 @@
         "Promise deterministic outcomes"
       ],
       "answer": 1
+    },
+    {
+      "q": "What should a board be asked to decide about an AI program?",
+      "options": [
+        "The exact prompt wording",
+        "An investment envelope or risk appetite tied to the company’s strategy",
+        "Which embedding dimension to use",
+        "Every model API call"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A scorecard shows monthly users up 40% while escalations and corrections double. What belongs in the executive update?",
+      "options": [
+        "Only the user growth",
+        "The usage and quality signals together, an owner for investigation, and a near-term action",
+        "Only the number of prompts",
+        "A claim that adoption and outcomes improved"
+      ],
+      "answer": 1
     }
   ],
   "homework": "Prepare a 10-slide board update on enterprise AI: market context, strategy, portfolio, value realized, material risks, governance, platform, workforce, 12-month roadmap, and 3 decisions requested from the board.",
@@ -83,5 +103,6 @@
         "Review date"
       ]
     ]
-  }
+  },
+  "quizVersion": 2
 }

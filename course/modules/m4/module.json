@@ -58,6 +58,26 @@
         "Only projects with immediate hard-dollar savings"
       ],
       "answer": 2
+    },
+    {
+      "q": "Which AI proposal most clearly follows company strategy?",
+      "options": [
+        "A new chatbot because competitors have one",
+        "A claims assistant tied to a measured reduction in resolution time and an accountable claims owner",
+        "A mandate that every team use one foundation model",
+        "A pilot chosen solely for its impressive demo"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Two portfolio candidates swap rank when the risk weight changes slightly. What should the CAIO do?",
+      "options": [
+        "Present the original ranking as certain",
+        "Remove risk from the scoring model",
+        "Show the sensitivity and fund targeted discovery to reduce uncertainty",
+        "Choose whichever proposal has the larger vendor discount"
+      ],
+      "answer": 2
     }
   ],
   "homework": "Build a 12-use-case AI portfolio for a hypothetical company. Rank it using a transparent scoring model and select 3 lighthouse use cases, 5 scale candidates, and 4 experiments.",
@@ -84,5 +104,6 @@
       ]
     ],
     "note": "At each step, evidence determines whether funding grows."
-  }
+  },
+  "quizVersion": 2
 }

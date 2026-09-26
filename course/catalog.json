@@ -25,7 +25,8 @@
           "title": "Executive stakeholder architecture",
           "duration": "45 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m2",
@@ -54,7 +55,8 @@
           "title": "Model economics",
           "duration": "60 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m3",
@@ -88,7 +90,8 @@
           "title": "Eval-driven development and production assurance",
           "duration": "75 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m4",
@@ -112,7 +115,8 @@
           "title": "Portfolio scoring",
           "duration": "75 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m5",
@@ -136,7 +140,8 @@
           "title": "MLOps and LLMOps",
           "duration": "75 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m6",
@@ -165,7 +170,8 @@
           "title": "EU AI Act and regulatory scanning",
           "duration": "90 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m7",
@@ -189,7 +195,8 @@
           "title": "Resilience and incident response",
           "duration": "60 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m8",
@@ -213,7 +220,8 @@
           "title": "Stage-gated investment",
           "duration": "60 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m9",
@@ -242,7 +250,8 @@
           "title": "Communities of practice",
           "duration": "45 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m10",
@@ -266,7 +275,8 @@
           "title": "AI maturity reporting",
           "duration": "45 min"
         }
-      ]
+      ],
+      "quizVersion": 2
     },
     {
       "id": "m11",
@@ -295,7 +305,8 @@
           "title": "Career evidence package",
           "duration": "2 hr"
         }
-      ]
+      ],
+      "quizVersion": 2
     }
   ],
   "dashboard": {

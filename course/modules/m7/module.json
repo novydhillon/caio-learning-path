@@ -58,6 +58,26 @@
         "They never need monitoring"
       ],
       "answer": 1
+    },
+    {
+      "q": "A vendor will summarize customer calls from Vancouver and Berlin. Which review is most useful before connecting data?",
+      "options": [
+        "Only compare the vendor’s token prices",
+        "Map purpose, lawful use, access, retention, provider use, subprocessors, and relevant cross-border transfers",
+        "Assume data residency settles every privacy requirement",
+        "Upload a full customer archive to test performance"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "An agent starts sending duplicate customer emails after a model update. What should happen first?",
+      "options": [
+        "Wait for the quarterly governance meeting",
+        "Pause its sending permission and contain the incident, then identify affected recipients and investigate",
+        "Delete logs so the next run is clean",
+        "Increase the agent’s step limit"
+      ],
+      "answer": 1
     }
   ],
   "homework": "Run a threat-model workshop for a hypothetical AI agent with email, CRM, and document access. Produce abuse cases, controls, residual risks, monitoring signals, and incident playbooks.",
@@ -89,5 +109,6 @@
       ]
     ],
     "note": "Confirm current rules and applicability with legal and privacy specialists."
-  }
+  },
+  "quizVersion": 2
 }

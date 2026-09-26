@@ -65,6 +65,26 @@
         "Purely technical"
       ],
       "answer": 1
+    },
+    {
+      "q": "A capstone plan relies on a data source whose access rights are unknown. What should the plan show?",
+      "options": [
+        "Treat access as approved to keep the roadmap simple",
+        "List the assumption, owner, validation step, and dependency before launch",
+        "Remove the data source from the diagram but keep the use case",
+        "Assign the risk to a future interviewer"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "How should a hypothetical capstone case be used in a CAIO interview?",
+      "options": [
+        "Present it as a shipped company outcome",
+        "Avoid discussing trade-offs because results are hypothetical",
+        "Label it as hypothetical and use it to explain decisions, evidence, and how the plan would change under critique",
+        "Claim its forecasts as measured results"
+      ],
+      "answer": 2
     }
   ],
   "homework": "Final deliverable: an executive-ready Enterprise AI Transformation Plan and a 30-minute board presentation. Have a peer or mentor challenge the plan using CEO, CFO, CISO, and legal perspectives; revise based on the critique.",
@@ -90,5 +110,6 @@
         "Review date"
       ]
     ]
-  }
+  },
+  "quizVersion": 2
 }

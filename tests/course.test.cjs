@@ -15,6 +15,14 @@ test('module and sublesson IDs are contiguous and independently addressable', ()
     assert.equal(summary.id, moduleId);
     const module = read(`modules/${moduleId}/module.json`);
     assert.equal(module.id, moduleId);
+    assert.equal(module.quizVersion, summary.quizVersion);
+    assert.equal(module.quiz.length, moduleId === 'm3' ? 8 : 4);
+    assert.equal(new Set(module.quiz.map(item=>item.q)).size, module.quiz.length);
+    module.quiz.forEach(item=>{
+      assert.equal(item.options.length,4);
+      assert.equal(new Set(item.options).size,4);
+      assert.ok(Number.isInteger(item.answer) && item.answer >= 0 && item.answer < 4);
+    });
     summary.lessons.forEach((lesson, li) => {
       const id = `${moduleId}.${li+1}`;
       assert.equal(lesson.id, id);
@@ -60,4 +68,16 @@ test('legacy progress migrates and a sublesson loads without a page reload', asy
   assert.match(node('section-view').innerHTML,/Canadian privacy regulators/);
   assert.match(node('section-view').innerHTML,/<a href="#references">View the full reference library/);
   assert.equal(requests.at(-1),'course/modules/m6/module.json');
+  await vm.runInContext("renderModule('m7')",context);
+  assert.match(node('section-view').innerHTML,/Previous score: 80% \(earlier quiz\)/);
+  vm.runInContext('renderDashboard()',context);
+  assert.match(node('dashboard-view').innerHTML,/>0\/11<\/div><p class="muted">Retrieval practice/);
+  await vm.runInContext("renderModule('m7')",context);
+  const answers=read('modules/m7/module.json').quiz.map(item=>item.answer);
+  node('quiz-form').querySelector=selector=>({value:answers[Number(selector.match(/q(\d+)/)[1]) ]});
+  await vm.runInContext("gradeQuiz('m7')",context);
+  const updated=JSON.parse(storage.get('caio-learning-progress-v1'));
+  assert.equal(updated.quiz.m7,100);
+  assert.equal(updated.quizRevision.m7,2);
+  assert.equal(updated.quizHistory.m7[0].score,80);
 });
