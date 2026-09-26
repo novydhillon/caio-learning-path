@@ -84,6 +84,26 @@
         "A cloud architecture framework"
       ],
       "answer": 1
+    },
+    {
+      "q": "In the NIST AI RMF, what does the MAP function help a team do?",
+      "options": [
+        "Choose the cheapest model",
+        "Understand the system’s context, intended use, affected people, and risks",
+        "Replace every legal review",
+        "Approve a model based on one benchmark"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A recruitment tool will be used in Toronto and Paris. What is the right governance starting point?",
+      "options": [
+        "Apply one US federal rule to both offices",
+        "Assess EU AI Act role and use category, GDPR personal-data processing, and the applicable Canadian privacy regime for the actual deployments",
+        "Assume the EU AI Act replaces GDPR",
+        "Apply Canada’s federal public-service automation directive to every private employer"
+      ],
+      "answer": 1
     }
   ],
   "homework": "Create an AI governance playbook with 3 risk tiers, required evidence per tier, approval roles, red-team/evaluation requirements, incident escalation, vendor review, and an AI-system registry.",
@@ -119,5 +139,6 @@
       ]
     ],
     "note": "Confirm current rules and applicability with legal and privacy specialists."
-  }
+  },
+  "quizVersion": 2
 }

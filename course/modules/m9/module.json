@@ -60,6 +60,26 @@
         "The CAIO approves every prompt"
       ],
       "answer": 1
+    },
+    {
+      "q": "In a federated AI operating model, who should own whether a customer-service workflow improves?",
+      "options": [
+        "The central model gateway team alone",
+        "The business or product team responsible for that workflow",
+        "The foundation-model vendor",
+        "The external auditor"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Tool usage rises while manual corrections also rise. What should an adoption review conclude?",
+      "options": [
+        "Higher usage proves success",
+        "Ignore corrections because they are a quality metric",
+        "Investigate quality and workflow fit before treating usage as a benefit",
+        "Require more prompts per employee"
+      ],
+      "answer": 2
     }
   ],
   "homework": "Design the first 18 months of an AI organization for a 5,000-person enterprise: org chart, central vs federated responsibilities, hiring sequence, upskilling plan, and adoption KPIs.",
@@ -85,5 +105,6 @@
         "Review date"
       ]
     ]
-  }
+  },
+  "quizVersion": 2
 }

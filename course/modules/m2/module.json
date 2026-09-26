@@ -70,6 +70,26 @@
         "Using the largest model available"
       ],
       "answer": 1
+    },
+    {
+      "q": "An employee assistant needs answers from policies that change each month. Which initial approach best supports current, cited answers?",
+      "options": [
+        "Fine-tune once on last year’s policies",
+        "Use retrieval over approved, current policies with access controls",
+        "Increase the model temperature",
+        "Let the model answer from general training alone"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "What is a useful unit for comparing two models in a real workflow?",
+      "options": [
+        "Cost per token alone",
+        "Number of parameters",
+        "Cost per successfully completed task at an agreed quality level",
+        "Total number of prompts submitted"
+      ],
+      "answer": 2
     }
   ],
   "homework": "Create an architecture decision record comparing three approaches for an enterprise knowledge assistant: hosted API + RAG, private hosted model + RAG, and fine-tuned model. Include security, quality, latency, cost, lock-in, and operational complexity.",
@@ -95,5 +115,6 @@
         "Review date"
       ]
     ]
-  }
+  },
+  "quizVersion": 2
 }

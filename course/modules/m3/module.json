@@ -133,6 +133,46 @@
         "Be replaced by quarterly business reviews"
       ],
       "answer": 2
+    },
+    {
+      "q": "A support assistant scores well on common questions but fails on rare account-access cases. What should the evaluation team do?",
+      "options": [
+        "Report only the overall average",
+        "Add representative high-impact cases and report performance by task and risk category",
+        "Remove account-access cases as outliers",
+        "Approve launch because common questions dominate volume"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A model grader rewards fluent answers that invent policy details. What is the best next step?",
+      "options": [
+        "Let the grader decide because it is consistent",
+        "Replace all tests with user satisfaction surveys",
+        "Calibrate against expert judgments, inspect disagreements, and revise the rubric",
+        "Raise the passing score without checking the errors"
+      ],
+      "answer": 2
+    },
+    {
+      "q": "Which RAG evaluation distinguishes two different failure sources?",
+      "options": [
+        "Check retrieval relevance separately from whether the final answer is supported by retrieved evidence",
+        "Check only the base model benchmark",
+        "Count only citations without opening sources",
+        "Measure response length and tone"
+      ],
+      "answer": 0
+    },
+    {
+      "q": "A release passes average task quality but leaks a restricted document in a test. What is the sound launch decision?",
+      "options": [
+        "Launch broadly and watch complaint volume",
+        "Ignore the case because it is rare",
+        "Pause release until the permission failure is fixed and retested against the safety gate",
+        "Lower the permission threshold to match observed performance"
+      ],
+      "answer": 2
     }
   ],
   "homework": "Design an evaluation and assurance plan for an enterprise AI assistant or agent. Define the business task and risk tier; create at least 25 representative and edge-case eval tasks; define quality, safety, cost, and latency metrics; specify deterministic/model/human graders; establish launch gates; add a red-team plan; and design a production monitoring scorecard with escalation thresholds. Include a one-page executive summary explaining what evidence would justify scaling, pausing, or rolling back the system.",
@@ -165,5 +205,6 @@
   "banner": {
     "src": "eval-lesson.webp",
     "alt": "An evaluator comparing AI responses with source material and review signals"
-  }
+  },
+  "quizVersion": 2
 }

@@ -58,6 +58,26 @@
         "To avoid measuring value"
       ],
       "answer": 1
+    },
+    {
+      "q": "An AI workflow handles 10,000 requests, but only 8,000 reach the agreed quality bar. What denominator fits cost per completed task?",
+      "options": [
+        "10,000 requests",
+        "8,000 successful completions",
+        "Only the requests with no model cost",
+        "The number of tokens generated"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A prototype works on a small test set, but adoption and operational quality are unproven. What is the next funding decision?",
+      "options": [
+        "Approve full enterprise rollout",
+        "Stop measuring because the model works",
+        "Fund a bounded production pilot with adoption, quality, and value gates",
+        "Measure prompt volume as the only success metric"
+      ],
+      "answer": 2
     }
   ],
   "homework": "Build a 3-year financial model for an AI customer-service program with adoption, deflection, staffing impact, model cost, platform cost, change cost, and downside scenarios.",
@@ -84,5 +104,6 @@
       ]
     ],
     "note": "At each step, evidence determines whether funding grows."
-  }
+  },
+  "quizVersion": 2
 }

@@ -58,6 +58,26 @@
         "It guarantees regulatory compliance"
       ],
       "answer": 1
+    },
+    {
+      "q": "Before connecting HR policies to a retrieval assistant, what should the team check?",
+      "options": [
+        "Only file format and document count",
+        "Ownership, current versions, conflicting documents, access rights, and regional scope",
+        "Whether every document can be placed in a public index",
+        "Whether the largest model can memorize the files"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A new embedding configuration makes answers worse. What enables a reliable rollback?",
+      "options": [
+        "A record of the prior model, index, prompts, retrieval settings, and evaluation results",
+        "A screenshot of the chatbot",
+        "Deleting all prior evaluation cases",
+        "Waiting for users to stop using the system"
+      ],
+      "answer": 0
     }
   ],
   "homework": "Draw a reference enterprise AI platform for a regulated company. Include data plane, model plane, application plane, identity/security, evaluation, observability, and governance control points.",
@@ -83,5 +103,6 @@
         "Review date"
       ]
     ]
-  }
+  },
+  "quizVersion": 2
 }
