@@ -52,4 +52,3 @@ The course uses:
 ## Suggested pacing
 
 Plan for 5–7 hours/week over 26 weeks. An experienced technical executive can compress the early technical sections and invest additional time in governance, economics, organizational transformation, and board communication.
-
