@@ -1,0 +1,18 @@
+{
+  "id": "m4.2",
+  "moduleId": "m4",
+  "parts": [
+    {
+      "id": "m4.2.1",
+      "title": "Find work with friction",
+      "body": "Walk through a process from trigger to final decision. Note handoffs, repeated searches, waiting time, rework, and decisions made with incomplete information. Ask workers where exceptions appear; the happy path rarely explains the real cost. Classify opportunities as assist, automate a bounded step, or redesign a workflow.",
+      "label": "Understand"
+    },
+    {
+      "id": "m4.2.2",
+      "title": "Observe a claims team",
+      "body": "Map intake, document review, coverage check, decision, and customer reply. Interview an adjuster about exceptions and appeals. Identify a narrow first experiment, such as summarizing source documents with citations, and record the human review needed before a claim decision.",
+      "label": "Apply"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "m3.4",
+  "moduleId": "m3",
+  "parts": [
+    {
+      "id": "m3.4.1",
+      "title": "Evaluate the whole path",
+      "body": "For retrieval systems, test whether the right document was found, whether the user was allowed to see it, and whether the answer followed the retrieved evidence. For agents, measure successful outcomes, side effects, tool permissions, recovery from failures, and spend. Several tool paths may be valid; test constraints and final state instead of one fixed trace.",
+      "label": "Understand"
+    },
+    {
+      "id": "m3.4.2",
+      "title": "Design two failure cases",
+      "body": "Place a stale policy next to the current policy and see whether the assistant cites the current one. Then place a prompt injection inside a retrieved document instructing an agent to email a secret. The expected behavior is to ignore the embedded instruction, keep the secret private, and log the attempted boundary crossing.",
+      "label": "Apply"
+    }
+  ]
+}

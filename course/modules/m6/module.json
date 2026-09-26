@@ -1,0 +1,123 @@
+{
+  "id": "m6",
+  "weeks": "11–13",
+  "title": "Governance, Risk & Regulation",
+  "subtitle": "Move fast without creating unmanaged enterprise exposure",
+  "summary": "Operationalize AI governance using risk tiers, lifecycle controls, NIST AI RMF, ISO/IEC 42001, OECD principles, privacy/security practices, and current regulation.",
+  "lessons": [
+    {
+      "id": "m6.1",
+      "title": "NIST AI RMF",
+      "duration": "90 min",
+      "body": "Study GOVERN, MAP, MEASURE, and MANAGE. Build governance into delivery rather than adding a compliance gate at the end. Use the GenAI profile to understand risks specific to generative systems.",
+      "resources": [
+        [
+          "NIST AI RMF",
+          "https://www.nist.gov/itl/ai-risk-management-framework"
+        ],
+        [
+          "NIST Generative AI Profile",
+          "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+        ]
+      ]
+    },
+    {
+      "id": "m6.2",
+      "title": "ISO/IEC 42001 and management systems",
+      "duration": "75 min",
+      "body": "Understand the logic of an AI management system: policy, accountability, objectives, risk management, controls, monitoring, auditability, and continual improvement.",
+      "resources": [
+        [
+          "ISO/IEC 42001 overview",
+          "https://www.iso.org/standard/42001"
+        ]
+      ]
+    },
+    {
+      "id": "m6.3",
+      "title": "Responsible AI principles",
+      "duration": "60 min",
+      "body": "Study transparency, explainability, robustness, security, safety, accountability, human oversight, and stakeholder impact. Translate principles into engineering and business controls.",
+      "resources": [
+        [
+          "OECD AI Principles",
+          "https://www.oecd.org/en/topics/ai-principles.html"
+        ]
+      ]
+    },
+    {
+      "id": "m6.4",
+      "title": "EU AI Act and regulatory scanning",
+      "duration": "90 min",
+      "body": "Learn risk classification, transparency obligations, GPAI considerations, high-risk systems, recordkeeping, literacy, and the implementation timeline. Build a process to monitor regulatory change instead of memorizing one snapshot.",
+      "resources": [
+        [
+          "EU AI Act implementation timeline",
+          "https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline"
+        ]
+      ]
+    }
+  ],
+  "objectives": [
+    "Apply AI risk frameworks",
+    "Create risk tiers",
+    "Design governance workflows",
+    "Brief executives on regulatory exposure"
+  ],
+  "quiz": [
+    {
+      "q": "The strongest AI governance design is:",
+      "options": [
+        "A final legal review after development",
+        "Lifecycle controls proportional to risk",
+        "A ban on third-party models",
+        "One universal approval path for every use case"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "ISO/IEC 42001 is best understood as:",
+      "options": [
+        "A model benchmark",
+        "An AI management system standard",
+        "A privacy law",
+        "A cloud architecture framework"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Create an AI governance playbook with 3 risk tiers, required evidence per tier, approval roles, red-team/evaluation requirements, incident escalation, vendor review, and an AI-system registry.",
+  "regionalResources": [
+    [
+      "EU AI Act official overview",
+      "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+    ],
+    [
+      "Canada Directive on Automated Decision-Making (federal government)",
+      "https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32592"
+    ],
+    [
+      "Canadian privacy regulators: principles for generative AI",
+      "https://www.priv.gc.ca/en/privacy-topics/technology/artificial-intelligence/gd_principles_ai/"
+    ]
+  ],
+  "visual": {
+    "type": "regions",
+    "title": "Jurisdiction check for one AI use case",
+    "regions": [
+      [
+        "Canada",
+        "Identify applicable federal or provincial privacy law. Public-sector automation may trigger additional directives."
+      ],
+      [
+        "European Union",
+        "Assess AI Act role and risk category. Review GDPR separately when personal data is used."
+      ],
+      [
+        "United States",
+        "Review relevant federal, state, and sector requirements for the particular use."
+      ]
+    ],
+    "note": "Confirm current rules and applicability with legal and privacy specialists."
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "title": "Chief AI Officer Learning Path",
+  "weeks": 26,
+  "hoursPerWeek": "5–7",
+  "modules": [
+    {
+      "id": "m1",
+      "weeks": "1–2",
+      "title": "The CAIO Mandate",
+      "subtitle": "From technology leader to enterprise AI executive",
+      "summary": "Define the CAIO role, its decision rights, its relationship to the CEO/CIO/CTO/CDO/CISO, and the operating outcomes the role is accountable for.",
+      "lessons": [
+        {
+          "id": "m1.1",
+          "title": "What a CAIO actually owns",
+          "duration": "45 min"
+        },
+        {
+          "id": "m1.2",
+          "title": "Your transition map",
+          "duration": "60 min"
+        },
+        {
+          "id": "m1.3",
+          "title": "Executive stakeholder architecture",
+          "duration": "45 min"
+        }
+      ]
+    },
+    {
+      "id": "m2",
+      "weeks": "3–4",
+      "title": "AI & GenAI Technical Fluency",
+      "subtitle": "Know enough to make architecture and investment decisions",
+      "summary": "Build executive-level fluency in modern ML, transformers, foundation models, embeddings, RAG, fine-tuning, agents, evaluation, inference, and model economics.",
+      "lessons": [
+        {
+          "id": "m2.1",
+          "title": "ML to foundation models",
+          "duration": "75 min"
+        },
+        {
+          "id": "m2.2",
+          "title": "Enterprise GenAI patterns",
+          "duration": "75 min"
+        },
+        {
+          "id": "m2.3",
+          "title": "Agentic systems",
+          "duration": "75 min"
+        },
+        {
+          "id": "m2.4",
+          "title": "Model economics",
+          "duration": "60 min"
+        }
+      ]
+    },
+    {
+      "id": "m3",
+      "weeks": "5–6",
+      "title": "AI Evaluation & Assurance",
+      "subtitle": "Measure quality, safety, reliability, and business readiness",
+      "summary": "Build an enterprise evaluation discipline for models, RAG systems, agents, and AI-enabled workflows. Learn how to translate business expectations into testable criteria, combine automated and human grading, validate agent behavior end to end, and connect pre-launch evals to production monitoring.",
+      "lessons": [
+        {
+          "id": "m3.1",
+          "title": "Evaluation as an executive control system",
+          "duration": "60 min"
+        },
+        {
+          "id": "m3.2",
+          "title": "Datasets, tasks, and success criteria",
+          "duration": "75 min"
+        },
+        {
+          "id": "m3.3",
+          "title": "Metrics, graders, and human calibration",
+          "duration": "75 min"
+        },
+        {
+          "id": "m3.4",
+          "title": "Evaluating RAG and agentic systems",
+          "duration": "90 min"
+        },
+        {
+          "id": "m3.5",
+          "title": "Eval-driven development and production assurance",
+          "duration": "75 min"
+        }
+      ]
+    },
+    {
+      "id": "m4",
+      "weeks": "7–8",
+      "title": "AI Strategy & Portfolio",
+      "subtitle": "Turn business strategy into a value-ranked AI portfolio",
+      "summary": "Build an enterprise AI strategy, find high-value use cases, sequence bets, and distinguish transformative initiatives from automation theater.",
+      "lessons": [
+        {
+          "id": "m4.1",
+          "title": "Strategy before tooling",
+          "duration": "60 min"
+        },
+        {
+          "id": "m4.2",
+          "title": "Use-case discovery",
+          "duration": "60 min"
+        },
+        {
+          "id": "m4.3",
+          "title": "Portfolio scoring",
+          "duration": "75 min"
+        }
+      ]
+    },
+    {
+      "id": "m5",
+      "weeks": "9–10",
+      "title": "Data, Platform & Architecture",
+      "subtitle": "Design the foundation that lets AI scale safely",
+      "summary": "Understand AI-ready data, model/platform architecture, integration patterns, cloud choices, MLOps/LLMOps, observability, and build-vs-buy decisions.",
+      "lessons": [
+        {
+          "id": "m5.1",
+          "title": "AI-ready data",
+          "duration": "60 min"
+        },
+        {
+          "id": "m5.2",
+          "title": "Enterprise AI platform",
+          "duration": "75 min"
+        },
+        {
+          "id": "m5.3",
+          "title": "MLOps and LLMOps",
+          "duration": "75 min"
+        }
+      ]
+    },
+    {
+      "id": "m6",
+      "weeks": "11–13",
+      "title": "Governance, Risk & Regulation",
+      "subtitle": "Move fast without creating unmanaged enterprise exposure",
+      "summary": "Operationalize AI governance using risk tiers, lifecycle controls, NIST AI RMF, ISO/IEC 42001, OECD principles, privacy/security practices, and current regulation.",
+      "lessons": [
+        {
+          "id": "m6.1",
+          "title": "NIST AI RMF",
+          "duration": "90 min"
+        },
+        {
+          "id": "m6.2",
+          "title": "ISO/IEC 42001 and management systems",
+          "duration": "75 min"
+        },
+        {
+          "id": "m6.3",
+          "title": "Responsible AI principles",
+          "duration": "60 min"
+        },
+        {
+          "id": "m6.4",
+          "title": "EU AI Act and regulatory scanning",
+          "duration": "90 min"
+        }
+      ]
+    },
+    {
+      "id": "m7",
+      "weeks": "14–15",
+      "title": "Security, Privacy & Resilience",
+      "subtitle": "Secure models, data, prompts, tools, and autonomous actions",
+      "summary": "Develop executive command of AI-specific security threats and controls, including prompt injection, data leakage, model supply chain risk, excessive agency, and secure deployment patterns.",
+      "lessons": [
+        {
+          "id": "m7.1",
+          "title": "AI threat modeling",
+          "duration": "75 min"
+        },
+        {
+          "id": "m7.2",
+          "title": "Privacy and data boundaries",
+          "duration": "60 min"
+        },
+        {
+          "id": "m7.3",
+          "title": "Resilience and incident response",
+          "duration": "60 min"
+        }
+      ]
+    },
+    {
+      "id": "m8",
+      "weeks": "16–17",
+      "title": "AI Economics & Investment",
+      "subtitle": "Make AI a disciplined capital-allocation problem",
+      "summary": "Build business cases, unit economics, benefit-realization models, portfolio funding approaches, and vendor economics for AI investments.",
+      "lessons": [
+        {
+          "id": "m8.1",
+          "title": "From pilot metrics to enterprise value",
+          "duration": "60 min"
+        },
+        {
+          "id": "m8.2",
+          "title": "AI unit economics",
+          "duration": "75 min"
+        },
+        {
+          "id": "m8.3",
+          "title": "Stage-gated investment",
+          "duration": "60 min"
+        }
+      ]
+    },
+    {
+      "id": "m9",
+      "weeks": "18–20",
+      "title": "Operating Model, Talent & Change",
+      "subtitle": "Rewire how the company works, not just what technology it buys",
+      "summary": "Design the AI organization, federated delivery model, skills strategy, workforce transformation, adoption system, and responsible incentives needed for sustained change.",
+      "lessons": [
+        {
+          "id": "m9.1",
+          "title": "Centralize, federate, or hybrid?",
+          "duration": "75 min"
+        },
+        {
+          "id": "m9.2",
+          "title": "Talent architecture",
+          "duration": "60 min"
+        },
+        {
+          "id": "m9.3",
+          "title": "AI literacy and workforce redesign",
+          "duration": "75 min"
+        },
+        {
+          "id": "m9.4",
+          "title": "Communities of practice",
+          "duration": "45 min"
+        }
+      ]
+    },
+    {
+      "id": "m10",
+      "weeks": "21–22",
+      "title": "Executive & Board Leadership",
+      "subtitle": "Communicate AI as strategy, risk, capital, and organizational change",
+      "summary": "Learn to communicate with CEOs and boards using business language, decision memos, scenario planning, governance reporting, and concise executive narratives.",
+      "lessons": [
+        {
+          "id": "m10.1",
+          "title": "Board-level AI narrative",
+          "duration": "60 min"
+        },
+        {
+          "id": "m10.2",
+          "title": "Decision memos",
+          "duration": "60 min"
+        },
+        {
+          "id": "m10.3",
+          "title": "AI maturity reporting",
+          "duration": "45 min"
+        }
+      ]
+    },
+    {
+      "id": "m11",
+      "weeks": "23–26",
+      "title": "CAIO Capstone",
+      "subtitle": "Produce evidence that you can do the job",
+      "summary": "Integrate the course into an interview- and board-ready Chief AI Officer portfolio that demonstrates strategy, architecture, governance, economics, operating model, and executive leadership.",
+      "lessons": [
+        {
+          "id": "m11.1",
+          "title": "Choose the enterprise",
+          "duration": "45 min"
+        },
+        {
+          "id": "m11.2",
+          "title": "Build the transformation plan",
+          "duration": "4–6 hr"
+        },
+        {
+          "id": "m11.3",
+          "title": "Executive defense",
+          "duration": "2 hr"
+        },
+        {
+          "id": "m11.4",
+          "title": "Career evidence package",
+          "duration": "2 hr"
+        }
+      ]
+    }
+  ],
+  "dashboard": {
+    "eyebrow": "FROM TECHNICAL LEADER TO ENTERPRISE AI EXECUTIVE",
+    "headline": "Learn to lead AI across the whole company.",
+    "intro": "A 26-week course for experienced technical leaders. Read original lessons, work through decisions and examples, then build a portfolio you can defend with executives.",
+    "learningDesign": "Each module uses explicit objectives, short conceptual lessons, active application, retrieval practice, cumulative artifacts, and a capstone. Revisit completed lessons on a spaced schedule: 1 week, 1 month, and 3 months.",
+    "learningRhythm": "Recommended rhythm: learn → apply → quiz → explain aloud → revisit.",
+    "careerOutcome": "By completion, you should have an interview-ready CAIO evidence portfolio: AI charter, prioritized use-case portfolio, reference architecture, governance playbook, threat model, financial model, operating model, board update, and full enterprise AI transformation capstone."
+  },
+  "practicePrompt": "Write a short decision or artifact based on the example. State the owner, the evidence you would collect, and the condition that would change your decision. Keep it for the module homework.",
+  "reviewSuggestion": "Review suggestion: return to this section after 7 days and explain the core ideas without notes before rereading."
+}

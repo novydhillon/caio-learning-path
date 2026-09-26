@@ -1,0 +1,18 @@
+{
+  "id": "m8.3",
+  "moduleId": "m8",
+  "parts": [
+    {
+      "id": "m8.3.1",
+      "title": "Fund learning in stages",
+      "body": "Discovery establishes the workflow and baseline. A prototype tests feasibility on representative cases. Controlled production tests reliability, adoption, and actual value. Scale requires stronger evidence and a support plan. Set a decision, evidence requirement, owner, and spending cap at each stage.",
+      "label": "Understand"
+    },
+    {
+      "id": "m8.3.2",
+      "title": "Write a gate memo",
+      "body": "A claims summarizer passes a small technical test but produces wrong citations on rare cases. Keep the next investment limited to a monitored pilot with review and a citation error threshold. State which result would trigger scale, redesign, or cancellation.",
+      "label": "Apply"
+    }
+  ]
+}

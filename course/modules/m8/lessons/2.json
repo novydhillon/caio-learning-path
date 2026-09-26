@@ -1,0 +1,18 @@
+{
+  "id": "m8.2",
+  "moduleId": "m8",
+  "parts": [
+    {
+      "id": "m8.2.1",
+      "title": "Use full unit costs",
+      "body": "Select a unit that reflects the business workflow, such as cost per resolved case. Add model calls, retries, retrieval, storage, engineering, human review, security, monitoring, and change management. Compare the new cost with the old one at the same quality standard. Stress-test volume and model prices.",
+      "label": "Understand"
+    },
+    {
+      "id": "m8.2.2",
+      "title": "Build a scenario table",
+      "body": "At 50,000 cases, estimate 70% adoption and 80% successful AI-assisted completion. Add a case where adoption is 40% and review time doubles. Calculate cost per completed case and break-even volume in both. Present assumptions next to outputs so a CFO can challenge them.",
+      "label": "Apply"
+    }
+  ]
+}

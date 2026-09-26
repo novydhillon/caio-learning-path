@@ -1,0 +1,18 @@
+{
+  "id": "m5.1",
+  "moduleId": "m5",
+  "parts": [
+    {
+      "id": "m5.1.1",
+      "title": "Data readiness is a permissions question",
+      "body": "Check whether data has a known owner, acceptable quality, traceable origin, useful freshness, and clear access rules. Retrieval over messy documents can repeat old instructions or reveal restricted content. Apply user permissions before retrieval and preserve the source version used in an answer. Data residency and retention belong in the design, not in a late vendor checklist.",
+      "label": "Understand"
+    },
+    {
+      "id": "m5.1.2",
+      "title": "Inspect one dataset",
+      "body": "For HR policies, sample 20 documents. Mark owner, effective date, region, access class, duplicates, and conflicting versions. Estimate how many would produce an unsafe or stale answer. Write the cleanup work and ownership before connecting them to an assistant.",
+      "label": "Apply"
+    }
+  ]
+}

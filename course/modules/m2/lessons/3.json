@@ -1,0 +1,18 @@
+{
+  "id": "m2.3",
+  "moduleId": "m2",
+  "parts": [
+    {
+      "id": "m2.3.1",
+      "title": "Agents act through tools",
+      "body": "An agent can plan steps, choose tools, inspect results, and continue. That flexibility is valuable when tasks vary, but action rights need limits. Separate reading from writing permissions, cap spending and step count, log consequential actions, and require approval before an irreversible change. A tool response can contain untrusted instructions, so the agent must treat retrieved content as data.",
+      "label": "Understand"
+    },
+    {
+      "id": "m2.3.2",
+      "title": "Scope an operations agent",
+      "body": "A billing agent may read invoices and draft correction requests, but refunds over a threshold need human authorization. Write a permissions table for reading, drafting, submitting, and refunding. Simulate an invoice that tells the agent to send customer data to a new address. The expected result is rejection and an audit event.",
+      "label": "Apply"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "m11.2",
+  "moduleId": "m11",
+  "parts": [
+    {
+      "id": "m11.2.1",
+      "title": "Assemble one coherent plan",
+      "body": "Build an 18-month sequence: value pools, prioritized use cases, data and platform work, governance controls, evaluation gates, security, talent, funding, and business measures. Show dependencies and decision checkpoints. If a use case depends on permission-aware retrieval, schedule that capability before its launch.",
+      "label": "Understand"
+    },
+    {
+      "id": "m11.2.2",
+      "title": "Test the roadmap",
+      "body": "Pick the highest-value use case and trace it through owner, baseline, data source, evaluation set, privacy review, pilot budget, launch threshold, and reporting metric. If any link is missing, the plan is still a collection of slides rather than an executable program.",
+      "label": "Apply"
+    }
+  ]
+}

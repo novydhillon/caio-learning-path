@@ -1,0 +1,18 @@
+{
+  "id": "m1.1",
+  "moduleId": "m1",
+  "parts": [
+    {
+      "id": "m1.1.1",
+      "title": "The mandate in practice",
+      "body": "A CAIO owns the companywide AI agenda: which opportunities get funded, what evidence is needed to scale them, who can accept risk, and whether people actually use the resulting systems. The role needs authority over portfolio priorities and shared standards, even when delivery stays with product and business teams. A charter should name its limits. The CIO may own enterprise IT, the CTO product engineering, and the CISO security policy. Give each a clear seat in AI decisions.",
+      "label": "Understand"
+    },
+    {
+      "id": "m1.1.2",
+      "title": "Draw the decision boundary",
+      "body": "A retail company wants an AI service agent. Product owns the customer journey; the platform team owns approved model access; legal and privacy review customer data use; the CAIO decides whether the use case fits the portfolio and whether release evidence meets the agreed bar. Write a one-line decision right for each owner. If two owners both think they approve launch, the charter still needs work.",
+      "label": "Apply"
+    }
+  ]
+}

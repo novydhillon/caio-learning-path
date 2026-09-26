@@ -1,0 +1,18 @@
+{
+  "id": "m3.5",
+  "moduleId": "m3",
+  "parts": [
+    {
+      "id": "m3.5.1",
+      "title": "Keep evaluation running",
+      "body": "Run regression cases after a prompt, model, tool, or data change. Before release, add adversarial tests and human review proportionate to risk. In production, sample outcomes, watch user corrections and incidents, and compare observed task mix with the test set. Set owners for a quality threshold, an incident threshold, and rollback authority.",
+      "label": "Understand"
+    },
+    {
+      "id": "m3.5.2",
+      "title": "Draft a weekly quality review",
+      "body": "Show task success, severe failures, latency, cost per successful task, top error categories, and drift in input types. Include counts and denominators. For each worsening measure, name the owner and next action. An attractive dashboard without a decision process is only decoration.",
+      "label": "Apply"
+    }
+  ]
+}

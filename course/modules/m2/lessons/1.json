@@ -1,0 +1,18 @@
+{
+  "id": "m2.1",
+  "moduleId": "m2",
+  "parts": [
+    {
+      "id": "m2.1.1",
+      "title": "How the pieces fit",
+      "body": "Traditional supervised learning trains a model on examples with target labels. A foundation model learns broad patterns during pretraining, then may be adapted through instruction tuning or other techniques. A transformer uses attention to relate tokens in context. At inference time it predicts a continuation, which can be useful without guaranteeing truth. Multimodal systems extend the input or output beyond text. Ask which capability is actually required by the workflow before choosing a model.",
+      "label": "Understand"
+    },
+    {
+      "id": "m2.1.2",
+      "title": "Choose a fit test",
+      "body": "For invoice classification, compare a conventional classifier, rules, and a general language model on the same labeled cases. Record accuracy by document type, review effort, latency, and cost per invoice. A demo on five clean invoices tells little about blurred scans or unusual suppliers.",
+      "label": "Apply"
+    }
+  ]
+}

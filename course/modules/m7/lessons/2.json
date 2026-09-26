@@ -1,0 +1,18 @@
+{
+  "id": "m7.2",
+  "moduleId": "m7",
+  "parts": [
+    {
+      "id": "m7.2.1",
+      "title": "Set data boundaries by region",
+      "body": "Record purpose, legal basis where needed, data class, provider access, retention, training use, subprocessors, and storage or processing region. In Canada, assess the applicable privacy regime, including PIPEDA or provincial law as relevant. For EU personal data, assess GDPR lawful basis, minimization, rights, processor terms, and cross-border transfers. A residency setting alone does not solve every privacy obligation.",
+      "label": "Understand"
+    },
+    {
+      "id": "m7.2.2",
+      "title": "Review a vendor request",
+      "body": "A vendor offers transcript summarization for teams in Vancouver and Berlin. Ask whether recordings contain personal data, whether consent or another lawful basis supports the use, who can retrieve summaries, how deletion works, where subprocessors operate, and whether customer content trains shared models. Write the answers into a data flow map before launch.",
+      "label": "Apply"
+    }
+  ]
+}

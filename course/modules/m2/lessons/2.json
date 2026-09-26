@@ -1,0 +1,18 @@
+{
+  "id": "m2.2",
+  "moduleId": "m2",
+  "parts": [
+    {
+      "id": "m2.2.1",
+      "title": "Choose the smallest useful pattern",
+      "body": "Prompting changes instructions and context for a request. Retrieval augmented generation fetches relevant material at request time and places it in context. Fine tuning changes model behavior through additional training examples; it does not keep facts current by itself. Structured outputs constrain response shape. Tool calls let a system read or change external state. Each addition creates another place for errors, permissions, and costs to accumulate.",
+      "label": "Understand"
+    },
+    {
+      "id": "m2.2.2",
+      "title": "Trace an employee question",
+      "body": "An employee asks about leave policy. Retrieve the current policy document using the employee's access rights, cite the relevant paragraph, and let the employee open the source. Test what happens when the policy has changed, when two regions disagree, and when the employee lacks access. Do not treat a fluent answer as proof that retrieval was correct.",
+      "label": "Apply"
+    }
+  ]
+}

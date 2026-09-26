@@ -1,0 +1,18 @@
+{
+  "id": "m5.2",
+  "moduleId": "m5",
+  "parts": [
+    {
+      "id": "m5.2.1",
+      "title": "Draw the shared path",
+      "body": "An application should reach models through identity and a gateway that applies approved routes, logging, cost limits, and policy. Retrieval should carry source permissions. Evaluation and telemetry should make quality and incidents visible across teams. Central components work best when teams can adopt them without surrendering ownership of the user workflow.",
+      "label": "Understand"
+    },
+    {
+      "id": "m5.2.2",
+      "title": "Trace a request",
+      "body": "Sketch the path from employee sign-in to retrieval, model call, answer, and audit record. Mark where identity is checked, where restricted data may leave a boundary, and where a model can be switched off. Try to explain the drawing to a CISO in two minutes.",
+      "label": "Apply"
+    }
+  ]
+}

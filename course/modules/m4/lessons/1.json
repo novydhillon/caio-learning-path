@@ -1,0 +1,18 @@
+{
+  "id": "m4.1",
+  "moduleId": "m4",
+  "parts": [
+    {
+      "id": "m4.1.1",
+      "title": "Start with a business constraint",
+      "body": "Write down the company's current priorities before collecting AI ideas. If customer churn is the largest problem, the initial portfolio should show how each use case changes retention, service quality, or the cost of serving customers. Tie proposals to an accountable business owner and a measurable baseline. A model capability is a means, not a strategic objective.",
+      "label": "Understand"
+    },
+    {
+      "id": "m4.1.2",
+      "title": "Write a strategy sentence",
+      "body": "For a subscription business, try: 'Reduce the time it takes support staff to resolve complex cases while preserving customer trust.' Name the customer segment, baseline resolution time, target, and who owns the metric. Then reject use cases that cannot explain their contribution.",
+      "label": "Apply"
+    }
+  ]
+}

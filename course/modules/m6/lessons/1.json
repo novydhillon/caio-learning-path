@@ -1,0 +1,18 @@
+{
+  "id": "m6.1",
+  "moduleId": "m6",
+  "parts": [
+    {
+      "id": "m6.1.1",
+      "title": "Use a lifecycle risk loop",
+      "body": "NIST's AI RMF organizes work as GOVERN, MAP, MEASURE, and MANAGE. Set ownership and policies, understand context and affected people, measure performance and harms, then respond to the evidence. Repeat as the use case changes. The framework is voluntary guidance; a legal requirement still needs its own mapping.",
+      "label": "Understand"
+    },
+    {
+      "id": "m6.1.2",
+      "title": "Apply it to hiring support",
+      "body": "Map the system's influence on screening and the applicants affected. Measure error and disparity across relevant groups where lawful and feasible. Define human review, appeals, records, and a stop condition. Have the team show evidence at each stage instead of filing a generic checklist at the end.",
+      "label": "Apply"
+    }
+  ]
+}

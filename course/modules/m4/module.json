@@ -1,0 +1,88 @@
+{
+  "id": "m4",
+  "weeks": "7–8",
+  "title": "AI Strategy & Portfolio",
+  "subtitle": "Turn business strategy into a value-ranked AI portfolio",
+  "summary": "Build an enterprise AI strategy, find high-value use cases, sequence bets, and distinguish transformative initiatives from automation theater.",
+  "lessons": [
+    {
+      "id": "m4.1",
+      "title": "Strategy before tooling",
+      "duration": "60 min",
+      "body": "Start from company strategy: revenue growth, margin, customer experience, speed, risk, and strategic differentiation. AI initiatives should map directly to measurable enterprise objectives.",
+      "resources": [
+        [
+          "McKinsey Global Tech Agenda 2026",
+          "https://www.mckinsey.com/capabilities/mckinsey-technology/our-insights/mckinsey-global-tech-agenda-2026"
+        ]
+      ]
+    },
+    {
+      "id": "m4.2",
+      "title": "Use-case discovery",
+      "duration": "60 min",
+      "body": "Use process mapping and value-stream analysis to identify opportunities in decision support, content, software development, operations, customer service, knowledge work, forecasting, and autonomous workflows.",
+      "resources": []
+    },
+    {
+      "id": "m4.3",
+      "title": "Portfolio scoring",
+      "duration": "75 min",
+      "body": "Score use cases on strategic value, financial value, feasibility, data readiness, adoption difficulty, risk, time-to-value, and option value. Avoid a single ROI metric that hides strategic importance or risk.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Create an AI strategy",
+    "Prioritize use cases",
+    "Build portfolio horizons",
+    "Tie AI work to enterprise KPIs"
+  ],
+  "quiz": [
+    {
+      "q": "The best starting point for enterprise AI strategy is:",
+      "options": [
+        "A vendor capability list",
+        "The company strategy and value pools",
+        "A mandate to use GenAI everywhere",
+        "A list of available models"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "A portfolio should include:",
+      "options": [
+        "Only quick wins",
+        "Only transformational bets",
+        "A mix of near-term value and longer-horizon strategic bets",
+        "Only projects with immediate hard-dollar savings"
+      ],
+      "answer": 2
+    }
+  ],
+  "homework": "Build a 12-use-case AI portfolio for a hypothetical company. Rank it using a transparent scoring model and select 3 lighthouse use cases, 5 scale candidates, and 4 experiments.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "Illustrative investment path",
+    "stages": [
+      [
+        "Discovery",
+        "Low spend"
+      ],
+      [
+        "Prototype",
+        "Feasibility"
+      ],
+      [
+        "Pilot",
+        "Measured value"
+      ],
+      [
+        "Scale",
+        "Proven controls"
+      ]
+    ],
+    "note": "At each step, evidence determines whether funding grows."
+  }
+}

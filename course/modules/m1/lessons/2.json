@@ -1,0 +1,18 @@
+{
+  "id": "m1.2",
+  "moduleId": "m1",
+  "parts": [
+    {
+      "id": "m1.2.1",
+      "title": "Separate knowledge from proof",
+      "body": "Create a matrix with strategy, finance, AI systems, evaluation, governance, security, data, organizational change, and board communication. For each area, record your confidence from 1 to 5 and one concrete piece of evidence: a project shipped, a decision memo, a review chaired, or a result measured. Knowing the vocabulary is different from being able to show an outcome.",
+      "label": "Understand"
+    },
+    {
+      "id": "m1.2.2",
+      "title": "Build your first evidence plan",
+      "body": "For a technical director, architecture and team leadership may already have strong examples. Regulatory judgment or companywide investment allocation may need new evidence. Pick two weak areas and design a small artifact for each, such as a governance playbook and a portfolio decision memo. Set a date for a knowledgeable reviewer to challenge them.",
+      "label": "Apply"
+    }
+  ]
+}

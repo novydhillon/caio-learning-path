@@ -1,0 +1,91 @@
+{
+  "id": "m1",
+  "weeks": "1–2",
+  "title": "The CAIO Mandate",
+  "subtitle": "From technology leader to enterprise AI executive",
+  "summary": "Define the CAIO role, its decision rights, its relationship to the CEO/CIO/CTO/CDO/CISO, and the operating outcomes the role is accountable for.",
+  "lessons": [
+    {
+      "id": "m1.1",
+      "title": "What a CAIO actually owns",
+      "duration": "45 min",
+      "body": "Study the role as a business transformation executive: AI strategy, portfolio value, governance, adoption, risk, talent, operating model, and executive communication. Contrast this with a CTO or VP Engineering role, which usually owns broader technology delivery rather than enterprise AI outcomes.",
+      "resources": [
+        [
+          "IBM — What is a Chief AI Officer?",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "U.S. OMB M-25-21 — Federal AI leadership and governance",
+          "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
+        ]
+      ]
+    },
+    {
+      "id": "m1.2",
+      "title": "Your transition map",
+      "duration": "60 min",
+      "body": "Inventory your current strengths across engineering leadership, strategy, governance, finance, product, data, security, change management, and board communication. Identify which gaps are knowledge gaps versus evidence gaps—areas you understand but cannot yet prove through outcomes.",
+      "resources": []
+    },
+    {
+      "id": "m1.3",
+      "title": "Executive stakeholder architecture",
+      "duration": "45 min",
+      "body": "Create a stakeholder map covering CEO, board, CIO/CTO, CDO, CISO, legal/privacy, finance, HR, product/business-unit leaders, and risk. The CAIO succeeds through distributed ownership, not through centralizing every AI decision.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Explain the CAIO mandate",
+    "Map executive stakeholders",
+    "Define decision rights",
+    "Assess personal readiness"
+  ],
+  "quiz": [
+    {
+      "q": "Which outcome is most characteristic of a CAIO mandate?",
+      "options": [
+        "Owning all enterprise software delivery",
+        "Maximizing enterprise value from AI while governing risk",
+        "Running only the ML engineering team",
+        "Choosing a single foundation model vendor"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "The most sustainable CAIO operating model is usually:",
+      "options": [
+        "A fully centralized AI team that owns every use case",
+        "A governance-only office with no delivery capability",
+        "A federated model with central standards and distributed execution",
+        "A procurement function inside IT"
+      ],
+      "answer": 2
+    }
+  ],
+  "homework": "Write a 2-page CAIO charter for a 5,000-person company. Include mission, decision rights, interfaces with CIO/CTO/CDO/CISO, first-year outcomes, and what the CAIO explicitly does not own.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "From an idea to an accountable decision",
+    "stages": [
+      [
+        "Business need",
+        "Owner"
+      ],
+      [
+        "System design",
+        "Boundaries"
+      ],
+      [
+        "Evidence",
+        "Evaluation"
+      ],
+      [
+        "Decision",
+        "Review date"
+      ]
+    ]
+  }
+}

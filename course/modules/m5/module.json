@@ -1,0 +1,87 @@
+{
+  "id": "m5",
+  "weeks": "9–10",
+  "title": "Data, Platform & Architecture",
+  "subtitle": "Design the foundation that lets AI scale safely",
+  "summary": "Understand AI-ready data, model/platform architecture, integration patterns, cloud choices, MLOps/LLMOps, observability, and build-vs-buy decisions.",
+  "lessons": [
+    {
+      "id": "m5.1",
+      "title": "AI-ready data",
+      "duration": "60 min",
+      "body": "Assess quality, lineage, access, privacy, freshness, semantics, permissions, and ownership. AI magnifies weak data governance because models can expose or amplify hidden data problems.",
+      "resources": []
+    },
+    {
+      "id": "m5.2",
+      "title": "Enterprise AI platform",
+      "duration": "75 min",
+      "body": "Design model gateways, identity, secrets, retrieval, model routing, prompt/config management, evaluation, observability, policy enforcement, logging, and cost controls as shared platform capabilities.",
+      "resources": []
+    },
+    {
+      "id": "m5.3",
+      "title": "MLOps and LLMOps",
+      "duration": "75 min",
+      "body": "Learn lifecycle controls for datasets, prompts, models, evaluation suites, deployment, monitoring, rollback, incident response, and feedback loops. Treat prompts and evals as production artifacts.",
+      "resources": [
+        [
+          "Google Cloud — Generative AI learning resources",
+          "https://cloud.google.com/learn/training/generative-ai"
+        ]
+      ]
+    }
+  ],
+  "objectives": [
+    "Assess AI data readiness",
+    "Design a reference platform",
+    "Define LLMOps capabilities",
+    "Make build/buy/partner decisions"
+  ],
+  "quiz": [
+    {
+      "q": "An AI platform should centralize primarily:",
+      "options": [
+        "Every business workflow",
+        "Reusable controls and capabilities",
+        "All product decisions",
+        "All datasets into one database"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Why is evaluation a platform concern?",
+      "options": [
+        "It is only needed during model training",
+        "Shared evaluation makes quality measurable across releases and use cases",
+        "It removes the need for monitoring",
+        "It guarantees regulatory compliance"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Draw a reference enterprise AI platform for a regulated company. Include data plane, model plane, application plane, identity/security, evaluation, observability, and governance control points.",
+  "regionalResources": [],
+  "visual": {
+    "type": "stages",
+    "title": "From an idea to an accountable decision",
+    "stages": [
+      [
+        "Business need",
+        "Owner"
+      ],
+      [
+        "System design",
+        "Boundaries"
+      ],
+      [
+        "Evidence",
+        "Evaluation"
+      ],
+      [
+        "Decision",
+        "Review date"
+      ]
+    ]
+  }
+}

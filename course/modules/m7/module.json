@@ -1,0 +1,93 @@
+{
+  "id": "m7",
+  "weeks": "14–15",
+  "title": "Security, Privacy & Resilience",
+  "subtitle": "Secure models, data, prompts, tools, and autonomous actions",
+  "summary": "Develop executive command of AI-specific security threats and controls, including prompt injection, data leakage, model supply chain risk, excessive agency, and secure deployment patterns.",
+  "lessons": [
+    {
+      "id": "m7.1",
+      "title": "AI threat modeling",
+      "duration": "75 min",
+      "body": "Threat-model the full system: user inputs, prompts, retrieval, tools, plugins, model provider, data stores, output channels, identities, and downstream actions. Model failures are only one part of the attack surface.",
+      "resources": [
+        [
+          "OWASP Top 10 for LLM Applications",
+          "https://owasp.org/www-project-top-10-for-large-language-model-applications/"
+        ]
+      ]
+    },
+    {
+      "id": "m7.2",
+      "title": "Privacy and data boundaries",
+      "duration": "60 min",
+      "body": "Define what data may enter which model, under what contractual terms, retention policy, region, identity, and auditing. Separate public, internal, confidential, restricted, and regulated information classes.",
+      "resources": []
+    },
+    {
+      "id": "m7.3",
+      "title": "Resilience and incident response",
+      "duration": "60 min",
+      "body": "Prepare for harmful outputs, data exposure, model/vendor outage, compromised connectors, runaway agents, and policy breaches. Define kill switches, rollback, alternate models, and escalation ownership.",
+      "resources": []
+    }
+  ],
+  "objectives": [
+    "Threat-model AI systems",
+    "Define security controls",
+    "Design incident response",
+    "Govern third-party AI risk"
+  ],
+  "quiz": [
+    {
+      "q": "Prompt injection is primarily a risk because it can:",
+      "options": [
+        "Only make responses longer",
+        "Manipulate model behavior and tool use through untrusted content",
+        "Increase model training speed",
+        "Remove the need for authentication"
+      ],
+      "answer": 1
+    },
+    {
+      "q": "Agentic AI increases security concern because:",
+      "options": [
+        "Agents use more CSS",
+        "They can take actions using real permissions and tools",
+        "They cannot access data",
+        "They never need monitoring"
+      ],
+      "answer": 1
+    }
+  ],
+  "homework": "Run a threat-model workshop for a hypothetical AI agent with email, CRM, and document access. Produce abuse cases, controls, residual risks, monitoring signals, and incident playbooks.",
+  "regionalResources": [
+    [
+      "Office of the Privacy Commissioner of Canada: PIPEDA",
+      "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/"
+    ],
+    [
+      "European Data Protection Board: AI model opinion",
+      "https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en"
+    ]
+  ],
+  "visual": {
+    "type": "regions",
+    "title": "Jurisdiction check for one AI use case",
+    "regions": [
+      [
+        "Canada",
+        "Identify applicable federal or provincial privacy law. Public-sector automation may trigger additional directives."
+      ],
+      [
+        "European Union",
+        "Assess AI Act role and risk category. Review GDPR separately when personal data is used."
+      ],
+      [
+        "United States",
+        "Review relevant federal, state, and sector requirements for the particular use."
+      ]
+    ],
+    "note": "Confirm current rules and applicability with legal and privacy specialists."
+  }
+}
