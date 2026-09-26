@@ -58,5 +58,6 @@ test('legacy progress migrates and a sublesson loads without a page reload', asy
   assert.deepEqual(requests,['course/catalog.json','course/id-migration.json','course/modules/m1/module.json','course/modules/m1/lessons/1.json']);
   await vm.runInContext("renderModule('m6')",context);
   assert.match(node('section-view').innerHTML,/Canadian privacy regulators/);
+  assert.match(node('section-view').innerHTML,/<a href="#references">View the full reference library/);
   assert.equal(requests.at(-1),'course/modules/m6/module.json');
 });
