@@ -250,6 +250,7 @@ function renderModule(id){
     ${m.lessons.map((l,i)=>`<div class="card lesson"><div class="lesson-top"><div><p class="eyebrow">LESSON ${i+1} · ${l.duration}</p><h4>${l.title}</h4></div><span class="badge ${state.completed[l.id]?'done':''}">${state.completed[l.id]?'Completed':'Ready to read'}</span></div><p>${l.body}</p><button class="primary" onclick="openLesson('${l.id}')">Open lesson →</button><label class="checkline"><input type="checkbox" ${state.completed[l.id]?'checked':''} onchange="toggleLesson('${l.id}',this.checked)"> Mark lesson complete</label></div>`).join('')}
     <div class="card homework"><p class="eyebrow">APPLIED PRACTICE</p><h3>Homework</h3><p>${m.homework}</p><label class="checkline"><input type="checkbox" ${state.homework[m.id]?'checked':''} onchange="toggleHomework('${m.id}',this.checked)"> I completed this artifact</label></div>
     <div class="card"><p class="eyebrow">RETRIEVAL PRACTICE</p><h3>Module quiz</h3><form id="quiz-form">${m.quiz.map((q,qi)=>`<div class="quiz-q"><strong>${qi+1}. ${q.q}</strong>${q.options.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"> ${o}</label>`).join('')}</div>`).join('')}<button type="button" class="primary" onclick="gradeQuiz('${m.id}')">Submit quiz</button><div id="quiz-result" class="quiz-result">${state.quiz[m.id]!==undefined?`Last score: ${state.quiz[m.id]}%`:''}</div></form></div>
+    <div class="card"><h3>Module references</h3>${moduleReferences(m).length?`<ul class="resources">${moduleReferences(m).map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul>`:'<p class="muted">No external references are listed for this module.</p>'}</div>
     <footer>Review suggestion: return to this section after 7 days and explain the core ideas without notes before rereading.</footer>`;
   renderNav(); const b=document.querySelector(`[data-nav="${id}"]`); if(b)b.classList.add('active');
 }
@@ -264,6 +265,10 @@ const regionalSources = {
     ['European Data Protection Board: AI model opinion','https://www.edpb.europa.eu/news/news/2024/edpb-opinion-ai-models-gdpr-principles-support-responsible-ai_en']
   ]
 };
+function moduleReferences(m){
+  const links=[...m.lessons.flatMap(l=>l.resources),...(regionalSources[m.id]||[])];
+  return [...new Map(links.map(link=>[link[1],link])).values()];
+}
 function visualFor(moduleId){
   if(moduleId==='meval') return `<figure class="learning-visual"><figcaption>Illustrative release gate: several checks must pass together</figcaption><div class="gate-bars"><div><span>Task success</span><b style="--w:87%">87% / target 85%</b></div><div><span>Grounded answers</span><b style="--w:91%">91% / target 90%</b></div><div><span>Permission safety</span><b class="fail" style="--w:98%">98% / target 100%</b></div></div><small>Example values for teaching only. The permission failure blocks this sample launch despite the other passes.</small></figure>`;
   if(moduleId==='m7'||moduleId==='m3') return `<figure class="learning-visual"><figcaption>Illustrative investment path</figcaption><div class="stage-chart"><span>Discovery<small>Low spend</small></span><span>Prototype<small>Feasibility</small></span><span>Pilot<small>Measured value</small></span><span>Scale<small>Proven controls</small></span></div><small>At each step, evidence determines whether funding grows.</small></figure>`;
@@ -285,7 +290,7 @@ function openLesson(id, updateHash=true){
     <article class="reading-part" id="part-1"><p class="eyebrow">PART 01 · UNDERSTAND</p><h3>${parts[0]}</h3><p>${parts[1]}</p></article>
     <article class="reading-part" id="part-2"><p class="eyebrow">PART 02 · APPLY</p><h3>${parts[2]}</h3><p>${parts[3]}</p></article>
     <div class="card practice-card"><p class="eyebrow">YOUR TURN</p><h3>Make it yours</h3><p>Write a short decision or artifact based on the example. State the owner, the evidence you would collect, and the condition that would change your decision. Keep it for the module homework.</p></div>
-    <div class="card"><h3>Further reading</h3><p class="muted">The lesson above stands on its own. Use these sources to check details and go deeper.</p>${links.length?`<ul class="resources">${links.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul>`:'<p class="muted">Use the module reference library for more background.</p>'}</div>
+    ${links.length?`<div class="card"><h3>Further reading</h3><p class="muted">Use these sources to check details and go deeper.</p><ul class="resources">${links.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul></div>`:''}
     <label class="checkline completion"><input type="checkbox" ${state.completed[id]?'checked':''} onchange="toggleLesson('${id}',this.checked)"> I finished this lesson</label>
     <div class="lesson-actions"><button class="secondary" onclick="renderModule('${m.id}');location.hash='module/${m.id}'">Back to module</button>${m.lessons[index+1]?`<button class="primary" onclick="openLesson('${m.lessons[index+1].id}')">Next lesson →</button>`:''}</div>
   </div><aside class="lesson-toc"><p class="eyebrow">IN THIS LESSON</p><button onclick="document.getElementById('part-1').scrollIntoView({behavior:'smooth'})">01 · ${parts[0]}</button><button onclick="document.getElementById('part-2').scrollIntoView({behavior:'smooth'})">02 · ${parts[2]}</button><p class="muted">${l.duration} · Self paced</p></aside></div>`;
