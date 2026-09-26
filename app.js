@@ -266,4 +266,3 @@ function renderReferences(){
   renderNav(); document.querySelector('[data-nav="references"]').classList.add('active');
 }
 renderDashboard();
-
