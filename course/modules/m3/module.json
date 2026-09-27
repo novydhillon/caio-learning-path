@@ -202,9 +202,5 @@
     ],
     "note": "Example values for teaching only. The permission failure blocks this sample launch despite the other passes."
   },
-  "banner": {
-    "src": "eval-lesson.webp",
-    "alt": "An evaluator comparing AI responses with source material and review signals"
-  },
   "quizVersion": 2
 }

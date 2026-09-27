@@ -4,6 +4,19 @@ state.quizRevision ||= {};
 const save = () => localStorage.setItem(progressKey, JSON.stringify(state));
 const el = id => document.getElementById(id);
 const dataRoot = 'course/';
+const moduleArtAlt = {
+  m1: 'Executive overlooking the city with connected strategic decision paths',
+  m2: 'Executive examining connected AI models, retrieval paths, and agents',
+  m3: 'Executive reviewing AI evaluations, test paths, and a release gate',
+  m4: 'Executive weighing a connected portfolio of AI initiatives',
+  m5: 'Executive examining the layers of an enterprise AI data platform',
+  m6: 'Executive considering governance gates and guarded AI risk paths',
+  m7: 'Executive overseeing protected data flows and a diverted security threat',
+  m8: 'Executive comparing staged AI investments and paths to business value',
+  m9: 'Executive connecting teams in a federated AI operating model',
+  m10: 'Executive reviewing strategic signals converging on a board decision',
+  m11: 'Executive integrating the course themes into a complete AI strategy'
+};
 let catalog, migration, requestNumber = 0;
 const getJSON = async path => {
   const response = await fetch(dataRoot + path, {cache:'no-store'});
@@ -81,6 +94,7 @@ async function renderModule(id,updateHash=true){
     const refs=moduleReferences(m);
     el('section-view').innerHTML=`
       <div class="section-head"><p class="eyebrow">WEEKS ${m.weeks} · MODULE ${catalog.modules.findIndex(x=>x.id===id)+1}</p><h3>${m.title}</h3><p>${m.summary}</p><div class="objectives">${m.objectives.map(x=>`<span class="objective">${x}</span>`).join('')}</div></div>
+      <figure class="module-art"><img src="images/modules/${m.id}.webp" alt="${moduleArtAlt[m.id]}" loading="eager" decoding="async"></figure>
       <div class="card summary-box"><h4>Section summary</h4><p>${m.summary}</p><p class="muted">Use this as your review anchor after completing the section.</p></div>
       ${m.lessons.map((l,i)=>`<div class="card lesson"><div class="lesson-top"><div><p class="eyebrow">LESSON ${i+1} · ${l.duration}</p><h4>${l.title}</h4></div><span class="badge ${state.completed[l.id]?'done':''}">${state.completed[l.id]?'Completed':'Ready to read'}</span></div><p>${l.body}</p><button class="primary" onclick="openLesson('${l.id}')">Open lesson →</button><label class="checkline"><input type="checkbox" ${state.completed[l.id]?'checked':''} onchange="toggleLesson('${l.id}',this.checked)"> Mark lesson complete</label></div>`).join('')}
       <div class="card homework"><p class="eyebrow">APPLIED PRACTICE</p><h3>Homework</h3><p>${m.homework}</p><label class="checkline"><input type="checkbox" ${state.homework[m.id]?'checked':''} onchange="toggleHomework('${m.id}',this.checked)"> I completed this artifact</label></div>
@@ -109,7 +123,6 @@ async function openLesson(id,updateHash=true,sublessonId=null){
     el('lesson-view').innerHTML=`<div class="lesson-layout"><div class="lesson-main">
       <button class="back-link" onclick="renderModule('${m.id}')">← ${m.title}</button>
       <div class="section-head"><p class="eyebrow">MODULE ${catalog.modules.findIndex(x=>x.id===m.id)+1} · LESSON ${index+1} · ${info.duration}</p><h3>${info.title}</h3><p>${info.body}</p></div>
-      ${m.banner?`<img class="lesson-banner" src="${m.banner.src}" alt="${m.banner.alt}" loading="lazy">`:''}
       ${visualFor(m.visual)}
       ${l.parts.map((part,i)=>`<article class="reading-part" id="part-${i+1}" data-sublesson-id="${part.id}"><p class="eyebrow">${part.id} · ${part.label.toUpperCase()}</p><h3>${part.title}</h3><p>${part.body}</p></article>`).join('')}
       <div class="card practice-card"><p class="eyebrow">YOUR TURN</p><h3>Make it yours</h3><p>${catalog.practicePrompt}</p></div>
