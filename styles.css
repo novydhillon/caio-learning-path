@@ -63,6 +63,8 @@ main { min-width:0; }
 .section-head { margin-bottom:18px; }
 .section-head h3 { font-size:32px; margin:4px 0 8px; }
 .section-head p { color:var(--muted); max-width:900px; }
+.module-art { margin:0 0 20px; overflow:hidden; border:1px solid var(--line); border-radius:18px; background:var(--panel-2); box-shadow:var(--shadow); }
+.module-art img { display:block; width:100%; aspect-ratio:2/1; object-fit:cover; }
 .objectives { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
 .objective { background:var(--panel-2); border:1px solid var(--line); padding:7px 10px; border-radius:999px; font-size:13px; }
 .lesson { margin-top:14px; }
@@ -92,7 +94,6 @@ main { min-width:0; }
 .back-link { border:0; background:none; color:var(--accent); padding:0; cursor:pointer; margin-bottom:28px; }
 .lesson-layout { display:grid; grid-template-columns:minmax(0,760px) minmax(190px,240px); gap:42px; align-items:start; }
 .lesson-main { min-width:0; }
-.lesson-banner { width:100%; aspect-ratio:16/7; object-fit:cover; border-radius:16px; border:1px solid var(--line); display:block; }
 .lesson-toc { position:sticky; top:76px; border-left:1px solid var(--line); padding:16px; display:grid; gap:14px; }
 .lesson-toc a { color:var(--text); text-decoration:none; font-size:14px; }
 .lesson-toc button { border:0; padding:0; background:none; color:var(--text); text-align:left; cursor:pointer; font-size:14px; }
