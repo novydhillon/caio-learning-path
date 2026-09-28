@@ -38,15 +38,16 @@ Then visit `http://localhost:8000`.
 
 You can edit one lesson file independently. The app fetches module and lesson JSON on navigation without reloading the page; edits appear on the next visit to that module or lesson. Keep the catalog and module listing in sync when adding, removing, or renaming lessons. Check the structure with `node --test tests/course.test.cjs`.
 
-## GitHub Pages
+## GitHub Pages and branch flow
 
-This repository includes a GitHub Actions workflow in `.github/workflows/pages.yml`. After pushing to GitHub:
+The Pages workflow publishes two paths from this repository:
 
-1. Open **Settings → Pages**.
-2. Set **Source** to **GitHub Actions**.
-3. Push to `main` (or manually run the workflow).
+- Production: https://novydhillon.github.io/caio-learning-path/ from `main`.
+- Test: https://novydhillon.github.io/caio-learning-path/dev/ from `dev`.
 
-The site is intentionally build-free: HTML, CSS, JavaScript, and JSON.
+Create changes on a feature branch, merge them into `dev`, and review the test site. Merge `dev` into `main` only after approval. Pushes to either branch refresh both paths: the production path is always assembled from `main`, and the test path is always assembled from `dev`. Progress is stored separately for each path in the same browser.
+
+In **Settings → Pages**, set **Source** to **GitHub Actions**. The site is build-free: HTML, CSS, JavaScript, and JSON.
 
 ## Progress data
 
