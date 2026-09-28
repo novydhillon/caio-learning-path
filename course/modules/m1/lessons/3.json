@@ -4,15 +4,99 @@
   "parts": [
     {
       "id": "m1.3.1",
-      "title": "Map influence and accountability",
-      "body": "List the CEO, board, CIO, CTO, CDO, CISO, CFO, legal, privacy, HR, and business leaders. Next to each, write the decision they own, the information they need, and the conflict they might raise. The CAIO should make decisions legible across this group. A stakeholder map that only lists names does not tell you how work will move.",
-      "label": "Understand"
+      "label": "Map",
+      "title": "Build a map around decisions, not titles",
+      "body": "A stakeholder list only tells you who exists. A decision map tells you how work gets done. For each executive or function, record the decision they own, the information they need, the authority they can exercise, and the point at which they should enter the process. Include the CEO or sponsor, board or board committee, CIO, CTO, CDO, CISO, CFO, legal, privacy, HR, procurement, and business or product leaders. In some organizations several of these functions sit under one person; record the function anyway.\n\nStart from a specific use case. A customer assistant involves product ownership of the workflow, technology ownership of integration and reliability, data stewardship, security and privacy review, financial approval, and a business sponsor who owns the result. The CAIO connects these decisions to the AI portfolio and shared standards. NIST calls for documented roles, communication, and executive responsibility for AI risk decisions. IBM notes the role's overlap with other chiefs, which is why a diagram of reporting lines is not enough.\n\nUse four verbs in the map: proposes, advises, consents, and decides. 'Consulted' can be too vague. A security leader may advise on residual risk and require consent before a vendor is approved; a product leader may decide workflow design within those boundaries. Confirm the actual authority with your organization.",
+      "example": {
+        "title": "A map entry",
+        "body": "CFO: decides whether the investment fits the approved budget; needs lifecycle cost, benefit assumptions, alternatives, and the date of the next funding decision; joins at portfolio entry and before scale."
+      },
+      "exercise": {
+        "title": "Map one use case",
+        "body": "Choose one AI initiative. Add at least eight functions to a table with the four verbs above, the evidence each needs, and the latest safe point for their input. Mark any function brought in only after a key decision."
+      },
+      "sources": [
+        [
+          "NIST AI RMF Core: roles and communication",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "IBM: CAIO relationships",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ]
+      ]
     },
     {
       "id": "m1.3.2",
-      "title": "Rehearse a disagreement",
-      "body": "Suppose sales wants to upload call transcripts into a new vendor tool. Sales sees immediate value; privacy wants a purpose and retention review; security needs vendor assurance. Draft a meeting agenda that resolves data boundaries, a limited pilot, its success measure, and who can stop it. Record unresolved decisions rather than calling them alignment.",
-      "label": "Apply"
+      "label": "Convene",
+      "title": "Give each forum a job",
+      "body": "A single committee asked to approve every AI issue will become a queue. Separate the conversations by decision. A portfolio forum compares opportunities, expected benefits, capacity, and spend. A design and risk review examines data, system boundaries, affected people, evaluation plans, and controls. A release gate checks evidence against thresholds and names the operating owner. An incident path handles unexpected behavior quickly, with authority to pause or roll back. A periodic executive review looks across the portfolio for drift, duplicated spend, and systemic risks.\n\nThe U.S. federal policy in OMB M-25-21 offers a concrete governance example: AI leaders coordinate with technology, data, cybersecurity, budget, legal, privacy, procurement, human resources, and program offices. Its agency structure is a public-sector case study, not a rule for private companies. The transferable idea is that each discipline has a defined place and that the CAIO can organize the view without replacing accountable officials.\n\nWrite a one-page terms of reference for each forum: decisions in scope, chair, required participants, input packet, frequency, escalation route, and where decisions are recorded. Keep routine low-risk changes on a lighter path if your organization's policy allows. Reserve senior attention for material investment, high-impact use, and unresolved risk.",
+      "example": {
+        "title": "A practical cadence",
+        "body": "Portfolio review monthly; design and risk review when scope changes; release gate before a new audience or autonomy level; incident escalation as needed; executive review quarterly. The cadence is illustrative and should match the organization's risk and delivery pace."
+      },
+      "exercise": {
+        "title": "Design two forums",
+        "body": "Draft terms of reference for a portfolio review and a release gate. For each, list three decisions it can make and two decisions that must go elsewhere."
+      },
+      "sources": [
+        [
+          "U.S. OMB M-25-21: federal governance example",
+          "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
+        ],
+        [
+          "NIST AI RMF Core: continuous governance",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ]
+      ]
+    },
+    {
+      "id": "m1.3.3",
+      "label": "Resolve",
+      "title": "Work through a real disagreement",
+      "body": "Imagine sales wants to upload call transcripts to a new AI vendor to draft follow-up notes. Sales expects faster account work. Privacy needs to know whether customers were told about this use and how long transcripts will be kept. Security needs vendor access and retention controls. Legal needs contract terms and relevant obligations. The CDO asks whether the transcripts are accurate and permitted for this purpose. Finance wants the full cost. None of these questions is answered by a demo.\n\nRun the discussion in a fixed order. First, state the intended workflow and measurable benefit. Second, map the data flow: who collects the recording, where it moves, who can access it, whether it trains a model, and when it is deleted. Third, list unresolved issues with owners. Fourth, propose the smallest safe pilot, perhaps a limited set of consented transcripts with human review and no training use, subject to actual policy and legal review. Fifth, define the gate to expand: quality, time saved, user feedback, security and privacy findings, and a named decision maker.\n\nRecord the dissent. If privacy says retention remains unresolved, write that fact and the decision it blocks. 'Everyone aligned' is not a substitute for a decision record. NIST's Map, Measure, and Manage functions provide a useful rhythm for making the context, evidence, and response explicit.",
+      "example": {
+        "title": "A decision record",
+        "body": "Decision: defer vendor upload. Reason: retention terms and training-use restrictions are unresolved. Owner: procurement and privacy. Next step: request revised terms and test a local redacted sample. Review date: two weeks. Sales remains the benefit owner."
+      },
+      "exercise": {
+        "title": "Chair the meeting",
+        "body": "Write a 30-minute agenda and a one-page decision log for the transcript case. Include the question to decide, options, required evidence, objections, owner, and next review date."
+      },
+      "sources": [
+        [
+          "NIST AI RMF Core: context, measurement, response",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "U.S. OMB M-25-21: multidisciplinary review example",
+          "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
+        ]
+      ]
+    },
+    {
+      "id": "m1.3.4",
+      "label": "Communicate",
+      "title": "Make escalation and board reporting useful",
+      "body": "Stakeholder architecture should survive conflict and turnover. Set a clear escalation rule: a team can decide within its delegated limits; a control owner can halt a path that violates a required control; unresolved tradeoffs go to a named executive; material strategy or risk questions go to the CEO or board according to the organization's charter. Record the decision, rationale, dissent, owner, and review date. The CAIO can prepare the integrated recommendation even when someone else holds the final authority.\n\nFor the board, avoid a tour of model names. Show a small set of choices: where investment is going, what benefit has been measured, which systems face material risk, what management has done, and what decision is requested. State uncertainty plainly. If a benefit estimate is based on a pilot in one team, say that the evidence is narrow. If risk controls are proposed but untested, distinguish the plan from the result.\n\nFor the executive team, use the same facts with more operational detail: use case owner, stage, cost, evaluation and adoption trends, exceptions, and upcoming gates. Consistent records let the board ask whether the company is learning and changing course. NIST places responsibility for AI risk decisions with executive leadership; a clear record gives that leadership something concrete to govern.",
+      "example": {
+        "title": "An executive ask",
+        "body": "Approve a six-week pilot of the internal knowledge assistant for 50 support staff, subject to the privacy and security conditions in the attached decision record. Expansion requires the agreed answer-quality threshold, no increase in escalations, and a cost review."
+      },
+      "exercise": {
+        "title": "Write the escalation rule",
+        "body": "For your chosen use case, name the team decision limit, the control owners who can stop a launch, the executive who resolves a tradeoff, and the board question that would trigger escalation. Write a five-sentence executive update."
+      },
+      "sources": [
+        [
+          "NIST AI RMF Core: executive accountability",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "U.S. OMB M-25-21: roles and risk decisions",
+          "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
+        ]
+      ]
     }
   ]
 }

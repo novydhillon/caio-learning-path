@@ -4,15 +4,103 @@
   "parts": [
     {
       "id": "m1.2.1",
-      "title": "Separate knowledge from proof",
-      "body": "Create a matrix with strategy, finance, AI systems, evaluation, governance, security, data, organizational change, and board communication. For each area, record your confidence from 1 to 5 and one concrete piece of evidence: a project shipped, a decision memo, a review chaired, or a result measured. Knowing the vocabulary is different from being able to show an outcome.",
-      "label": "Understand"
+      "label": "Diagnose",
+      "title": "Score the work you can actually show",
+      "body": "The CAIO role combines technical judgment with investment, governance, and organizational leadership. IBM lists technical expertise, strategic vision, business acumen, leadership, and ethical insight. Turn those broad terms into a readiness inventory: AI systems, evaluation, data, security and privacy, governance, portfolio finance, product outcomes, change management, and executive communication. For each area, record what you know, what you have done, and what another person can verify.\n\nUse a simple evidence scale. Level 0: unfamiliar. Level 1: can explain a concept. Level 2: can design a credible approach. Level 3: has delivered an artifact reviewed by relevant specialists. Level 4: has led a decision or deployment with measured results and follow-up. A level 4 claim needs a specific context, your contribution, a decision or outcome, and a source that could corroborate it. Do not mark yourself level 4 because your team worked near the subject.\n\nSeparate knowledge gaps from evidence gaps. You may understand model evaluation but never have set a release threshold. You may have chaired engineering reviews but never a cross-functional AI risk review. The first gap calls for study and practice; the second calls for an opportunity to produce evidence. This distinction keeps the transition plan honest and useful.",
+      "example": {
+        "title": "A precise inventory entry",
+        "body": "AI evaluation: knowledge level 2; evidence level 1. I can design a test set and explain false positives, but I have not yet chaired a release decision using evaluation results. Next proof: a reviewed evaluation plan and a documented go/no-go recommendation."
+      },
+      "exercise": {
+        "title": "Build the inventory",
+        "body": "Create nine rows for the domains above. In each row, write a knowledge level, an evidence level, one artifact or outcome, and the name or role of someone who could challenge your assessment."
+      },
+      "sources": [
+        [
+          "IBM: CAIO skills and role overlap",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "NIST AI RMF Core: governance and measurement",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ]
+      ]
     },
     {
       "id": "m1.2.2",
-      "title": "Build your first evidence plan",
-      "body": "For a technical director, architecture and team leadership may already have strong examples. Regulatory judgment or companywide investment allocation may need new evidence. Pick two weak areas and design a small artifact for each, such as a governance playbook and a portfolio decision memo. Set a date for a knowledgeable reviewer to challenge them.",
-      "label": "Apply"
+      "label": "Translate",
+      "title": "Turn past leadership into CAIO evidence",
+      "body": "A transition does not require pretending that every past project was an AI program. Translate adjacent work at the level of decisions and outcomes. Running an engineering platform may show that you can set shared standards, manage tradeoffs, and support distributed teams. Building a security review process may show governance discipline. Owning a product roadmap may show portfolio prioritization. Yet none of these alone proves that you can evaluate AI behavior, govern model risk, or connect AI investment to business results. State the transferable part and the missing part side by side.\n\nA useful evidence story has five lines: the business problem, the decision you owned, the people and constraints involved, the artifact or system produced, and the observed result. If the result was not measured, say so. If your contribution was one part of a team effort, say which part. This gives you a credible basis for a development plan and later executive interviews.\n\nNIST's framework is helpful here because it breaks AI risk work into govern, map, measure, and manage. Map your prior work to those verbs. You may have governed software releases and measured service reliability; you may still need direct evidence of mapping AI-specific harms or measuring model performance on representative cases.",
+      "example": {
+        "title": "Before and after",
+        "body": "Vague: 'Led AI transformation.' Specific: 'Led the enterprise data platform used by three product teams; set access and quality standards; did not own model evaluation or AI investment decisions.' The second statement shows useful experience and a clear development need."
+      },
+      "exercise": {
+        "title": "Rewrite two examples",
+        "body": "Choose two achievements from your career. For each, write the five-line evidence story. Add one sentence on what it proves for a CAIO role and one sentence on what it does not yet prove."
+      },
+      "sources": [
+        [
+          "IBM: technical and strategic CAIO skills",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "NIST AI RMF Core: four functions",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ]
+      ]
+    },
+    {
+      "id": "m1.2.3",
+      "label": "Prioritize",
+      "title": "Choose gaps by consequence and access",
+      "body": "You cannot close every gap in one quarter. Prioritize gaps by how often they appear in the CAIO mandate, how costly a mistake would be, how weak your current proof is, and whether you can get a real decision or reviewer. Governance and evaluation often rank high because a CAIO must explain why a system should be used at scale and who remains accountable when it fails. Finance may rank high if the role controls a portfolio. The ordering will change with the company.\n\nChoose one knowledge gap and one evidence gap. For the knowledge gap, read a primary framework and turn it into a usable checklist for a real use case. For the evidence gap, produce an artifact with a reviewer and a decision attached: an evaluation plan that informs a pilot gate, a risk register discussed with legal and security, or an investment memo that compares two use cases. A course certificate can show study; a reviewed decision artifact shows judgment.\n\nISO/IEC 42001 describes an AI management system built around policies, objectives, processes, and continual improvement. Treat that as a reminder to connect your artifacts into a repeatable system. A standalone policy with no owner, measurement, or review cycle is weak evidence.",
+      "example": {
+        "title": "A gap ranking",
+        "body": "Portfolio finance: high role frequency, high current gap, medium access. AI evaluation: high role frequency, high current gap, high access. Board communication: medium role frequency, medium gap, low access. Start with evaluation, then seek a finance reviewer for a portfolio memo."
+      },
+      "exercise": {
+        "title": "Pick the next two",
+        "body": "Rank your top five gaps. Note the consequence of each gap, the evidence you already have, and the reviewer or decision you can reach in the next 90 days. Select two and explain the choice in one paragraph."
+      },
+      "sources": [
+        [
+          "IBM: CAIO scope",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "ISO: AI management system overview",
+          "https://www.iso.org/standard/42001"
+        ],
+        [
+          "NIST AI RMF Core: leadership and measurement",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ]
+      ]
+    },
+    {
+      "id": "m1.2.4",
+      "label": "Build",
+      "title": "Run a 90-day evidence sprint",
+      "body": "Make the transition map operational. In days 1–30, choose a real or clearly labeled fictional use case, document the business baseline, map affected people and data, and draft the decision rights. Ask a product or finance leader and a risk specialist what would make the proposal credible. In days 31–60, prepare one evaluation plan and one portfolio decision memo. Include expected benefit, costs, failure modes, comparison options, thresholds, and an owner for post-launch monitoring. In days 61–90, review both artifacts with people who would challenge them in practice. Record the objections, revise the documents, and write the decision you would recommend.\n\nKeep an evidence log. Each entry should link the artifact, date, your role, reviewer, objection, revision, and decision. For fictional exercises, label the scenario and numbers as illustrative; never present them as delivered results. If you have a real pilot, use actual measurements with permission and appropriate confidentiality.\n\nAt the end, you should be able to explain one decision you changed because the evidence changed. That is stronger than a collection of polished slides. It also gives you a clear next step: seek a live opportunity where you can own the decision and follow the outcome.",
+      "example": {
+        "title": "A useful day-90 result",
+        "body": "The initial recommendation was to scale a claims summarizer. A domain reviewer found that the test set omitted complex appeals. After adding those cases, quality fell below the release threshold, so the recommendation changed to a narrower pilot with human review."
+      },
+      "exercise": {
+        "title": "Schedule the sprint",
+        "body": "Put four dates on your calendar: use case selection, first artifact draft, specialist review, and final decision memo. Name the reviewer you need for each gap and write the question you want that person to answer."
+      },
+      "sources": [
+        [
+          "NIST AI RMF Core: map, measure, manage",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "ISO: continual improvement in AI management",
+          "https://www.iso.org/standard/42001"
+        ]
+      ]
     }
   ]
 }

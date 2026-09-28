@@ -109,6 +109,13 @@ function visualFor(visual){
   if(visual.type==='regions') return `<figure class="learning-visual"><figcaption>${visual.title}</figcaption><div class="region-grid">${visual.regions.map(([name,body])=>`<div><strong>${name}</strong><p>${body}</p></div>`).join('')}</div><small>${visual.note}</small></figure>`;
   return `<figure class="learning-visual"><figcaption>${visual.title}</figcaption><div class="stage-chart">${visual.stages.map(([name,detail])=>`<span>${name}<small>${detail}</small></span>`).join('')}</div>${visual.note?`<small>${visual.note}</small>`:''}</figure>`;
 }
+const escapeLessonText = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+function renderLessonPart(part,i){
+  const paragraphs=part.body.split(/\n\s*\n/).map(paragraph=>`<p>${escapeLessonText(paragraph)}</p>`).join('');
+  const note=(item,kind)=>item?`<div class="lesson-note ${kind}"><h4>${escapeLessonText(item.title)}</h4><p>${escapeLessonText(item.body)}</p></div>`:'';
+  const sources=part.sources?.length?`<div class="source-note"><strong>Sources for this section:</strong> ${part.sources.map(([label,url])=>`<a href="${escapeLessonText(url)}" target="_blank" rel="noopener noreferrer">${escapeLessonText(label)} ↗</a>`).join(' · ')}</div>`:'';
+  return `<article class="reading-part" id="part-${i+1}" data-sublesson-id="${part.id}"><p class="eyebrow">${part.id} · ${part.label.toUpperCase()}</p><h3>${escapeLessonText(part.title)}</h3>${paragraphs}${note(part.example,'example')}${note(part.exercise,'exercise')}${sources}</article>`;
+}
 async function openLesson(id,updateHash=true,sublessonId=null){
   const match=/^(m\d+)\.(\d+)$/.exec(id);
   if(!match || !catalog.modules.some(m=>m.id===match[1] && m.lessons.some(l=>l.id===id))) return renderDashboard();
@@ -125,8 +132,8 @@ async function openLesson(id,updateHash=true,sublessonId=null){
       <button class="back-link" onclick="renderModule('${m.id}')">← ${m.title}</button>
       <div class="section-head"><p class="eyebrow">MODULE ${catalog.modules.findIndex(x=>x.id===m.id)+1} · LESSON ${index+1} · ${info.duration}</p><h3>${info.title}</h3><p>${info.body}</p></div>
       ${visualFor(m.visual)}
-      ${l.parts.map((part,i)=>`<article class="reading-part" id="part-${i+1}" data-sublesson-id="${part.id}"><p class="eyebrow">${part.id} · ${part.label.toUpperCase()}</p><h3>${part.title}</h3><p>${part.body}</p></article>`).join('')}
-      <div class="card practice-card"><p class="eyebrow">YOUR TURN</p><h3>Make it yours</h3><p>${catalog.practicePrompt}</p></div>
+      ${l.parts.map(renderLessonPart).join('')}
+      ${l.parts.some(part=>part.exercise)?'':`<div class="card practice-card"><p class="eyebrow">YOUR TURN</p><h3>Make it yours</h3><p>${catalog.practicePrompt}</p></div>`}
       ${links.length?`<div class="card"><h3>Further reading</h3><p class="muted">Use these sources to check details and go deeper.</p><ul class="resources">${links.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul></div>`:''}
       <label class="checkline completion"><input type="checkbox" ${state.completed[id]?'checked':''} onchange="toggleLesson('${id}',this.checked)"> I finished this lesson</label>
       <div class="lesson-actions"><button class="secondary" onclick="renderModule('${m.id}')">Back to module</button>${m.lessons[index+1]?`<button class="primary" onclick="openLesson('${m.lessons[index+1].id}')">Next lesson →</button>`:''}</div>

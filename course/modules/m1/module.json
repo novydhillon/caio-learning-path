@@ -8,15 +8,19 @@
     {
       "id": "m1.1",
       "title": "What a CAIO actually owns",
-      "duration": "45 min",
-      "body": "Study the role as a business transformation executive: AI strategy, portfolio value, governance, adoption, risk, talent, operating model, and executive communication. Contrast this with a CTO or VP Engineering role, which usually owns broader technology delivery rather than enterprise AI outcomes.",
+      "duration": "75 min",
+      "body": "Define the CAIO's decisions, peer boundaries, operating cadence, and first-year scorecard. Work through a customer-assistant example and draft your own decision rights.",
       "resources": [
         [
-          "IBM — What is a Chief AI Officer?",
+          "IBM: What is a Chief AI Officer?",
           "https://www.ibm.com/think/topics/chief-ai-officer"
         ],
         [
-          "U.S. OMB M-25-21 — Federal AI leadership and governance",
+          "NIST AI Risk Management Framework Core",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "U.S. OMB M-25-21: federal governance example",
           "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
         ]
       ]
@@ -24,16 +28,42 @@
     {
       "id": "m1.2",
       "title": "Your transition map",
-      "duration": "60 min",
-      "body": "Inventory your current strengths across engineering leadership, strategy, governance, finance, product, data, security, change management, and board communication. Identify which gaps are knowledge gaps versus evidence gaps—areas you understand but cannot yet prove through outcomes.",
-      "resources": []
+      "duration": "90 min",
+      "body": "Assess what you know and what you can prove. Translate past leadership into CAIO evidence, rank the gaps that matter, and build a 90-day plan with reviewed artifacts.",
+      "resources": [
+        [
+          "IBM: CAIO skills and responsibilities",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "NIST AI Risk Management Framework Core",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "ISO/IEC 42001 overview",
+          "https://www.iso.org/standard/42001"
+        ]
+      ]
     },
     {
       "id": "m1.3",
       "title": "Executive stakeholder architecture",
-      "duration": "45 min",
-      "body": "Create a stakeholder map covering CEO, board, CIO/CTO, CDO, CISO, legal/privacy, finance, HR, product/business-unit leaders, and risk. The CAIO succeeds through distributed ownership, not through centralizing every AI decision.",
-      "resources": []
+      "duration": "75 min",
+      "body": "Map decision rights across executives, design the forums that move work, resolve a data-and-vendor disagreement, and write an escalation and board-reporting path.",
+      "resources": [
+        [
+          "IBM: CAIO role overlap",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "NIST AI Risk Management Framework Core",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "U.S. OMB M-25-21: federal governance example",
+          "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
+        ]
+      ]
     }
   ],
   "objectives": [
