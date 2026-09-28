@@ -63,7 +63,7 @@ test('legacy progress migrates and a sublesson loads without a page reload', asy
   assert.equal(progress.homework.m4,true);
   assert.equal(progress.quiz.m7,80);
   assert.match(node('lesson-view').innerHTML,/data-sublesson-id="m1\.1\.1"/);
-  assert.match(node('lesson-view').innerHTML,/The mandate in practice/);
+  assert.match(node('lesson-view').innerHTML,/Turn the mandate into decisions/);
   assert.deepEqual(requests,['course/catalog.json','course/id-migration.json','course/modules/m1/module.json','course/modules/m1/lessons/1.json']);
   await vm.runInContext("renderModule('m6')",context);
   assert.match(node('section-view').innerHTML,/Canadian privacy regulators/);
