@@ -4,15 +4,99 @@
   "parts": [
     {
       "id": "m1.1.1",
-      "title": "The mandate in practice",
-      "body": "A CAIO owns the companywide AI agenda: which opportunities get funded, what evidence is needed to scale them, who can accept risk, and whether people actually use the resulting systems. The role needs authority over portfolio priorities and shared standards, even when delivery stays with product and business teams. A charter should name its limits. The CIO may own enterprise IT, the CTO product engineering, and the CISO security policy. Give each a clear seat in AI decisions.",
-      "label": "Understand"
+      "label": "Understand",
+      "title": "Turn the mandate into decisions",
+      "body": "A CAIO needs a mandate that can settle real disputes. IBM describes the role across strategy, technology oversight, teams, governance, and education. Those categories become useful when you name the decisions behind them. Who chooses the AI opportunities that matter most? Who sets the evidence required before a pilot reaches customers? Who can accept a known risk, and who must be consulted first? Who checks whether a launch improved the business outcome it promised?\n\nStart with four recurring decisions: portfolio entry, design standards, release approval, and continued operation. For each, write the proposer, the reviewers, the decision maker, and the evidence that person needs. Portfolio entry might require a named business owner, a baseline measure, estimated cost, and a plausible benefit. Release approval might require quality results on representative cases, privacy and security review, a human fallback, and an owner for incidents. Continued operation needs usage, benefit, quality, cost, and incident trends. These are sample requirements for a company to tailor, not universal thresholds.\n\nThe CAIO can own the method and the cross-company view while another executive owns the final decision. In the U.S. federal model, OMB assigns the CAIO a central coordinating role but keeps existing officials responsible for their own legal duties. That is a useful warning against writing a charter that quietly transfers powers from the CIO, CISO, legal team, or business owner.",
+      "example": {
+        "title": "A decision-right sentence",
+        "body": "The CAIO sets the evidence required to scale an AI use case and advises on portfolio priority; the accountable business executive approves the investment and owns the operating result."
+      },
+      "exercise": {
+        "title": "Write the four decisions",
+        "body": "For one proposed AI use case, fill in proposer, reviewers, decision maker, evidence, and review date for portfolio entry, design, release, and continued operation. Circle any decision that has two approvers or none."
+      },
+      "sources": [
+        [
+          "IBM: CAIO responsibilities",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "U.S. OMB M-25-21: federal role boundaries",
+          "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
+        ]
+      ]
     },
     {
       "id": "m1.1.2",
-      "title": "Draw the decision boundary",
-      "body": "A retail company wants an AI service agent. Product owns the customer journey; the platform team owns approved model access; legal and privacy review customer data use; the CAIO decides whether the use case fits the portfolio and whether release evidence meets the agreed bar. Write a one-line decision right for each owner. If two owners both think they approve launch, the charter still needs work.",
-      "label": "Apply"
+      "label": "Practice",
+      "title": "Draw the boundary with peer executives",
+      "body": "Expect overlap. IBM notes that CAIO responsibilities intersect with the CIO, CTO, CDO, and CISO, and reporting lines vary. A workable boundary follows the asset and the risk. The CIO typically owns enterprise systems and access; the CTO or engineering leader owns product architecture and delivery; the CDO owns data stewardship and quality; the CISO owns security policy and response. Finance owns financial controls. Legal and privacy specialists interpret obligations. Product and business leaders own the customer or employee workflow and its result. These are starting assumptions to confirm in the company charter, since titles differ by organization.\n\nFor a retail service assistant, product defines the customer journey and escalation path. Engineering owns integration and reliability. Data leaders establish which customer records may be used and how quality is maintained. Security and privacy review access, retention, and vendor handling. The CAIO connects the investment case, shared AI standards, evaluation evidence, and monitoring plan. A launch decision can then be assigned to one accountable executive with explicit advice or required signoff from the relevant control owners.\n\nWrite a boundary table with three columns: decision, accountable owner, and required consultation. Include model or vendor selection, data use, release, incident response, and retirement. If a row says everyone approves, it will probably stall; if it says the CAIO approves everything, it hides existing authority.",
+      "example": {
+        "title": "A boundary that survives a dispute",
+        "body": "Security may block use of a vendor that fails the company's control requirements. The CAIO may recommend a different vendor or narrower pilot. The business owner may choose among viable options, but cannot waive a security control on the CAIO's behalf."
+      },
+      "exercise": {
+        "title": "Resolve an overlap",
+        "body": "Pick one decision that both the CAIO and a peer executive might claim. Write who decides, whose consent is required, what evidence resolves the dispute, and where an appeal goes."
+      },
+      "sources": [
+        [
+          "IBM: role overlap and skills",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "NIST AI RMF: documented roles and leadership",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ]
+      ]
+    },
+    {
+      "id": "m1.1.3",
+      "label": "Operate",
+      "title": "Build a cadence that creates evidence",
+      "body": "A charter is only credible if it changes the weekly work. Keep a register of proposed and deployed AI uses with owners, purpose, data, model or vendor, risk tier, and next review date. NIST's AI Risk Management Framework calls for documented roles, inventories, monitoring, and leadership responsibility for risk decisions. It also treats governance as work that continues through mapping, measuring, and managing a system, rather than as a one-time signoff.\n\nUse a monthly portfolio review to decide which initiatives enter discovery, continue as pilots, scale, pause, or stop. Ask for the business baseline and the cost of delay alongside technical feasibility. Use a separate release review when an application changes its audience, data, autonomy, or model. That review should compare evaluation results with predefined thresholds and confirm named owners for fallback and monitoring. Bring unresolved risks to a risk forum with the appropriate executive authority; record the decision and the date for rechecking it.\n\nA quarterly executive update should be short enough to support action: investment by stage, realized versus expected benefits, adoption, quality trends, material incidents, and decisions required. Avoid a dashboard that only counts prototypes. A growing prototype count can coexist with no business value and no dependable controls.",
+      "example": {
+        "title": "A useful portfolio line",
+        "body": "Claims assistant: pilot in one region; 18% faster draft preparation against the previous workflow; human reviewers still correct 12% of drafts; operating cost $2.40 per case; decision due 15 November on whether to expand. These numbers illustrate the format and are not evidence from a real deployment."
+      },
+      "exercise": {
+        "title": "Design one review packet",
+        "body": "Create a one-page packet for a hypothetical pilot. Include its owner, baseline, target, evaluation results, cost, unresolved risks, recommendation, decision maker, and next review date."
+      },
+      "sources": [
+        [
+          "NIST AI RMF Core: Govern, Map, Measure, Manage",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ],
+        [
+          "U.S. OMB M-25-21: inventory and monitoring example",
+          "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-21-Accelerating-Federal-Use-of-AI-through-Innovation-Governance-and-Public-Trust.pdf"
+        ]
+      ]
+    },
+    {
+      "id": "m1.1.4",
+      "label": "Apply",
+      "title": "Write a first-year scorecard",
+      "body": "Judge the CAIO by outcomes that cross organizational lines. A balanced first-year scorecard can track four kinds of evidence: value, reliability, control, and adoption. Value asks whether use cases changed cost, revenue, service, or employee time compared with a baseline. Reliability asks whether systems perform on representative work and stay within service expectations. Control asks whether risks have owners, evaluations are current, incidents are handled, and retirement decisions occur. Adoption asks whether people use the system in the intended workflow and know when to override it.\n\nDefine each metric before collecting it. 'Time saved' needs a measurement method and an owner; otherwise it becomes a self-reported impression. 'Passed evaluation' needs a dataset, grading method, threshold, and date. 'Adoption' needs a denominator: active users out of eligible users, or assisted cases out of eligible cases. Add a countermeasure so local optimization does not hide harm. Faster handling is less impressive if rework, complaints, or error rates rise.\n\nMake the scorecard a conversation about decisions, not a trophy wall. If a pilot has strong usage but weak quality, fund correction before expansion. If quality is high but usage is low, inspect workflow fit and training. If both are weak, stop it. The specific targets belong to the organization and use case.",
+      "example": {
+        "title": "A scorecard row",
+        "body": "Customer assistant: target 20% reduction in handling time, with no increase in reopened cases; weekly sample review of answer quality; monthly cost per resolved case; named product owner; expansion decision after eight weeks. Targets are illustrative."
+      },
+      "exercise": {
+        "title": "Draft five measures",
+        "body": "For a use case you know, write one value measure, one quality measure, one risk measure, one adoption measure, and one countermeasure. Give each a baseline, owner, collection method, and decision it will inform."
+      },
+      "sources": [
+        [
+          "IBM: strategy, oversight, and adoption",
+          "https://www.ibm.com/think/topics/chief-ai-officer"
+        ],
+        [
+          "NIST AI RMF Core: measurement and risk response",
+          "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"
+        ]
+      ]
     }
   ]
 }
