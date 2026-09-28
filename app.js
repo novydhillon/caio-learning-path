@@ -1,4 +1,5 @@
-const progressKey = 'caio-learning-progress-v1';
+const progressKey = /\/dev(?:\/|$)/.test(location.pathname) ? 'caio-learning-progress-dev-v1' : 'caio-learning-progress-v1';
+const migrationKey = progressKey + '-id-migration-v2';
 const state = JSON.parse(localStorage.getItem(progressKey) || '{"completed":{},"homework":{},"quiz":{}}');
 state.quizRevision ||= {};
 const save = () => localStorage.setItem(progressKey, JSON.stringify(state));
@@ -27,7 +28,7 @@ const allLessons = () => catalog.modules.flatMap(m => m.lessons);
 const pct = () => Math.round(allLessons().filter(l => state.completed[l.id]).length / allLessons().length * 100);
 const modulePct = m => Math.round(m.lessons.filter(l => state.completed[l.id]).length / m.lessons.length * 100);
 function migrateProgress(ids){
-  if(localStorage.getItem('caio-id-migration-v2')) return;
+  if(localStorage.getItem(migrationKey)) return;
   for(const [oldId,newId] of Object.entries(ids.lessons)){
     if(state.completed[oldId] && state.completed[newId] === undefined) state.completed[newId] = true;
   }
@@ -35,7 +36,7 @@ function migrateProgress(ids){
     if(state.homework[oldId] && state.homework[newId] === undefined) state.homework[newId] = true;
     if(state.quiz[oldId] !== undefined && state.quiz[newId] === undefined) state.quiz[newId] = state.quiz[oldId];
   }
-  save(); localStorage.setItem('caio-id-migration-v2','done');
+  save(); localStorage.setItem(migrationKey,'done');
 }
 function navigate(type,id){
   const hash = '#' + type + (id ? '/' + id : '');
