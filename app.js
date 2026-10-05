@@ -76,8 +76,8 @@ function renderDashboard(updateHash=true){
     </div>`;
   renderNav('dashboard');
 }
-function moduleReferences(m){
-  const links=[...m.lessons.flatMap(l=>l.resources),...m.regionalResources];
+function moduleReferences(m,details=[]){
+  const links=[...m.lessons.flatMap(l=>l.resources),...m.regionalResources,...details.flatMap(detail=>detail.parts.flatMap(part=>part.sources||[]))];
   return [...new Map(links.map(link=>[link[1],link])).values()];
 }
 function showLoadError(view,retry){
@@ -91,8 +91,9 @@ async function renderModule(id,updateHash=true){
   renderNav(id); el('section-view').innerHTML='<p class="muted" role="status">Loading module…</p>';
   try{
     const m=await getJSON(`modules/${id}/module.json`);
+    const details=await Promise.all(m.lessons.map((_,i)=>getJSON(`modules/${id}/lessons/${i+1}.json`)));
     if(request!==requestNumber) return;
-    const refs=moduleReferences(m);
+    const refs=moduleReferences(m,details);
     el('section-view').innerHTML=`
       <div class="section-head"><p class="eyebrow">WEEKS ${m.weeks} · MODULE ${catalog.modules.findIndex(x=>x.id===id)+1}</p><h3>${m.title}</h3><p>${m.summary}</p><div class="objectives">${m.objectives.map(x=>`<span class="objective">${x}</span>`).join('')}</div></div>
       <figure class="module-art"><img src="images/modules/${m.id}.webp" alt="${moduleArtAlt[m.id]}" loading="eager" decoding="async"></figure>
