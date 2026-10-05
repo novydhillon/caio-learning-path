@@ -1,18 +1,41 @@
 {
   "id": "m10.1",
-  "moduleId": "m10",
   "parts": [
     {
       "id": "m10.1.1",
-      "title": "Give the board a decision",
-      "body": "A board update should connect AI investment to company strategy and material risk. Show value delivered against baselines, major programs, risk exposure, control health, and choices requiring oversight. Separate observed results from forecasts. Give the board enough detail to ask whether management can detect a failure and respond.",
-      "label": "Understand"
+      "label": "Understand",
+      "title": "Start with the board's decision",
+      "body": "A board briefing earns its place on the agenda when directors can see what management wants them to decide or challenge. Open with the requested investment or risk boundary, the strategic reason, the amount at risk, and the date when management will return with evidence. If no vote is needed, say what directors should scrutinize.\n\nSeparate oversight from operating choices. Management selects models, staff, and vendors within delegated authority. Directors examine strategic fit, material exposure, management's ability to detect harm, and the resources to respond. The OECD AI Principles place accountability with actors according to their roles and context. NIST's AI Risk Management Framework offers a structure for reporting governance, mapped risks, measurement, and response. Neither supplies a universal board approval threshold.\n\nPut observed results beside projections. A productivity claim needs a baseline, measurement period, eligible population, cost, and owner. Label forecasts and unresolved assumptions. A director should be able to ask what changed the investment case and find the answer on the page.",
+      "example": {"title": "A board opening", "body": "Decision requested: authorize up to €2 million for a 90-day service pilot in two markets. Customer release requires quality, privacy, and security reviews. Management will return with cost per resolved case, correction rate, complaints, and a recommendation to expand, narrow, or stop. Amounts and timing are illustrative."},
+      "exercise": {"title": "Rewrite an update as a request", "body": "Turn 'We have 14 pilots and strong interest' into a two-sentence board request. Include the decision, investment limit, evidence needed, and date of the next review. Identify who retains operating approval."},
+      "sources": [["OECD AI Principles: accountability", "https://www.oecd.org/en/topics/ai-principles.html"], ["NIST AI RMF Core", "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"]]
     },
     {
       "id": "m10.1.2",
-      "title": "Build a four-slide briefing",
-      "body": "Use one slide each for strategic thesis, portfolio performance, material risks and controls, and decisions requested. Include a Canada and EU exposure note if the company operates there. Ask the board to choose an investment envelope or risk appetite, not a model vendor.",
-      "label": "Apply"
+      "label": "Practice",
+      "title": "Tell the portfolio story with evidence",
+      "body": "A concise packet can use four views: strategic thesis, portfolio economics, material exposure, and decisions. Show each major initiative's stage, owner, baseline, actual benefit, full operating cost, and next gate. Group small experiments. A value-versus-execution-confidence chart can expose portfolio choices, provided its axes and scores are explained as management estimates.\n\nChoose denominators that make the picture honest. A 40% increase in users says little if rework doubles. Compare assisted cases with eligible cases, successful outcomes with all assisted cases, and costs with completed outcomes. Show adoption, quality, and economics together. For consequential uses, examine affected groups and error severity. A worsening measure belongs in the board packet with an owner and response.\n\nKeep the competitive view tied to a decision. An outside benchmark may show that a capability is possible, but its conditions rarely match your workflow. Explain whether a competitor's move changes the timing, cost, or differentiation of your investment. If unknown, commission a focused comparison with a due date.",
+      "example": {"title": "A portfolio row with tension", "body": "Claims drafting pilot: 1,200 eligible cases, 480 assisted; median draft time fell from 18 to 12 minutes, while correction rate rose from 9% to 14%; operating cost €3.10 per assisted case. Management pauses expansion pending an error review. Figures are invented."},
+      "exercise": {"title": "Build the portfolio slide", "body": "For three initiatives, record stage, owner, baseline, realized benefit, quality countermeasure, run cost, and next decision. Mark figures observed, forecast, or assumed. Write the one question you want directors to ask."},
+      "sources": [["NIST AI RMF Core: Measure and Manage", "https://airc.nist.gov/airmf-resources/airmf/5-sec-core/"], ["Stanford HAI: 2026 AI Index", "https://hai.stanford.edu/ai-index/2026-ai-index-report"]]
+    },
+    {
+      "id": "m10.1.3",
+      "label": "Operate",
+      "title": "Report jurisdiction exposure precisely",
+      "body": "A multinational board needs a map of where a system is used, whom it affects, what decisions it supports, and which obligations have been assessed. Avoid writing 'EU compliant' across an entire portfolio. The EU AI Act assigns duties by role and classification. Its implementation timetable can change; counsel should confirm current requirements and dates for each use before release. The GDPR may independently apply to personal data.\n\nFor Canadian operations, ask the privacy lead which federal or provincial law applies. PIPEDA's principles include accountability, identifying purposes, consent, limiting use, and safeguards. A Canadian presence alone does not settle applicable law or authorize a new AI use of customer records. Record the assessment owner and open questions.\n\nShow exposure as a management control problem: use, region, affected people, assessment owner, decision deadline, and unresolved issue. Give material exceptions a route to the appropriate board committee. Directors should challenge whether management has the evidence and competent reviewers, rather than performing legal classification from a slide.",
+      "example": {"title": "One exposure line", "body": "EU support assistant: product owns deployment; privacy counsel checks data use; AI counsel records role and classification; security reviews vendor access; customer launch waits for those reviews and a quality test. This is a process example, not a legal conclusion."},
+      "exercise": {"title": "Write a jurisdiction note", "body": "Choose a use operating in Canada and the EU. List where it runs, whose data it uses, whether it assists or makes decisions, legal questions, reviewers, and next gate. Replace blanket compliance claims with evidence and owners."},
+      "sources": [["EU AI Act", "https://eur-lex.europa.eu/eli/reg/2024/1689/oj"], ["European Commission AI Act timeline", "https://ai-act-service-desk.ec.europa.eu/en/ai-act/eu-ai-act-implementation-timeline"], ["OPC Canada: PIPEDA principles", "https://www.priv.gc.ca/en/privacy-topics/privacy-laws-in-canada/the-personal-information-protection-and-electronic-documents-act-pipeda/p_principle/"]]
+    },
+    {
+      "id": "m10.1.4",
+      "label": "Apply",
+      "title": "Rehearse the board discussion",
+      "body": "Send a one-page decision cover with the packet. In the meeting, spend less time reciting slides and more on uncertainty. Prepare answers to: What would make us stop? Who can halt a system after release? How much capital is committed before the next gate? What does the downside case do to the economics? Who accepted the open material risk?\n\nAnswer with a testable condition where possible. 'We will monitor quality' is weaker than naming a sample, review frequency, threshold, and person empowered to pause use. Thresholds should reflect the consequence of error; they are management proposals, not universal standards. Record directors' challenges, the response, owner, and follow-up date. When a director asks about a region outside the pilot, explain which evidence does not transfer and who must reassess data rights, language quality, and legal duties before expansion.\n\nEnd with the requested decision, conditions, delegated authority, and checkpoint. If directors decline the investment, the same packet should make a narrower fallback intelligible. That tests whether the options were genuinely considered.",
+      "example": {"title": "A plausible challenge", "body": "Director: 'If the assistant saves time but raises incorrect advice, who stops it?' CAIO: 'The service owner can pause it immediately. We propose no deterioration from the baseline in the reviewed sample. We report weekly for eight weeks.' The condition is illustrative."},
+      "exercise": {"title": "Run a ten-minute mock board", "body": "Ask a peer to challenge investment, risk boundary, and Canadian or EU exposure. Answer without reading the deck. Record two unanswered questions and revise the packet with an evidence owner and due date."},
+      "sources": [["OECD AI Principles", "https://www.oecd.org/en/topics/ai-principles.html"], ["NIST AI RMF Playbook: Govern", "https://airc.nist.gov/airmf-resources/playbook/govern/"]]
     }
   ]
 }

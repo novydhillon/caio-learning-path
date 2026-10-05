@@ -6,7 +6,7 @@ A self-paced 26-week course for experienced technical leaders moving toward Chie
 
 - 11 sequenced modules across technical fluency, AI evaluation and assurance, AI strategy, data/platform, governance, security, economics, operating model, executive leadership, and a capstone.
 - Section summaries and reusable review pages.
-- 39 original lessons, each with concept and application sub-lessons, examples, and practice prompts.
+- 39 original lessons with four substantial sub-lessons each, worked examples, practice prompts, and section sources.
 - Stable IDs: `m1` through `m11` for modules, `m1.1` for lessons, and `m1.1.1` for sub-lessons.
 - Light and dark appearance modes with a fixed switch and saved preference.
 - Original illustrations and explanatory diagrams, including illustrative charts labelled as examples.
@@ -31,7 +31,7 @@ Then visit `http://localhost:8000`.
 ## Course files
 
 - `course/catalog.json`: lightweight module and lesson listing for navigation and progress.
-- `course/modules/mN/module.json`: module introduction, lesson summaries, quiz, homework, diagrams, and references.
+- `course/modules/mN/module.json`: module introduction, lesson summaries, quiz, homework, diagrams, and references. The module page also gathers sources cited by its sub-lessons.
 - `course/modules/mN/lessons/L.json`: one lesson's teaching content, with sub-lesson IDs.
 - `course/references.json`: the course-wide reference library.
 - `course/id-migration.json`: one-time mapping for progress saved under earlier IDs.
