@@ -6,7 +6,7 @@ A self-paced 26-week course for experienced technical leaders moving toward Chie
 
 - 11 sequenced modules across technical fluency, AI evaluation and assurance, AI strategy, data/platform, governance, security, economics, operating model, executive leadership, and a capstone.
 - Section summaries and reusable review pages.
-- 39 original lessons, each with concept and application sub-lessons, examples, and practice prompts.
+- 39 original lessons with four substantial sub-lessons each, worked examples, practice prompts, and section sources.
 - Stable IDs: `m1` through `m11` for modules, `m1.1` for lessons, and `m1.1.1` for sub-lessons.
 - Light and dark appearance modes with a fixed switch and saved preference.
 - Original illustrations and explanatory diagrams, including illustrative charts labelled as examples.
@@ -31,22 +31,23 @@ Then visit `http://localhost:8000`.
 ## Course files
 
 - `course/catalog.json`: lightweight module and lesson listing for navigation and progress.
-- `course/modules/mN/module.json`: module introduction, lesson summaries, quiz, homework, diagrams, and references.
+- `course/modules/mN/module.json`: module introduction, lesson summaries, quiz, homework, diagrams, and references. The module page also gathers sources cited by its sub-lessons.
 - `course/modules/mN/lessons/L.json`: one lesson's teaching content, with sub-lesson IDs.
 - `course/references.json`: the course-wide reference library.
 - `course/id-migration.json`: one-time mapping for progress saved under earlier IDs.
 
 You can edit one lesson file independently. The app fetches module and lesson JSON on navigation without reloading the page; edits appear on the next visit to that module or lesson. Keep the catalog and module listing in sync when adding, removing, or renaming lessons. Check the structure with `node --test tests/course.test.cjs`.
 
-## GitHub Pages
+## GitHub Pages and branch flow
 
-This repository includes a GitHub Actions workflow in `.github/workflows/pages.yml`. After pushing to GitHub:
+The Pages workflow publishes two paths from this repository:
 
-1. Open **Settings → Pages**.
-2. Set **Source** to **GitHub Actions**.
-3. Push to `main` (or manually run the workflow).
+- Production: https://novydhillon.github.io/caio-learning-path/ from `main`.
+- Test: https://novydhillon.github.io/caio-learning-path/dev/ from `dev`.
 
-The site is intentionally build-free: HTML, CSS, JavaScript, and JSON.
+Create changes on a feature branch, merge them into `dev`, and review the test site. Merge `dev` into `main` only after approval. Pushes to either branch refresh both paths: the production path is always assembled from `main`, and the test path is always assembled from `dev`. Progress is stored separately for each path in the same browser.
+
+In **Settings → Pages**, set **Source** to **GitHub Actions**. The site is build-free: HTML, CSS, JavaScript, and JSON.
 
 ## Progress data
 

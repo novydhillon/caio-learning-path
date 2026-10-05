@@ -99,7 +99,15 @@ main { min-width:0; }
 .lesson-toc button { border:0; padding:0; background:none; color:var(--text); text-align:left; cursor:pointer; font-size:14px; }
 .reading-part { margin:22px 0; padding:30px; background:var(--panel); border:1px solid var(--line); border-radius:16px; }
 .reading-part h3 { font-size:25px; line-height:1.25; margin:8px 0 16px; }
-.reading-part p:not(.eyebrow) { font-size:17px; line-height:1.75; margin:0; }
+.reading-part > p:not(.eyebrow) { font-size:17px; line-height:1.75; margin:0 0 16px; }
+.reading-part > p:not(.eyebrow):last-child { margin-bottom:0; }
+.lesson-note { margin-top:22px; padding:18px 20px; border:1px solid var(--line); border-radius:12px; background:var(--panel-2); }
+.lesson-note.exercise { border-left:4px solid var(--accent); }
+.lesson-note.example { border-left:4px solid var(--accent-2); }
+.lesson-note h4 { margin:0 0 8px; font-size:16px; }
+.lesson-note p { margin:0; color:var(--text); line-height:1.65; }
+.source-note { margin-top:20px; padding-top:16px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; line-height:1.7; }
+.source-note a { display:inline; }
 .practice-card { margin:22px 0; border-left:4px solid var(--accent); }
 .completion { padding:20px 0; font-weight:700; }
 .lesson-actions { display:flex; justify-content:space-between; gap:12px; margin-top:12px; }

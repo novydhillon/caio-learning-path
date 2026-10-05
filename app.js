@@ -1,4 +1,5 @@
-const progressKey = 'caio-learning-progress-v1';
+const progressKey = /\/dev(?:\/|$)/.test(location.pathname) ? 'caio-learning-progress-dev-v1' : 'caio-learning-progress-v1';
+const migrationKey = progressKey + '-id-migration-v2';
 const state = JSON.parse(localStorage.getItem(progressKey) || '{"completed":{},"homework":{},"quiz":{}}');
 state.quizRevision ||= {};
 const save = () => localStorage.setItem(progressKey, JSON.stringify(state));
@@ -27,7 +28,7 @@ const allLessons = () => catalog.modules.flatMap(m => m.lessons);
 const pct = () => Math.round(allLessons().filter(l => state.completed[l.id]).length / allLessons().length * 100);
 const modulePct = m => Math.round(m.lessons.filter(l => state.completed[l.id]).length / m.lessons.length * 100);
 function migrateProgress(ids){
-  if(localStorage.getItem('caio-id-migration-v2')) return;
+  if(localStorage.getItem(migrationKey)) return;
   for(const [oldId,newId] of Object.entries(ids.lessons)){
     if(state.completed[oldId] && state.completed[newId] === undefined) state.completed[newId] = true;
   }
@@ -35,7 +36,7 @@ function migrateProgress(ids){
     if(state.homework[oldId] && state.homework[newId] === undefined) state.homework[newId] = true;
     if(state.quiz[oldId] !== undefined && state.quiz[newId] === undefined) state.quiz[newId] = state.quiz[oldId];
   }
-  save(); localStorage.setItem('caio-id-migration-v2','done');
+  save(); localStorage.setItem(migrationKey,'done');
 }
 function navigate(type,id){
   const hash = '#' + type + (id ? '/' + id : '');
@@ -75,8 +76,8 @@ function renderDashboard(updateHash=true){
     </div>`;
   renderNav('dashboard');
 }
-function moduleReferences(m){
-  const links=[...m.lessons.flatMap(l=>l.resources),...m.regionalResources];
+function moduleReferences(m,details=[]){
+  const links=[...m.lessons.flatMap(l=>l.resources),...m.regionalResources,...details.flatMap(detail=>detail.parts.flatMap(part=>part.sources||[]))];
   return [...new Map(links.map(link=>[link[1],link])).values()];
 }
 function showLoadError(view,retry){
@@ -90,8 +91,9 @@ async function renderModule(id,updateHash=true){
   renderNav(id); el('section-view').innerHTML='<p class="muted" role="status">Loading module…</p>';
   try{
     const m=await getJSON(`modules/${id}/module.json`);
+    const details=await Promise.all(m.lessons.map((_,i)=>getJSON(`modules/${id}/lessons/${i+1}.json`)));
     if(request!==requestNumber) return;
-    const refs=moduleReferences(m);
+    const refs=moduleReferences(m,details);
     el('section-view').innerHTML=`
       <div class="section-head"><p class="eyebrow">WEEKS ${m.weeks} · MODULE ${catalog.modules.findIndex(x=>x.id===id)+1}</p><h3>${m.title}</h3><p>${m.summary}</p><div class="objectives">${m.objectives.map(x=>`<span class="objective">${x}</span>`).join('')}</div></div>
       <figure class="module-art"><img src="images/modules/${m.id}.webp" alt="${moduleArtAlt[m.id]}" loading="eager" decoding="async"></figure>
@@ -107,6 +109,13 @@ function visualFor(visual){
   if(visual.type==='gates') return `<figure class="learning-visual"><figcaption>${visual.title}</figcaption><div class="gate-bars">${visual.bars.map(([label,width,text,fail])=>`<div><span>${label}</span><b class="${fail?'fail':''}" style="--w:${width}%">${text}</b></div>`).join('')}</div><small>${visual.note}</small></figure>`;
   if(visual.type==='regions') return `<figure class="learning-visual"><figcaption>${visual.title}</figcaption><div class="region-grid">${visual.regions.map(([name,body])=>`<div><strong>${name}</strong><p>${body}</p></div>`).join('')}</div><small>${visual.note}</small></figure>`;
   return `<figure class="learning-visual"><figcaption>${visual.title}</figcaption><div class="stage-chart">${visual.stages.map(([name,detail])=>`<span>${name}<small>${detail}</small></span>`).join('')}</div>${visual.note?`<small>${visual.note}</small>`:''}</figure>`;
+}
+const escapeLessonText = value => String(value).replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
+function renderLessonPart(part,i){
+  const paragraphs=part.body.split(/\n\s*\n/).map(paragraph=>`<p>${escapeLessonText(paragraph)}</p>`).join('');
+  const note=(item,kind)=>item?`<div class="lesson-note ${kind}"><h4>${escapeLessonText(item.title)}</h4><p>${escapeLessonText(item.body)}</p></div>`:'';
+  const sources=part.sources?.length?`<div class="source-note"><strong>Sources for this section:</strong> ${part.sources.map(([label,url])=>`<a href="${escapeLessonText(url)}" target="_blank" rel="noopener noreferrer">${escapeLessonText(label)} ↗</a>`).join(' · ')}</div>`:'';
+  return `<article class="reading-part" id="part-${i+1}" data-sublesson-id="${part.id}"><p class="eyebrow">${part.id} · ${part.label.toUpperCase()}</p><h3>${escapeLessonText(part.title)}</h3>${paragraphs}${note(part.example,'example')}${note(part.exercise,'exercise')}${sources}</article>`;
 }
 async function openLesson(id,updateHash=true,sublessonId=null){
   const match=/^(m\d+)\.(\d+)$/.exec(id);
@@ -124,8 +133,8 @@ async function openLesson(id,updateHash=true,sublessonId=null){
       <button class="back-link" onclick="renderModule('${m.id}')">← ${m.title}</button>
       <div class="section-head"><p class="eyebrow">MODULE ${catalog.modules.findIndex(x=>x.id===m.id)+1} · LESSON ${index+1} · ${info.duration}</p><h3>${info.title}</h3><p>${info.body}</p></div>
       ${visualFor(m.visual)}
-      ${l.parts.map((part,i)=>`<article class="reading-part" id="part-${i+1}" data-sublesson-id="${part.id}"><p class="eyebrow">${part.id} · ${part.label.toUpperCase()}</p><h3>${part.title}</h3><p>${part.body}</p></article>`).join('')}
-      <div class="card practice-card"><p class="eyebrow">YOUR TURN</p><h3>Make it yours</h3><p>${catalog.practicePrompt}</p></div>
+      ${l.parts.map(renderLessonPart).join('')}
+      ${l.parts.some(part=>part.exercise)?'':`<div class="card practice-card"><p class="eyebrow">YOUR TURN</p><h3>Make it yours</h3><p>${catalog.practicePrompt}</p></div>`}
       ${links.length?`<div class="card"><h3>Further reading</h3><p class="muted">Use these sources to check details and go deeper.</p><ul class="resources">${links.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul></div>`:''}
       <label class="checkline completion"><input type="checkbox" ${state.completed[id]?'checked':''} onchange="toggleLesson('${id}',this.checked)"> I finished this lesson</label>
       <div class="lesson-actions"><button class="secondary" onclick="renderModule('${m.id}')">Back to module</button>${m.lessons[index+1]?`<button class="primary" onclick="openLesson('${m.lessons[index+1].id}')">Next lesson →</button>`:''}</div>

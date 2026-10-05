@@ -29,7 +29,8 @@ test('module and sublesson IDs are contiguous and independently addressable', ()
       assert.equal(module.lessons[li].id, id);
       const detail = read(`modules/${moduleId}/lessons/${li+1}.json`);
       assert.equal(detail.id, id);
-      assert.deepEqual(detail.parts.map(part=>part.id), [`${id}.1`,`${id}.2`]);
+      assert.deepEqual(detail.parts.map(part=>part.id), Array.from({length:4},(_,i)=>`${id}.${i+1}`));
+      assert.ok(detail.parts.every(part=>part.example && part.exercise && part.sources?.length >= 2 && part.body.split(/\s+/).length >= 150));
       assert.ok(detail.parts.every(part=>part.title && part.body));
     });
   });
@@ -62,12 +63,14 @@ test('legacy progress migrates and a sublesson loads without a page reload', asy
   assert.equal(progress.homework.m4,true);
   assert.equal(progress.quiz.m7,80);
   assert.match(node('lesson-view').innerHTML,/data-sublesson-id="m1\.1\.1"/);
-  assert.match(node('lesson-view').innerHTML,/The mandate in practice/);
+  assert.match(node('lesson-view').innerHTML,/Turn the mandate into decisions/);
   assert.deepEqual(requests,['course/catalog.json','course/id-migration.json','course/modules/m1/module.json','course/modules/m1/lessons/1.json']);
   await vm.runInContext("renderModule('m6')",context);
   assert.match(node('section-view').innerHTML,/Canadian privacy regulators/);
   assert.match(node('section-view').innerHTML,/<a href="#references">View the full reference library/);
-  assert.equal(requests.at(-1),'course/modules/m6/module.json');
+  assert.ok(requests.includes('course/modules/m6/lessons/1.json'));
+  const module6Details=read('modules/m6/lessons/1.json');
+  assert.match(node('section-view').innerHTML,new RegExp(module6Details.parts[0].sources[0][1].replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
   await vm.runInContext("renderModule('m7')",context);
   assert.match(node('section-view').innerHTML,/Previous score: 80% \(earlier quiz\)/);
   vm.runInContext('renderDashboard()',context);
