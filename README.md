@@ -11,7 +11,7 @@ A self-paced 26-week course for experienced technical leaders moving toward Chie
 - Light and dark appearance modes with a fixed switch and saved preference.
 - Original illustrations and explanatory diagrams, including illustrative charts labelled as examples.
 - Progress tracking stored locally in the browser with `localStorage`.
-- Quizzes and applied homework.
+- Module quizzes with one to three questions per lesson, answer explanations and lesson review links after submission, plus applied homework.
 - Curated links to current primary/reference material.
 - Canadian and EU privacy, AI governance, and security considerations alongside US material.
 - Responsive static site suitable for GitHub Pages.
@@ -52,6 +52,10 @@ In **Settings → Pages**, set **Source** to **GitHub Actions**. The site is bui
 ## Progress data
 
 Progress is stored in the browser under `caio-learning-progress-v1`. It is device/browser specific. Clearing browser storage resets progress.
+
+Each module and its catalog entry share a `quizVersion`. When a quiz changes, increment both values. Earlier scores remain visible as previous-version results and are archived when the learner submits the updated quiz. Each question has a `lessonId`, four `options`, a zero-based `answer`, and an `explanation`.
+
+The current 114-question set covers every lesson with two or three questions. [QUIZ_REVIEW.md](QUIZ_REVIEW.md) records the blind review rubric, revision rounds, and final scores of at least 9/10 for every module.
 
 ## Curriculum design
 

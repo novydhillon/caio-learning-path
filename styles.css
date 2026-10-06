@@ -84,6 +84,9 @@ main { min-width:0; }
 :root[data-theme="light"] .primary { color:#fff; }
 .secondary { border:1px solid var(--line); background:var(--panel-2); color:var(--text); }
 .quiz-result { margin-top:12px; font-weight:700; }
+.quiz-feedback { margin-top:14px; padding:12px; border:1px solid var(--line); border-radius:10px; }
+.quiz-feedback summary { cursor:pointer; font-weight:700; }
+.quiz-feedback p { margin:10px 0; }
 .homework { background:linear-gradient(135deg,rgba(242,196,109,.08),rgba(125,168,255,.05)); }
 .summary-box { border-left:3px solid var(--accent-2); }
 .callout { border-left:3px solid var(--warn); padding:10px 14px; background:rgba(242,196,109,.06); color:var(--muted); }

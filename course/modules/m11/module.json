@@ -47,44 +47,136 @@
   ],
   "quiz": [
     {
-      "q": "The capstone is strongest when it demonstrates:",
+      "q": "A public-company capstone has sourced revenue and strategy, an assumed volume estimate, and two unknowns: permission to retrieve claim text and the vendor’s future dashboard design. Discovery funding is limited. Which first test is most likely to change the initial real-data investment decision?",
       "options": [
-        "Only technical depth",
-        "Integrated business, technical, financial, risk, and leadership judgment",
-        "Only knowledge of current vendors",
-        "Only regulatory knowledge"
+        "Ask finance to verify public revenue before selecting a workflow, because the sourced company scale determines every pilot",
+        "Compare dashboard designs with users before retrieval tests, because interface adoption determines the pilot’s forecast value",
+        "Have the data and privacy owners validate retrieval purpose and access, with a narrower or deferred path if they fail",
+        "Replace assumed volume with industry averages and choose the vendor whose roadmap best matches the desired launch date"
       ],
-      "answer": 1
+      "answer": 2,
+      "lessonId": "m11.1",
+      "explanation": "Unpermitted retrieval can block the proposed real-data path regardless of its forecast benefit or interface quality. Prioritize that decision-changing uncertainty with owners and a fallback, while keeping the assumed volume explicit for later baseline validation."
     },
     {
-      "q": "A CAIO-ready portfolio should make trade-offs:",
+      "q": "Discovery budget can fund one substantive test now. A service use has plausible value, but its baseline is an industry average; data rights and security have been reviewed. Its ROI is only positive if current handling time exceeds 16 minutes. Which test should come first?",
       "options": [
-        "Invisible",
-        "Explicit, evidence-based, and reversible where possible",
-        "Vendor-defined",
-        "Purely technical"
+        "Time representative current cases and checking work, then update the investment case against the 16-minute sensitivity",
+        "Validate the vendor’s benchmark on routine prompts, then use the benchmark to revise the expected time gain",
+        "Survey users’ willingness to adopt, then fund the pilot if a majority favor the proposed interface",
+        "Prototype the integration at expected peak volume, then use its latency result to approve the ROI assumption"
       ],
-      "answer": 1
+      "answer": 0,
+      "lessonId": "m11.1",
+      "explanation": "The recommendation turns on the actual baseline, so representative end-to-end measurement directly tests the investment’s sensitive assumption. Benchmark, adoption, and latency work may matter later, but none establishes current handling time or the quality-equivalent comparison."
     },
     {
-      "q": "A capstone plan relies on a data source whose access rights are unknown. What should the plan show?",
+      "q": "A Canadian internal drafting pilot has passed, and management must choose its next discovery spend. An EU subsidiary proposes customer-visible coverage advice. Which unresolved question most directly determines whether the existing pilot’s authority and evidence can support that next use?",
       "options": [
-        "Treat access as approved to keep the roadmap simple",
-        "List the assumption, owner, validation step, and dependency before launch",
-        "Remove the data source from the diagram but keep the use case",
-        "Assign the risk to a future interviewer"
+        "Whether the EU team prefers the same interface layout, which could require revised training before transfer",
+        "Whether the new decision, affected people, data purpose, and local role change its assessment and release requirements",
+        "Whether the vendor offers its model from the same cloud provider, which would establish a reusable security boundary",
+        "Whether EU case volume is large enough to reuse the Canadian platform allocation without a separate local budget"
       ],
-      "answer": 1
+      "answer": 1,
+      "lessonId": "m11.1",
+      "explanation": "The audience and consequential decision change the intended use, while local data and role can alter applicable assessments and authority. Shared infrastructure or a larger volume does not establish that Canadian internal-drafting evidence authorizes this EU customer use."
     },
     {
-      "q": "How should a hypothetical capstone case be used in a CAIO interview?",
+      "q": "A fictional plan has 50,000 annual eligible cases, eight net minutes released per adopted case, CAD 45 per usable hour, CAD 90,000 fixed run cost, and CAD 2 variable cost per adopted case. Exclude setup and all other benefits. What adoption level gives annual net capacity value of zero?",
       "options": [
-        "Present it as a shipped company outcome",
-        "Avoid discussing trade-offs because results are hypothetical",
-        "Label it as hypothetical and use it to explain decisions, evidence, and how the plan would change under critique",
-        "Claim its forecasts as measured results"
+        "30% adoption, because each adopted case releases CAD 6 of capacity against CAD 90,000 fixed cost",
+        "60% adoption, because CAD 2 variable cost leaves CAD 3 of capacity value per adopted case",
+        "50% adoption, because half the cases must cover the fixed cost before setup is included",
+        "45% adoption, because CAD 4 per adopted case must cover CAD 90,000 fixed cost"
       ],
-      "answer": 2
+      "answer": 3,
+      "lessonId": "m11.2",
+      "explanation": "Eight minutes at CAD 45 per hour gives CAD 6 capacity value; subtract CAD 2 variable cost to obtain CAD 4 contribution per adopted case. Break-even is 90,000 ÷ 4 = 22,500 cases, or 45% of 50,000; adoption above that only yields positive modeled capacity value before setup, not automatic cash savings."
+    },
+    {
+      "q": "A capstone pilot passes routine-case quality but fails complex cases; its budget assumes benefits from both. One engineer remains, permission-aware retrieval and fallback are unfinished, and reviewers have no reserved time. The sponsor wants routine-only release next month and a second-use dashboard in parallel. Which executive recommendation makes the narrower proposal executable?",
+      "options": [
+        "Recalculate routine-only economics, fund retrieval, fallback, and reviewer capacity before a revised gate, and defer the second-use dashboard",
+        "Keep both benefit streams conditional, split engineering across retrieval and the dashboard, and provide reviewers after the first release",
+        "Use the routine-case pass as the original gate, fund retrieval first, and preserve the forecast while complex-case correction continues",
+        "Hold every use until complex cases pass, build the dashboard first, and fund reviewers from the savings forecast after launch"
+      ],
+      "answer": 0,
+      "lessonId": "m11.2",
+      "explanation": "The narrower scope needs its own quality gate and economics, including protected reviewer capacity and the technical dependencies that precede release. Deferring the second-use dashboard exposes the scarce-capacity tradeoff; retaining full-scope benefits or assuming future savings will supply pre-release controls makes the plan inconsistent."
+    },
+    {
+      "q": "A rights check blocks the planned 40,000-case pilot. A redesigned permitted source supports 10,000 eligible cases with 50% expected adoption, the same fixed run cost, and extra extraction work. Which revised packet could justify a new narrow-pilot decision?",
+      "options": [
+        "Retain the original scale forecast and use the smaller source for the first tranche while access remediation continues",
+        "Approve the original tranche against the new source, treating the reduced volume as an operational contingency",
+        "Show the permitted boundary, fresh quality test, revised volume and full costs, and a new capped gate with an owner",
+        "Use the original per-case benefit and remove the fixed cost because the narrower scope is only a temporary phase"
+      ],
+      "answer": 2,
+      "lessonId": "m11.2",
+      "explanation": "A permitted narrower design can be legitimate, but its source, volume, extraction work, quality, and fixed-cost allocation change the recommendation. The decision needs its own evidence and cap; preserving the larger forecast or omitting unchanged costs would make the new plan internally inconsistent."
+    },
+    {
+      "q": "A defense scenario has 60,000 eligible annual cases, 25% adoption, four gross minutes released per adopted case at CAD 42 per hour, CAD 1.20 variable correction and run cost per adopted case, and CAD 35,000 fixed cost. Exclude setup and other benefits. What should the CFO conclude from this scenario alone?",
+      "options": [
+        "CAD 42,000 positive net capacity value supports scale if the four-minute assumption holds",
+        "Negative CAD 11,000 net capacity value means this case alone does not support scale funding",
+        "CAD 7,000 positive net capacity value supports scale after a cash-realization decision",
+        "CAD 24,000 positive net capacity value supports scale if current reviewers absorb fixed costs"
+      ],
+      "answer": 1,
+      "lessonId": "m11.3",
+      "explanation": "15,000 adopted cases release 1,000 gross hours worth CAD 42,000; variable cost is CAD 18,000 and fixed cost CAD 35,000. The result is negative CAD 11,000 before setup, so additional evidence or a changed cost/value case is needed for scale."
+    },
+    {
+      "q": "A model change coincides with aggregate quality falling below the agreed floor. The representative audit uses an unchanged rubric and case mix; failures cluster in amendment citations. The proposed next region has a different language and remains untested. Which defense best uses this evidence?",
+      "options": [
+        "Raise human review across all regions and retest the new language first, since the observed failure has been localized",
+        "Collect a larger aggregate sample of the same cases before changing the model, keeping both expansion dates provisional",
+        "Retest the old model on routine cases and expand the new region if those cases meet the original aggregate floor",
+        "Hold expansion, compare versions on fresh amendment and other representative cases, and keep regional validation separate"
+      ],
+      "answer": 3,
+      "lessonId": "m11.3",
+      "explanation": "Stable rubric and case mix make a version-related citation defect a plausible hypothesis, which fresh comparative tests can examine without assuming causation. The failed gate holds expansion, and the untested language has a separate evidence gap that the amendment investigation cannot close."
+    },
+    {
+      "q": "After defense, the CFO corrects modeled annual value from CAD 300,000 to CAD 30,000; the vendor-data review also remains open. Which revised packet is internally consistent enough to request the next decision?",
+      "options": [
+        "All artifacts show the corrected value; the ask is capped discovery with real-data use conditional on the vendor review",
+        "The finance appendix shows corrected value; the board cover retains the scale ask while management tests adoption",
+        "All artifacts show corrected value; the original scale tranche remains because the prior committee already approved the plan",
+        "The deck removes the value claim; the budget retains the larger forecast to avoid reworking dependent milestones"
+      ],
+      "answer": 0,
+      "lessonId": "m11.3",
+      "explanation": "The correction must propagate through the model, narrative, forecast, and spending recommendation, while the open data review remains an explicit condition. Updating an appendix alone or keeping spending tied to disproved economics leaves conflicting decision evidence."
+    },
+    {
+      "q": "An interview portfolio forecasts a positive outcome in a hypothetical insurer case; the candidate also has real experience with a related internal tool. Which caption is most credible?",
+      "options": [
+        "Enterprise AI transformation: led the insurer strategy and used related delivery experience to validate its forecast",
+        "AI investment leadership: combined a modeled insurer outcome with prior tool results into one executive case",
+        "Hypothetical insurer case: designed the investment gates; describe actual tool authority and results separately",
+        "CAIO portfolio outcome: forecast the insurer benefit and omit the fictional company name to preserve confidentiality"
+      ],
+      "answer": 2,
+      "lessonId": "m11.4",
+      "explanation": "The capstone demonstrates design judgment, while actual work demonstrates personal authority and observed outcomes. Clear status and separate claims prevent a forecast or simulated decision from being mistaken for a delivered company result."
+    },
+    {
+      "q": "A candidate coordinated an evaluation review and recommended narrowing a launch. The service VP held release authority; the team later saw fewer reopens, alongside a staffing change and revised policy. Which leadership-story claim is best supported?",
+      "options": [
+        "I stopped the launch and reduced reopens, using evaluation evidence to overrule the service VP’s original delivery plan",
+        "I led the review and narrowing recommendation; the VP decided, and later reopens fell alongside other changes",
+        "I owned the launch outcome and the team’s measured reopen improvement, while the VP handled the formal approval",
+        "I established that evaluation caused the reopen improvement, because my recommendation preceded the measured change"
+      ],
+      "answer": 1,
+      "lessonId": "m11.4",
+      "explanation": "The story can claim the candidate’s review and recommendation, name the VP’s actual authority, and report the observed team result with its causal limits. Coordination does not imply release authority, and other simultaneous changes prevent attributing the entire outcome to one intervention."
     }
   ],
   "homework": "Final deliverable: an executive-ready Enterprise AI Transformation Plan and a 30-minute board presentation. Have a peer or mentor challenge the plan using CEO, CFO, CISO, and legal perspectives; revise based on the critique.",
@@ -111,5 +203,5 @@
       ]
     ]
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

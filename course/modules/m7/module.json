@@ -40,44 +40,112 @@
   ],
   "quiz": [
     {
-      "q": "Prompt injection is primarily a risk because it can:",
+      "lessonId": "m7.1",
+      "q": "A renewal agent may send records only to contacts authorized for the relevant account. A CRM note tells it to use a different address inside an approved corporate domain. Which send design enforces the account boundary if the model follows that note?",
       "options": [
-        "Only make responses longer",
-        "Manipulate model behavior and tool use through untrusted content",
-        "Increase model training speed",
-        "Remove the need for authentication"
+        "Restrict recipients to approved corporate domains and let a reviewer approve the model’s explanation of the send",
+        "Keep CRM retrieval tenant-scoped and let the model choose among email addresses appearing in retrieved notes",
+        "Check recipient entitlement for the account in the send service and obtain approval of the actual message and recipient",
+        "Show the actual message to a reviewer and rely on a corporate-domain allowlist for the recipient permission check"
       ],
-      "answer": 1
+      "answer": 2,
+      "explanation": "An approved domain can still contain an unauthorized recipient, so the send service must verify the actual account entitlement. Showing the effect supports meaningful approval, while tenant-scoped retrieval or model explanations alone do not enforce the final destination boundary."
     },
     {
-      "q": "Agentic AI increases security concern because:",
+      "lessonId": "m7.1",
+      "q": "Two retrieval designs face the same cross-tenant attack and legitimate-task tests. Design A uses separate tenant indexes but leaks through a shared answer cache. Design B uses enforced tenant filters and partitioned caches; it blocks the attack and completes 97% of legitimate tasks, above the agreed 95% utility gate. Which pilot decision is supported today?",
       "options": [
-        "Agents use more CSS",
-        "They can take actions using real permissions and tools",
-        "They cannot access data",
-        "They never need monitoring"
+        "Choose A because physical index separation outweighs the cache result; repair its shared cache during the pilot",
+        "Choose B within the tested scope, retain attack evidence, and retest tenant isolation after relevant changes",
+        "Require separate indexes in B before any pilot because filtered shared indexes cannot support tenant isolation",
+        "Retest utility on A and average both designs’ attack results to choose the better combined performance"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "B demonstrates both the protected boundary and the agreed useful-work result, whereas A has a known leak despite separate indexes. Architecture labels do not settle security; the passing composition supports a bounded pilot and remains subject to further attacks and change testing."
     },
     {
-      "q": "A vendor will summarize customer calls from Vancouver and Berlin. Which review is most useful before connecting data?",
+      "lessonId": "m7.1",
+      "q": "A supplier changes the model behind a CRM-writing agent. Which test packet most directly supports keeping the agent’s current action authority?",
       "options": [
-        "Only compare the vendor’s token prices",
-        "Map purpose, lawful use, access, retention, provider use, subprocessors, and relevant cross-border transfers",
-        "Assume data residency settles every privacy requirement",
-        "Upload a full customer archive to test performance"
+        "Expected and forbidden CRM writes, repeated-call recovery, user-bound permissions, utility cases, and a rehearsed stop path",
+        "Expected CRM writes, improved answer benchmarks, supplier security evidence, prompt stability, and a model-only rollback test",
+        "User-bound read permissions, retrieval attacks, document relevance, legitimate search cases, and a manual-service drill",
+        "Expected CRM writes, average latency, token budgets, message quality, supplier change notice, and a reviewer training record"
       ],
-      "answer": 1
+      "answer": 0,
+      "explanation": "The authority at risk is writing to CRM, so the packet must test legitimate and unauthorized actions, repeat behavior, and containment. The other packets contain useful evidence but omit action-boundary or recovery checks needed to establish this release’s operating scope."
     },
     {
-      "q": "An agent starts sending duplicate customer emails after a model update. What should happen first?",
+      "lessonId": "m7.2",
+      "q": "A supplier-deletion test removes a customer record from the main database, but an evaluation index still returns the person’s name on day 31. The approved rule requires identifiable evaluation copies removed within 30 days; isolated, inaccessible backups may persist for 90 days. Which action addresses the demonstrated failure?",
       "options": [
-        "Wait for the quarterly governance meeting",
-        "Pause its sending permission and contain the incident, then identify affected recipients and investigate",
-        "Delete logs so the next run is clean",
-        "Increase the agent’s step limit"
+        "Accept the deletion because the primary record is gone, and track the evaluation index as a separate development dataset",
+        "Move the evaluation index to a restricted workspace, keep it for 90 days, and apply the approved backup rule to its queries",
+        "Delete the isolated backups first, then use the existing evaluation index to confirm whether the primary deletion succeeded",
+        "Suspend retrieval from the affected evaluation copies, purge and retest them, and track backups under their separate approved rule"
       ],
-      "answer": 1
+      "answer": 3,
+      "explanation": "The accessible evaluation copy breaches the stated 30-day rule; calling it development data or a backup does not change that finding. A scoped suspension and verified purge address the exposed path, while the approved isolated-backup retention remains a separate monitored control."
+    },
+    {
+      "lessonId": "m7.2",
+      "q": "A call-summary pilot was approved for action items with restricted transcripts and short retention. Sales now wants the same calls used to train a coaching model. What decision is required?",
+      "options": [
+        "A new purpose review addressing lawful processing, notices where required, data minimization, terms, and controls",
+        "A model-quality review under the existing approval because both uses process the same original call source",
+        "A retention extension under the existing approval because the organization already controls the call recordings",
+        "A supplier approval under the existing purpose because training improves the accuracy of future call summaries"
+      ],
+      "answer": 0,
+      "explanation": "Coaching-model training changes the purpose and onward use, so it cannot inherit the summary approval automatically. Counsel and privacy owners must assess applicable requirements while the business owner defines the benefit and the new data-use boundary."
+    },
+    {
+      "lessonId": "m7.2",
+      "q": "A call service will operate through entities in British Columbia and the EU. Which review brief properly frames the applicable privacy requirements?",
+      "options": [
+        "Use PIPEDA for every Canadian record and GDPR for every EU record, then check only supplier storage locations",
+        "Use one global consent form and a shared deletion period, then apply technical access controls identically",
+        "Map entity, activity, data and flows to Canadian federal or provincial law and EU roles and obligations with counsel",
+        "Apply Canada’s federal automated-decision directive to the Canadian entity and rely on GDPR for the EU entity"
+      ],
+      "answer": 2,
+      "explanation": "Canadian coverage varies by organization, activity, province, and sector, while GDPR analysis includes processing roles and actual flows. Common controls can support both deployments, but a country label or universal consent form does not settle applicability."
+    },
+    {
+      "lessonId": "m7.3",
+      "q": "A model-provider outage forces an essential case service onto manual handling. It receives 180 essential cases per day, all due that day; tested manual capacity is 160. A fallback rehearsal confirms that a trained reserve adds 40 per day. An approved alternate model route has load-test evidence but no application-quality evaluation. What continuity decision meets the immediate essential workload?",
+      "options": [
+        "Use the existing 160-case manual service and carry the remaining essential cases into tomorrow’s first queue",
+        "Activate the tested reserve, prioritize essential cases within the 200-case capacity, and defer ordinary work with monitoring",
+        "Move all essential cases to the alternate model because its load test establishes enough capacity during the outage",
+        "Use the existing manual team on a first-arrival queue and estimate daily completions from its overall task-success rate"
+      ],
+      "answer": 1,
+      "explanation": "The existing fallback is 20 cases short of the essential daily requirement, while the tested reserve raises capacity to 200. Prioritization and backlog monitoring make the temporary boundary workable; technical throughput does not establish the alternate model’s quality in this essential workflow."
+    },
+    {
+      "lessonId": "m7.3",
+      "q": "A supplier assistant sends incorrect payment instructions to 60 accounts. One output also includes an identifiable customer’s bank details. The team has not yet established the controller, affected people’s locations, or whether the recipient retained the data. Which ownership and investigation plan should the incident commander use?",
+      "options": [
+        "Ask privacy to own all remediation and set regulator notices from the total of 60 accounts while operations investigates later",
+        "Ask operations to correct payment advice and treat notification as a customer-service choice until financial losses are confirmed",
+        "Ask communications to issue one global notice immediately and let the supplier decide which regulatory tests apply afterward",
+        "Assign operations to payment remediation; have privacy and legal establish disclosure facts, roles, and applicable notification tests"
+      ],
+      "answer": 3,
+      "explanation": "Incorrect instructions need business correction, while the personal-data exposure needs a factual record and the relevant breach analysis. Roles, jurisdiction, sensitivity, and exposure can affect notification, so a global count or financial-loss estimate cannot substitute for that assessment."
+    },
+    {
+      "lessonId": "m7.3",
+      "q": "After a malicious supplier document led to unauthorized bank-detail changes, the source is isolated and a patched agent passes action-permission tests. Seventeen queued changes created during the incident remain unverified. The trusted ledger and staff review can support draft-only work. Which restart best restores service without carrying those unverified actions forward?",
+      "options": [
+        "Restore automatic changes on the patched agent and review the seventeen queued items as the first production batch",
+        "Delete the seventeen queued items and restore automatic changes, treating the patched permission tests as completion of recovery",
+        "Quarantine the queued items for reconciliation and resume drafts from the trusted ledger with staff approval while monitoring",
+        "Restore the prior index and replay the queued items against it, using the ledger only if the prior answers differ"
+      ],
+      "answer": 2,
+      "explanation": "Passing tests of the repaired agent does not validate actions generated during the incident. Quarantine and reconciliation protect against replaying or silently losing them, while a limited trusted-source workflow restores useful service under a review boundary before automatic changes are reconsidered."
     }
   ],
   "homework": "Run a threat-model workshop for a hypothetical AI agent with email, CRM, and document access. Produce abuse cases, controls, residual risks, monitoring signals, and incident playbooks.",
@@ -110,5 +178,5 @@
     ],
     "note": "Confirm current rules and applicability with legal and privacy specialists."
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

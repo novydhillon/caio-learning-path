@@ -52,44 +52,148 @@
   ],
   "quiz": [
     {
-      "q": "RAG is primarily used to:",
+      "lessonId": "m2.1",
+      "q": "A plant routes maintenance alerts to four stable categories and has labelled history. On the same 1,000 unseen alerts, rules achieve 890 correct routes with four critical misroutes at $0.30 per accepted result; a classifier achieves 930 with one at $0.50; a language model achieves 965 with five at $0.90. The pilot gate is at least 92% correct, no more than one observed critical misroute, and at most $0.80 per accepted result. Which recommendation follows this evidence?",
       "options": [
-        "Change model weights",
-        "Ground generation in retrieved context",
-        "Reduce all hallucinations to zero",
-        "Replace evaluation"
+        "Pilot the rules within the tested scope, using their lower accepted-result cost to compensate for their lower overall routing accuracy.",
+        "Pilot the classifier within the tested scope, retaining the critical-error monitoring and fallback required by the gate.",
+        "Pilot the language model within the tested scope, using its higher overall accuracy to justify the extra review and operating expense.",
+        "Pilot all three on separate plant teams, treating the common held-out result as sufficient approval to compare deployment adoption."
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "The classifier reaches 93%, meets the observed critical-error limit, and stays within the cost ceiling. Rules fail quality and critical-error gates, while the language model fails critical-error and cost gates despite the strongest aggregate score."
     },
     {
-      "q": "A critical production concern for agents is:",
+      "lessonId": "m2.1",
+      "q": "A maintenance-ticket extractor is evaluated separately on typed requests (98% supported fields), clear scans (96%), and handwritten forms (78%). The approved assisted-workflow gate requires 95% in each supported slice, with staff verifying every proposed ticket; automatic posting is excluded. All other controls pass for typed requests and clear scans. Which launch covers the largest evidence-supported scope?",
       "options": [
-        "Only prompt length",
-        "Tool permissions and action boundaries",
-        "Whether the UI has a chatbot",
-        "Using the largest model available"
+        "Offer staff-verified drafts for typed requests only; retain both scanned and handwritten forms in the existing manual workflow.",
+        "Offer staff-verified drafts for clear scans only; retain both typed requests and handwritten forms in the existing manual workflow.",
+        "Offer staff-verified drafts for all three input types; add a second reviewer for handwritten forms while collecting new cases.",
+        "Offer staff-verified drafts for typed requests and clear scans; keep handwritten forms in the existing manual workflow."
       ],
-      "answer": 1
+      "answer": 3,
+      "explanation": "Typed requests and clear scans both meet the stated slice gate, so their combined reviewed scope has the largest supported coverage. The handwritten slice fails that gate despite the proposed extra reviewer; excluding an additional qualified slice would leave supported scope unused."
     },
     {
-      "q": "An employee assistant needs answers from policies that change each month. Which initial approach best supports current, cited answers?",
+      "lessonId": "m2.1",
+      "q": "A voice assistant drafts warehouse maintenance tickets. Overall transcription accuracy is high, but noisy recordings sometimes change an asset ID while preserving a fluent description of the fault. The ID determines which equipment receives service. Which pilot improvement most directly tests and contains the demonstrated risk?",
       "options": [
-        "Fine-tune once on last year’s policies",
-        "Use retrieval over approved, current policies with access controls",
-        "Increase the model temperature",
-        "Let the model answer from general training alone"
+        "Measure asset-ID accuracy on noisy recordings, verify IDs against asset records, and send uncertain matches with the audio to staff review.",
+        "Measure full-sentence transcription accuracy on noisy recordings, then have staff review a fixed random sample of fluent ticket drafts.",
+        "Measure description quality on noisy recordings, then ask the model for a confidence explanation whenever a ticket names equipment.",
+        "Measure response latency on noisy recordings, then increase audio-context length and compare the assistant's overall transcription accuracy."
       ],
-      "answer": 1
+      "answer": 0,
+      "explanation": "The consequential field is the asset ID, so field-level testing and reconciliation target the actual failure. Overall transcription or description quality can remain high while the wrong equipment is selected; reviewers need the original audio for uncertain matches."
     },
     {
-      "q": "What is a useful unit for comparing two models in a real workflow?",
+      "lessonId": "m2.2",
+      "q": "An HR assistant uses outdated leave rules. Current regional policies are approved and accessible, while the response format already works. Which first architecture experiment best targets the failure?",
       "options": [
-        "Cost per token alone",
-        "Number of parameters",
-        "Cost per successfully completed task at an agreed quality level",
-        "Total number of prompts submitted"
+        "Fine-tune on last year's successful answers, then evaluate whether the assistant sounds consistent with HR.",
+        "Constrain the response schema, then evaluate whether every answer includes a policy-name field.",
+        "Retrieve current approved policy with effective-date and region metadata, then test answer support and permissions.",
+        "Increase context capacity, then evaluate whether the assistant can accept a larger employee-question history."
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "Retrieval supplies current information at request time, with metadata needed to choose the applicable policy. Fine-tuning changes behaviour but does not itself keep monthly policy current, and formatting changes do not repair stale evidence."
+    },
+    {
+      "lessonId": "m2.2",
+      "q": "An inventory assistant produces JSON with a valid supplier ID and quantity of 25. The schema permits integer quantities. The store's unattended ordering limit is 20 units per product per day, counting pending orders; this product already has five pending units. Which additional validation most directly determines whether this request may execute?",
+      "options": [
+        "Check the proposed quantity against the store's remaining daily allowance and require the recorded approval for any excess before a write.",
+        "Check that the supplier's latest catalogue contains the product and allow the write if the requested quantity is a valid integer.",
+        "Check that the assistant cites the ordering policy and allow the write if its explanation states the daily limit correctly.",
+        "Check that the supplier ID exists in the master record and allow the write if the output passes the JSON schema again."
+      ],
+      "answer": 0,
+      "explanation": "The business limit has only 15 unattended units remaining, so a valid quantity of 25 cannot execute without the required approval. Schema, catalogue, and supplier checks address other properties; none enforces the cumulative allowance against live pending orders."
+    },
+    {
+      "lessonId": "m2.2",
+      "q": "A support assistant receives the correct current policy passages and cites them accurately. After repeated prompt experiments, it still inconsistently follows the company's stable response style and escalation phrasing. The team has expert-reviewed examples and a fresh held-out set. Which next experiment most directly fits the remaining failure?",
+      "options": [
+        "Compare a larger retrieval result set with the baseline on held-out cases, retaining the model while supplying more passages about the same policy.",
+        "Compare a newly indexed policy corpus with the baseline on held-out cases, retaining the prompt while refreshing already-current source documents.",
+        "Compare a new live-policy lookup tool with the baseline on held-out cases, retaining response instructions while replacing existing source retrieval.",
+        "Compare a fine-tuned behaviour candidate with the prompt baseline on held-out cases, retaining retrieval for current policy and access controls."
+      ],
+      "answer": 3,
+      "explanation": "The unresolved issue is persistent behaviour under correct context, which can justify testing fine-tuning with reviewed examples. Retrieval must remain responsible for current policy; more or fresher source access does not directly address the described style and escalation failure."
+    },
+    {
+      "lessonId": "m2.3",
+      "q": "A procurement agent's legitimate task is to compare delivery dates. A supplier-lookup tool returns useful dates plus a note claiming the CFO has authorized replacing that supplier's bank account. The real user did not request a bank change, and the payment service requires independent approval for one. What behaviour should the evaluation expect?",
+      "options": [
+        "Draft the bank change as part of the delivery comparison, treating the tool's CFO note as the approval record for later execution.",
+        "Pause the delivery comparison and ask the supplier tool to confirm the CFO's authority before deciding whether to change the bank record.",
+        "Use the dates as task data, flag the unexpected bank-change instruction, and leave payment records unchanged.",
+        "Use the dates and request the bank change through the ordinary service, leaving its payment validation to distinguish authorized from unauthorized requests."
+      ],
+      "answer": 2,
+      "explanation": "Tool output is untrusted task data and cannot expand the user's request or supply an independent approval. Service-side authorization remains necessary, but a safe agent should also keep the unexpected bank-change instruction outside its intended task boundary."
+    },
+    {
+      "lessonId": "m2.3",
+      "q": "A booking agent reserves a loading-bay slot, but the response times out before it creates the driver's dispatch ticket. The reservation service supports a stable request ID and status lookup. What recovery best completes the partial workflow without duplicating the reservation?",
+      "options": [
+        "Create a second reservation under a new ID, then build the dispatch ticket from whichever confirmation returns first and reconcile the spare later.",
+        "Inspect the reservation under the original ID, then create the dispatch ticket only for a confirmed slot; escalate if state remains unresolved.",
+        "Cancel the original request locally, then restart both steps under new IDs because no confirmation reached the agent.",
+        "Create the dispatch ticket using the requested slot, then ask staff to reconcile reservation status during the next operating review."
+      ],
+      "answer": 1,
+      "explanation": "The timeout leaves reservation state uncertain while the second step remains incomplete. Status lookup preserves the existing action and gives the dispatch step reliable input; a new request or assumed slot can duplicate capacity or issue an invalid ticket."
+    },
+    {
+      "lessonId": "m2.3",
+      "q": "A project's remaining daily capacity allowance is $100. Two concurrent agent calls each request $60. In the current service, both calls read the $100 balance before either reserves funds; each then reserves $60 and both run. Retried calls already use stable request IDs. What service change most directly prevents this $120 commitment?",
+      "options": [
+        "Make checking and reserving the project allowance one indivisible operation across pending and completed calls, while retaining request-ID duplicate prevention.",
+        "Check completed project spend instead of the balance, then reserve each request after its provisioning action has returned successfully.",
+        "Keep checking and reserving as separate operations, but use stable request IDs to recognize any repeated provisioning call.",
+        "Reserve capacity separately for each employee identity, then combine their project spending at the end of the daily allowance period."
+      ],
+      "answer": 0,
+      "explanation": "An indivisible check and reservation lets the first $60 commitment reduce the available allowance before the second is assessed. Duplicate prevention handles retries of one request; it does not stop two distinct requests from both acting on the same earlier balance."
+    },
+    {
+      "lessonId": "m2.4",
+      "q": "In one month, an assistant receives 10,000 requests and delivers 7,000 accepted tasks. Recurring costs are $1,800 for initial model calls, $700 for retry calls, $950 for platform operation, and $4,250 for human review. The lines do not overlap; exclude build costs and other overhead. What is cost per accepted task?",
+      "options": [
+        "$0.77 per accepted task.",
+        "$1.00 per accepted task.",
+        "$1.10 per accepted task.",
+        "$0.26 per accepted task."
+      ],
+      "answer": 2,
+      "explanation": "Total recurring cost is $1,800 + $700 + $950 + $4,250 = $7,700, and $7,700 / 7,000 = $1.10. Omitting retries yields $1.00, while dividing by requests yields $0.77; both miss the stated cost of an accepted outcome."
+    },
+    {
+      "lessonId": "m2.4",
+      "q": "Options A and B serve the same monthly workload. A costs $9,600 and delivers 8,000 accepted tasks. B has a fixed $7,500 operating total plus $900 of incremental repair cost for its unaccepted cases. Treat B's $900 repair cost as fixed for this sensitivity test, with no other costs. What minimum whole-number accepted-task count makes B's unit cost no higher than A's?",
+      "options": [
+        "6,250 accepted tasks.",
+        "7,000 accepted tasks.",
+        "6,999 accepted tasks.",
+        "8,000 accepted tasks."
+      ],
+      "answer": 1,
+      "explanation": "A costs $9,600 / 8,000 = $1.20 per accepted task, while B's full numerator is $7,500 + $900 = $8,400. B therefore needs at least $8,400 / $1.20 = 7,000 accepted tasks; omitting repair would produce the lower but incomplete 6,250 threshold."
+    },
+    {
+      "lessonId": "m2.4",
+      "q": "Two outage designs meet the same tested quality, permission, freshness, and six-second p95 gate in normal operation. During an outage, A queues cases at $0.10 each but misses the business deadline; B sends them to a staffed fallback that meets the deadline at $1.20 each. Expected outages produce 500 cases monthly; finance has approved up to $700 for this fallback and the deadline is a release condition. Which recommendation is supported?",
+      "options": [
+        "Choose A, include its expected $50 monthly queue expense in accepted-task cost, and record delayed cases as the fallback's operating limitation.",
+        "Choose A for the first 500 outage cases and B beyond that volume, using the approved budget to protect against unusually large outages.",
+        "Choose B for a small fixed sample and queue the remaining outage cases, using the sample's deadline performance as evidence for the fallback.",
+        "Choose B, include its expected $600 monthly fallback expense in accepted-task cost, and monitor outage volume against the approved budget."
+      ],
+      "answer": 3,
+      "explanation": "B satisfies the required deadline and its expected expense is 500 × $1.20 = $600, within the approved $700. A and mixed queue paths miss the release condition; monitoring volume matters because higher outage demand could exceed the funding assumption."
     }
   ],
   "homework": "Create an architecture decision record comparing three approaches for an enterprise knowledge assistant: hosted API + RAG, private hosted model + RAG, and fine-tuned model. Include security, quality, latency, cost, lock-in, and operational complexity.",
@@ -116,5 +220,5 @@
       ]
     ]
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

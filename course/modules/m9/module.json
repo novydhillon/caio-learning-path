@@ -42,44 +42,136 @@
   ],
   "quiz": [
     {
-      "q": "AI transformation fails most often when adoption is treated as:",
+      "q": "A company’s central AI release queue is slowing experienced domain teams. Local teams can evaluate and operate low-risk internal tools; security controls remain centrally governed. Which operating-model change best fits this evidence?",
       "options": [
-        "An operating-model change",
-        "A technology deployment only",
-        "A leadership priority",
-        "A measurable business program"
+        "Move workflow delivery and security policy to domain teams, retaining a central reporting service",
+        "Delegate a defined local change class, retain shared controls, and review decision speed and defects",
+        "Keep central release authority and expand its engineering capacity before changing the boundary",
+        "Delegate provider approval to domain leaders and require central sign-off on each workflow change"
       ],
-      "answer": 1
+      "answer": 1,
+      "lessonId": "m9.1",
+      "explanation": "Demonstrated local capability supports delegation within explicit boundaries, with shared controls and named outcome owners. Measuring decision speed and defects tests whether the new split works; blanket delegation or retaining every decision centrally ignores part of the evidence."
     },
     {
-      "q": "A federated model works best when:",
+      "q": "A data steward permits a new repository and security clears its access controls. Product evaluation then finds material citation failures on amended contracts, outside the preset release limit. The business sponsor wants release because access is approved. What resolves the ownership conflict?",
       "options": [
-        "Standards are optional",
-        "Central capabilities enable business-owned outcomes",
-        "Business units cannot build AI",
-        "The CAIO approves every prompt"
+        "The product owner releases routine contracts and records amendment failures as a data-steward exception",
+        "The central platform releases because source and access approvals cover the shared retrieval service",
+        "The data steward accepts citation risk because repository quality falls within its source responsibility",
+        "The product release owner holds the failing scope and returns with revised evaluation evidence under the gate"
       ],
-      "answer": 1
+      "answer": 3,
+      "lessonId": "m9.1",
+      "explanation": "Permitted access and functioning access controls do not establish that a workflow meets its product-quality gate. The accountable product release owner must enforce the evaluation condition, with any narrower design documented and tested rather than treating data approval as quality approval."
     },
     {
-      "q": "In a federated AI operating model, who should own whether a customer-service workflow improves?",
+      "q": "After cross-account exposure involving nested-group permissions, the function is paused and logs preserved. Engineering changes the permission filter; the implicated account pair now passes. Product, security, and privacy owners can review restart today. Which restart evidence plan is strongest?",
       "options": [
-        "The central model gateway team alone",
-        "The business or product team responsible for that workflow",
-        "The foundation-model vendor",
-        "The external auditor"
+        "Test fresh accounts including nested groups, revoked access, and both allowed and denied retrieval; assess scope before owners decide restart",
+        "Repeat the implicated pair under peak load, confirm expected latency, and ask the owners to approve a supervised restart",
+        "Test answer quality on a fresh sample within one account, confirm the patch deployment, and ask the owners to approve restart",
+        "Verify direct user-account mappings, carry forward earlier nested-group tests, and ask the owners to approve a limited restart"
       ],
-      "answer": 1
+      "answer": 0,
+      "lessonId": "m9.1",
+      "explanation": "The observed defect concerns permission inheritance and isolation, so fresh allowed and denied access cases should challenge those boundaries beyond the repaired account pair. Load, general answer quality, or prior tests that did not examine the changed filter leave a concrete containment risk unresolved; established owners also need the scope assessment."
     },
     {
-      "q": "Tool usage rises while manual corrections also rise. What should an adoption review conclude?",
+      "q": "An enterprise has funded English-language evaluators and product owners. Its only platform engineer owns identity, retrieval, and the stop procedure with no trained backup. Two pilots are queued, and a later French-language pilot lacks local reviewers. One permanent hire is available. Which plan best addresses the durable bottleneck while preserving regional release evidence?",
       "options": [
-        "Higher usage proves success",
-        "Ignore corrections because they are a quality metric",
-        "Investigate quality and workflow fit before treating usage as a benefit",
-        "Require more prompts per employee"
+        "Hire a model researcher, ask the vendor to support platform incidents, and translate English evaluation cases for the French pilot",
+        "Hire a French-domain evaluator, retain the sole engineer’s release workload, and centralize every incident decision with that engineer",
+        "Hire a platform engineer for delivery and backup ownership, phase the pilots, and reserve local French review before its evaluation gate",
+        "Hire another English evaluation lead, borrow engineering after each launch, and use the existing rubric to authorize French testing"
       ],
-      "answer": 2
+      "answer": 2,
+      "lessonId": "m9.2",
+      "explanation": "The current enduring gap is engineering capacity and a single point of operational knowledge, so a platform hire addresses both delivery and continuity. The regional review gap still needs allocated local expertise before French release; neither translation alone nor more already-funded English evaluation resolves it."
+    },
+    {
+      "q": "A second use is approved for discovery under a six-month CAD 220,000 talent cap. A product lead costs CAD 92,000, a temporary evaluation specialist CAD 38,000, reserved domain review CAD 50,000, reviewer backfill CAD 20,000, and training CAD 15,000. The baseline and grading protocol must exist before live testing. Which commitment fits both conditions?",
+      "options": [
+        "Commit CAD 195,000 excluding backfill, start live testing with the specialist, and train internal reviewers after launch",
+        "Commit CAD 215,000, reserve review and backfill before baseline work, and require internal calibration before live testing",
+        "Commit CAD 165,000 excluding review time, fund the permanent lead first, and ask managers to contribute reviewers as needed",
+        "Commit CAD 215,000, prioritize interface delivery, and use the specialist to establish the baseline during the first live month"
+      ],
+      "answer": 1,
+      "lessonId": "m9.2",
+      "explanation": "The five costs sum to CAD 215,000, leaving CAD 5,000 within the cap. Baseline measurement and calibrated review are prerequisites to the live test, so capacity cannot be left informal or scheduled afterward; backfill is part of making that time credible."
+    },
+    {
+      "q": "A partner created the grading guide and is due to leave in week eight. Which evidence best supports ending the engagement?",
+      "options": [
+        "Internal reviewers repeat the process unaided, reconcile material disagreements, and issue a release recommendation",
+        "All reviewers complete training and confirm they understand the partner’s grading examples",
+        "The partner reruns the evaluation successfully and transfers the slides and final result to the team",
+        "The evaluation lead accepts the guide and plans an internal reproduction at the next model change"
+      ],
+      "answer": 0,
+      "lessonId": "m9.2",
+      "explanation": "Transfer is demonstrated by internal staff independently reproducing the task and using its results in a decision. Training attendance, a partner-run success, or a future test does not establish that the company can operate the evaluation after the partner leaves."
+    },
+    {
+      "q": "Tool use rises from 400 of 1,000 eligible cases to 900 of 1,500; corrections rise from 40 of 400 used cases to 90 of 900. The second month includes harder cases and a new review checklist. What can an adoption review conclude now?",
+      "options": [
+        "Adoption rose from 40% to 60% and quality stayed constant because both correction rates are 10%",
+        "Adoption rose from 40% to 60%, but errors doubled, so the model should revert immediately",
+        "Adoption rose from 40% to 60% and corrections fell relative to eligible cases, supporting wider rollout",
+        "Adoption rose from 40% to 60%; the unchanged 10% observed correction rate needs segmented review before a quality claim"
+      ],
+      "answer": 3,
+      "lessonId": "m9.3",
+      "explanation": "Usage increased as a share of eligible work, while observed correction rates stayed at 10% of use. Changed case mix and detection rules prevent that equal rate from proving equal underlying quality; segment severity and cases under consistent review before deciding whether expansion is justified."
+    },
+    {
+      "q": "A private company operates in Canada and the EU and is planning AI literacy training. Which proposal follows the lesson’s jurisdiction and competence approach?",
+      "options": [
+        "Apply Canada’s federal automated-decision directive company-wide and use it as the EU training baseline",
+        "Use the same completion certificate in both regions, with local legal notices attached to the course",
+        "Check applicable local duties and assess role-specific judgment on approved uses, errors, and escalation",
+        "Train technical staff on model operation and let business managers decide whether other roles need practice"
+      ],
+      "answer": 2,
+      "lessonId": "m9.3",
+      "explanation": "Training should test the judgments each role makes in its actual workflow, while local owners confirm applicable obligations. Canada’s federal directive is not a blanket private-sector rule, and certificates or technical training alone do not demonstrate safe use by all affected roles."
+    },
+    {
+      "q": "A rollout rewards completed cases per shift. Reviewers report rushed checking, harder residual cases, and little time for feedback. The sponsor proposes a higher volume target based on drafting speed. Which workforce response best supports a defensible target decision?",
+      "options": [
+        "Keep the volume incentive and add optional refresher training, using manager escalation for the difficult cases",
+        "Consult staff and relevant representatives, protect review and feedback time, and test workload and quality before changing targets",
+        "Raise the target for routine cases first and assign complex exceptions to experienced reviewers at the existing workload",
+        "Fund a reporting channel and retain the target, treating individual review speed as the main difference to coach"
+      ],
+      "answer": 1,
+      "lessonId": "m9.3",
+      "explanation": "The evidence concerns incentives and real work allocation, so drafting speed alone cannot set the productivity target. Protected checking and feedback, local consultation where applicable, and outcome-level workload evidence test whether the redesign is sustainable rather than shifting unbudgeted work to reviewers."
+    },
+    {
+      "q": "A Canadian French-language team adapts an English internal FAQ pattern. Data access is approved, but its local test finds errors concentrated in one policy category; the preset pre-live gate requires no material unsupported advice in that scope. Two other categories pass fresh local tests. What transfer proposal is defensible?",
+      "options": [
+        "Run the entire FAQ as a supervised pilot, routing the known weak category to experienced French reviewers",
+        "Carry forward the English result for the weak category, using the successful French tests to authorize the overall pattern",
+        "Repair the weak category and repeat its previously failed questions, retaining the original full-scope release date",
+        "Seek a separately bounded release of the tested categories with fallback, and fresh retesting before adding the failed category"
+      ],
+      "answer": 3,
+      "lessonId": "m9.4",
+      "explanation": "A narrower use can be a legitimate new release decision when its tested boundaries, fallback, and owner are explicit. The failed category remains outside that scope until it meets the material-error gate on fresh evidence; supervision or success elsewhere does not turn the full-scope failure into a pass."
+    },
+    {
+      "q": "A community’s attendance doubles, but only two of ten attempted pattern transfers pass local evaluation. Which measure best shows whether learning is producing usable reuse?",
+      "options": [
+        "Validated transfers divided by attempted transfers, paired with local outcomes and reported defects",
+        "Clinic participants divided by eligible employees, paired with the number of published patterns",
+        "Patterns downloaded divided by library visits, paired with search satisfaction after each session",
+        "Transfers attempted divided by active champions, paired with quarterly training completion"
+      ],
+      "answer": 0,
+      "lessonId": "m9.4",
+      "explanation": "Two validated transfers out of ten attempted gives a 20% transfer success rate and points to a learning problem worth examining. Attendance and downloads measure activity; local outcomes and defect feedback establish whether shared methods work in their new settings."
     }
   ],
   "homework": "Design the first 18 months of an AI organization for a 5,000-person enterprise: org chart, central vs federated responsibilities, hiring sequence, upskilling plan, and adoption KPIs.",
@@ -106,5 +198,5 @@
       ]
     ]
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }
