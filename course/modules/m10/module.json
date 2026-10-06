@@ -40,44 +40,112 @@
   ],
   "quiz": [
     {
-      "q": "A board AI update should emphasize:",
+      "q": "Management’s pilot budget has three months left. Quality is promising, but finance has not verified net value and no scale decision is due today. Which board request most clearly separates oversight from management’s next evidence task?",
       "options": [
-        "Transformer internals",
-        "Strategic value, risk, investment, governance, and decisions",
-        "Prompt-writing tips",
-        "A full engineering backlog"
+        "Authorize the full scale envelope now, while management returns with net-value evidence before committing vendor contracts",
+        "Approve one model and a common accuracy threshold now, leaving management to verify value within the remaining pilot budget",
+        "Confirm the strategic risk and spending boundaries, require a dated net-value gate, and retain management’s delegated pilot decisions",
+        "Approve each pilot’s revised release plan now, reserving capital discussion for the first quarter with realized benefits"
       ],
-      "answer": 1
+      "answer": 2,
+      "lessonId": "m10.1",
+      "explanation": "The immediate oversight issue is whether management is operating within acceptable strategy, exposure, and capital limits while closing an evidence gap. A dated return gate avoids premature scale authorization; directors do not need to select models or perform delegated release management."
     },
     {
-      "q": "Good executive communication about uncertainty should:",
+      "q": "A pilot’s draft time falls from 24 to 17 minutes, corrections rise from 6% to 11%, and cost per correct case rises from CAD 4.20 to CAD 4.80. The comparison is representative but cause is unproven. Which board row most accurately turns these facts into an investment decision?",
       "options": [
-        "Hide uncertainty to build confidence",
-        "Quantify assumptions and define checkpoints",
-        "Avoid scenarios",
-        "Promise deterministic outcomes"
+        "Show all three changes; service VP holds expansion while evaluation and finance examine rework and return in two weeks",
+        "Show all three changes; service VP expands to recover fixed cost while evaluation investigates corrections and returns in two weeks",
+        "Show all three changes; service VP attributes the higher cost to review, asks finance to exclude it, and returns in two weeks",
+        "Show all three changes; service VP reports seven minutes of realized cash savings while finance checks staffing and returns in two weeks"
       ],
-      "answer": 1
+      "answer": 0,
+      "lessonId": "m10.1",
+      "explanation": "The representative comparison shows faster drafting alongside worse corrections and unit cost, so a temporary expansion hold and dated investigation fit the mixed evidence. The other rows infer an unproven cause, exclude a real cost, or treat time as cash before staffing effects are established."
     },
     {
-      "q": "What should a board be asked to decide about an AI program?",
+      "q": "An EU deployment row has counsel’s completed review for internal draft advice using existing employee permissions. The requested extension would display answers directly to customers, using the same model and sources. Which revised row accurately represents the current evidence?",
       "options": [
-        "The exact prompt wording",
-        "An investment envelope or risk appetite tied to the company’s strategy",
-        "Which embedding dimension to use",
-        "Every model API call"
+        "EU customer advice: existing role and data review complete; product owner evaluates the translated interface before the release date",
+        "EU customer advice: internal review complete; service owner carries its classification and tests customer satisfaction before the release date",
+        "EU customer advice: source access review complete; risk owner accepts external-output risk within the existing internal release approval",
+        "EU customer advice: internal assessment remains scoped; local counsel and product owners reassess the changed use and quality before release"
       ],
-      "answer": 1
+      "answer": 3,
+      "lessonId": "m10.1",
+      "explanation": "The completed internal assessment is useful evidence but has a documented scope that excludes direct customer answers. Reassessing the intended use and customer-quality boundary with the authorized owners preserves that distinction; unchanged technical components do not prove the legal or operational assessment transfers."
     },
     {
-      "q": "A scorecard shows monthly users up 40% while escalations and corrections double. What belongs in the executive update?",
+      "q": "A buy option originally sent claim text to a vendor. Privacy now permits a redesigned route that sends de-identified extracts only, but local preprocessing and review add costs absent from the comparison. Buying was previously cheaper than API build. What should the memo recommend next?",
       "options": [
-        "Only the user growth",
-        "The usage and quality signals together, an owner for investigation, and a near-term action",
-        "Only the number of prompts",
-        "A claim that adoption and outcomes improved"
+        "Choose buying because permission has been resolved, and absorb the extra local work within the existing contingency",
+        "Re-cost and evaluate the permitted design against build and defer on the same outcome and horizon before selecting a route",
+        "Choose API build because buying’s original data design failed, using the original buy quote as its cost comparison",
+        "Rank buying with a lower privacy-risk score, leaving added review costs for the operating owner after the procurement decision"
       ],
-      "answer": 1
+      "answer": 1,
+      "lessonId": "m10.2",
+      "explanation": "The permitted redesign removes one constraint but changes both workflow cost and potentially quality. Reconcile those inputs on a common basis before recommending buy, build, or defer; an earlier price advantage cannot establish the new route’s economics."
+    },
+    {
+      "q": "A memo forecasts 30,000 annual eligible cases, 60% adoption, five net minutes released per adopted case, and CAD 48 per usable hour. The permitted route also costs CAD 24,000 fixed annually and CAD 2 per adopted case. Exclude setup and other benefits. What annual result, before any cash-realization decision, should the option table show?",
+      "options": [
+        "CAD 72,000 net capacity value, using all released time at the stated hourly value",
+        "CAD 48,000 net capacity value, deducting fixed cost because variable work is already staffed",
+        "CAD 12,000 net capacity value, deducting both fixed and adopted-case operating costs",
+        "CAD 36,000 net capacity value, deducting per-case costs because fixed cost is shared"
+      ],
+      "answer": 2,
+      "lessonId": "m10.2",
+      "explanation": "18,000 adopted cases release 1,500 hours worth CAD 72,000. Stated operating cost is CAD 24,000 + 18,000 × CAD 2 = CAD 60,000, leaving CAD 12,000 net capacity value before setup; a staffing or other operational decision is still needed for a cash claim."
+    },
+    {
+      "q": "A pilot passes its quality floor for routine cases but fails on complex cases. Its approved expansion gate required both, and the financial forecast assumes all case types. The team proposes a routine-only extension within the remaining cap. Which memo best supports that decision?",
+      "options": [
+        "Approve routine expansion now and preserve the original benefit forecast while complex-case work continues",
+        "Continue the full pilot with extra complex-case review, treating the routine pass as enough evidence for the next tranche",
+        "Defer any further work until complex cases pass, retaining the original scope and spending the cap on interface improvements",
+        "Propose a revised routine-only gate and net-value forecast, retain complex-case fallback, and seek approval for the bounded extension"
+      ],
+      "answer": 3,
+      "lessonId": "m10.2",
+      "explanation": "Routine evidence can support a narrower proposal, but that is a changed scope with changed volumes, costs, and benefits. The decision maker should approve its specific gate and cap; retaining the full-scope forecast or inferring an all-case pass from one segment would conflict with the original terms."
+    },
+    {
+      "q": "Twenty registered material uses include 16 with current evaluations. Audit finds five further material uses, two already evaluated under the same criterion. What coverage should be reported for all known material uses?",
+      "options": [
+        "72%, from 18 current evaluations among 25 known uses, with discovered gaps assigned for remediation",
+        "80%, from 16 current evaluations among 20 registered uses, with the five additions listed in the audit appendix",
+        "64%, from 16 current evaluations among 25 known uses, excluding evaluations outside the registered process",
+        "60%, from 18 current evaluations among 30 uses, adding the five discoveries to both the current and prior inventory"
+      ],
+      "answer": 0,
+      "lessonId": "m10.3",
+      "explanation": "There are 25 known material uses and 18 current evaluations under the stated common criterion, giving 72%. A registered-only denominator hides known exposure, while excluding valid newly discovered evaluations understates coverage; the inventory expansion and outstanding owners should be explicit."
+    },
+    {
+      "q": "An executive dashboard reports zero AI incidents. Only 6 of 20 material uses have a tested reporting route, reviewer scenario checks show weak failure recognition, and another rollout asks for funding. Which recommendation best uses the dashboard’s evidence?",
+      "options": [
+        "Expand rollout under the zero-incident result and fund awareness training, with reporting-route coverage checked after launch",
+        "Treat zero incidents as low-confidence evidence, fund detection and reviewer competence, and condition expansion on tested readiness",
+        "Commission an incident audit for the six tested uses, retaining expansion because those systems establish the central process works",
+        "Set a higher incident-count target to encourage reporting, fund the new rollout, and use later reports to prioritize control improvements"
+      ],
+      "answer": 1,
+      "lessonId": "m10.3",
+      "explanation": "Zero reported incidents is weak assurance when detection, recognition, and reporting cover only part of the portfolio. Funding those capability gaps and establishing a readiness gate improves the evidence before exposure grows; a numerical reporting target or successful route in six uses does not establish coverage for the others."
+    },
+    {
+      "q": "A team changes adoption from monthly login to correct eligible-workflow completion. Last year’s logs lack workflow outcomes, so a reliable backcast is unavailable. Which reporting proposal best preserves useful history without fabricating comparability?",
+      "options": [
+        "Backcast the new measure using current completion-to-login ratios, then connect the historical and new series",
+        "Connect the two observed series with a documented definition break and describe the old and new percentages as one trend",
+        "Replace historical percentages with estimated completions from manager recall, attaching a low-confidence label",
+        "Preserve the old series, start the new measure separately, and show both during overlap with the data gap explained"
+      ],
+      "answer": 3,
+      "lessonId": "m10.3",
+      "explanation": "A disclosed break helps, but the two percentages still measure different behaviors and should not be treated as one comparable trend. Preserve actual history and collect an overlap period; applying current ratios or recalled outcomes to missing past data would add unsupported assumptions to the main metric."
     }
   ],
   "homework": "Prepare a 10-slide board update on enterprise AI: market context, strategy, portfolio, value realized, material risks, governance, platform, workforce, 12-month roadmap, and 3 decisions requested from the board.",
@@ -104,5 +172,5 @@
       ]
     ]
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

@@ -74,44 +74,100 @@
   ],
   "quiz": [
     {
-      "q": "Which outcome is most characteristic of a CAIO mandate?",
+      "lessonId": "m1.1",
+      "q": "A CAIO charter gives the CDO consent authority over source-data quality and engineering ownership of integration reliability. A stock-replenishment assistant passes integration tests, but duplicate product IDs make one warehouse's recommendations unreliable. The CDO withholds consent for that warehouse; the other warehouses have passed their quality gates. What recommendation best preserves the charter and useful delivery?",
       "options": [
-        "Owning all enterprise software delivery",
-        "Maximizing enterprise value from AI while governing risk",
-        "Running only the ML engineering team",
-        "Choosing a single foundation model vendor"
+        "Propose release across warehouses with extra engineering sampling, treating passed integration tests as sufficient evidence for the current scope.",
+        "Ask the CDO to take integration ownership during remediation, then request one combined quality-and-reliability approval for every warehouse.",
+        "Propose release for the qualified warehouses and a joint data-and-engineering repair plan before requesting consent for the excluded warehouse.",
+        "Hold every warehouse until the shared dataset is repaired, treating the withheld consent as an enterprise-wide block despite separate quality results."
       ],
-      "answer": 1
+      "answer": 2,
+      "explanation": "Consent applies to the source-quality issue in its stated scope, while engineering still owns the system repair and reliability evidence. A scoped release preserves that authority and uses the qualified evidence; integration tests alone do not answer the CDO's quality concern."
     },
     {
-      "q": "The most sustainable CAIO operating model is usually:",
+      "lessonId": "m1.1",
+      "q": "An assistant pilot reduces average handling time by 20%, but reopened cases rise from 5% to 11%. Eligible-case coverage and staffing are unchanged. What is the strongest recommendation for the first-year scorecard review?",
       "options": [
-        "A fully centralized AI team that owns every use case",
-        "A governance-only office with no delivery capability",
-        "A federated model with central standards and distributed execution",
-        "A procurement function inside IT"
+        "Hold expansion and investigate whether errors and rework offset the measured time reduction.",
+        "Expand and report the time reduction as realized value while tracking reopenings separately.",
+        "Continue expansion but revise the target to combine handling time and reopening rate into one score.",
+        "Stop measuring handling time and judge the pilot solely by the reopened-case rate."
       ],
-      "answer": 2
+      "answer": 0,
+      "explanation": "Reopened cases are a countermeasure for the claimed speed benefit. The increase makes expansion premature because faster initial handling may create additional work or harm; both measures should remain visible."
     },
     {
-      "q": "A business team proposes an AI customer assistant. Which division of responsibility is clearest?",
+      "lessonId": "m1.1",
+      "q": "A business unit wants to expand an internal read-only assistant to customers and allow it to change account details. The monthly portfolio review approved its original pilot budget. Which next review is most appropriate?",
       "options": [
-        "The CAIO writes every answer and operates support",
-        "Product owns the customer workflow; shared teams own standards and controls; the CAIO oversees portfolio and release evidence",
-        "The CISO owns the customer journey",
-        "The model vendor decides whether to launch"
+        "A portfolio review focused on incremental benefit because the original pilot already passed release.",
+        "A procurement review focused on vendor capacity because the underlying model will stay the same.",
+        "An adoption review focused on training customers because the internal users already accepted the workflow.",
+        "A release review of the new audience and write authority against fresh evidence and operating controls."
       ],
-      "answer": 1
+      "answer": 3,
+      "explanation": "Audience and autonomy changes alter exposure even when the model remains unchanged. The release review must examine representative evaluation, permissions, fallback, monitoring, and accountable approval for the proposed scope."
     },
     {
-      "q": "You know how to design an AI governance process but have never led one. What belongs in your transition map?",
+      "lessonId": "m1.2",
+      "q": "A prospective CAIO can design evaluation and finance plans but has no reviewed decision evidence in either. In the next 90 days, they can chair an evaluation decision for a customer pilot with a risk reviewer, or draft a finance memo without access to a finance reviewer. The customer launch is due in eight weeks; portfolio budgeting is six months away. Which development priority is best supported?",
       "options": [
-        "A knowledge gap only",
-        "No gap because you know the terminology",
-        "An evidence gap with a plan to produce a reviewed governance artifact",
-        "A reason to omit governance from your charter"
+        "Start finance, because the wider capital mandate outweighs the lack of a reviewer before the budget cycle.",
+        "Start evaluation, using the imminent decision and reviewer to demonstrate judgment on the current launch risk.",
+        "Divide time equally, producing two draft artifacts even if neither reaches a reviewed decision in the quarter.",
+        "Start general CAIO study, postponing both artifacts until the candidate can claim comparable experience in each."
       ],
-      "answer": 2
+      "answer": 1,
+      "explanation": "The evaluation opportunity combines imminent consequence, a weak evidence base, and access to a real decision and challenger. Finance remains important, but its later deadline and missing reviewer make it a less effective first evidence sprint under these conditions."
+    },
+    {
+      "lessonId": "m1.2",
+      "q": "A candidate writes an evaluation plan, has a domain expert critique it, revises the cases, and issues a reasoned pilot recommendation. It is a clearly labelled fictional exercise with no deployment or measured follow-up. On the lesson's evidence scale (2: credible design; 3: specialist-reviewed artifact; 4: led a decision or deployment with measured results and follow-up), which entry is strongest?",
+      "options": [
+        "Level 2 for the evaluation work; fictional use cases cannot provide evidence beyond an independently prepared design.",
+        "Level 4 for evaluation leadership; the revised recommendation counts as a decision even without observed operating results.",
+        "Level 3 for the reviewed evaluation artifact; seek a live decision with measured follow-up to establish level 4 evidence.",
+        "Level 3 for deployment leadership; specialist review establishes delivery ownership although the system remains fictional."
+      ],
+      "answer": 2,
+      "explanation": "The evidence establishes a reviewed artifact and documented judgment, which fits level 3. Fictional work can produce useful reviewed evidence, but it cannot establish live deployment ownership or the measured results and follow-up required for level 4."
+    },
+    {
+      "lessonId": "m1.3",
+      "q": "Privacy must consent before customer transcripts go to a vendor; retention and training terms remain unresolved. Procurement may negotiate terms but cannot grant privacy consent. Both a local redacted test of real transcripts and a vendor test of wholly synthetic transcripts are already authorized. Which two-week plan best tests usefulness on the real workflow while respecting delegated authority?",
+      "options": [
+        "Defer both authorized tests; sales owns the benefit, procurement and privacy resolve terms, and sales resumes discovery after the two-week review.",
+        "Upload redacted customer transcripts under procurement's contract authority; sales owns the benefit, privacy checks terms, and the group reviews results in two weeks.",
+        "Defer customer upload and test only synthetic vendor examples; sales owns the benefit, procurement and privacy resolve terms, and the group reviews results in two weeks.",
+        "Defer customer upload; sales owns the benefit, procurement and privacy resolve terms, and sales runs the authorized local test before the two-week review."
+      ],
+      "answer": 3,
+      "explanation": "The local real-transcript test is authorized and provides more direct workflow evidence than synthetic examples alone. The plan also preserves privacy's consent authority over vendor upload; procurement's negotiation role does not transfer that authority."
+    },
+    {
+      "lessonId": "m1.3",
+      "q": "One AI committee is becoming a bottleneck because it debates funding, architecture, release evidence, and urgent incidents in the same monthly meeting. What redesign best follows the lesson's stakeholder approach?",
+      "options": [
+        "Give separate forums defined decisions and packets, with a named incident path and escalation authority.",
+        "Keep one committee but increase membership so each function can approve its own portion during the meeting.",
+        "Delegate every decision to business sponsors and let the committee review quarterly summaries of their choices.",
+        "Create separate forums by executive title and require each forum to sign off every AI initiative."
+      ],
+      "answer": 0,
+      "explanation": "Forums work when organized around decisions such as investment, design, release, and incident response. More members or repeated signoffs preserve the queue, while blanket delegation can bypass control owners' authority."
+    },
+    {
+      "lessonId": "m1.3",
+      "q": "A board packet says a support assistant should improve enterprise service, based on a supervised pilot in one unit. Controls for wider deployment are designed but untested. What should the CAIO change before presenting the funding request?",
+      "options": [
+        "Present the pilot's percentage gain as the enterprise forecast, then cover limitations in the technical appendix.",
+        "State the tested population and supervision, distinguish proposed controls from results, and request a bounded next stage.",
+        "Replace the benefit figures with model benchmarks so directors can compare vendors without narrow pilot assumptions.",
+        "Remove the funding request until all units have been tested, then return with a single enterprise result."
+      ],
+      "answer": 1,
+      "explanation": "The board needs a decision supported by the actual evidence and its limits. A bounded next stage can buy missing evidence; neither extrapolating a narrow pilot nor substituting benchmarks establishes enterprise value or proven controls."
     }
   ],
   "homework": "Write a 2-page CAIO charter for a 5,000-person company. Include mission, decision rights, interfaces with CIO/CTO/CDO/CISO, first-year outcomes, and what the CAIO explicitly does not own.",
@@ -138,5 +194,5 @@
       ]
     ]
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

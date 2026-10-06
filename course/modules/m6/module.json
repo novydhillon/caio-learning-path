@@ -66,44 +66,148 @@
   ],
   "quiz": [
     {
-      "q": "The strongest AI governance design is:",
+      "lessonId": "m6.1",
+      "q": "An assistant approved to summarize equipment-maintenance reports will now assign repair priority. Low-ranked reports may wait weeks; the summarizer’s tests measured whether facts appeared in its notes. What new evidence is needed for the funding decision?",
       "options": [
-        "A final legal review after development",
-        "Lifecycle controls proportional to risk",
-        "A ban on third-party models",
-        "One universal approval path for every use case"
+        "A larger summary sample showing that the tool captures every maintenance term used by the engineering teams",
+        "A supplier comparison showing that repair-priority outputs are consistent across several leading models",
+        "A reviewer signoff procedure for the priority list, using the existing summary-quality release threshold",
+        "A map of delayed-repair harms, comparison with current triage, and realistic tests of ranking and reviewer intervention"
       ],
-      "answer": 1
+      "answer": 3,
+      "explanation": "Repair priority changes how the output affects equipment and people, so factual summary quality cannot establish readiness for that decision. The new map and measurements must follow errors into delayed action, with an accountable owner and legal or safety review appropriate to the setting."
     },
     {
-      "q": "ISO/IEC 42001 is best understood as:",
+      "lessonId": "m6.1",
+      "q": "A utility tests 240 inspection summaries. Eighteen omit a finding that requires follow-up; reviewers correct exactly two-thirds of those omissions under normal workload. No other summary has this error. What is the residual error rate across all summaries after review?",
       "options": [
-        "A model benchmark",
-        "An AI management system standard",
-        "A privacy law",
-        "A cloud architecture framework"
+        "2.5%: six summaries still omit the finding; assess severity against the agreed workflow release threshold",
+        "7.5%: eighteen summaries still omit the finding; assess severity against the agreed workflow release threshold",
+        "5%: twelve summaries still omit the finding; assess severity against the agreed workflow release threshold",
+        "33.3%: six summaries still omit the finding; assess severity against the agreed workflow release threshold"
       ],
-      "answer": 1
+      "answer": 0,
+      "explanation": "Reviewers correct 12 of the 18 omissions, leaving 6 among 240 summaries: 6 ÷ 240 = 2.5%. The 33.3% figure describes the fraction of original omissions missed, while the release decision also needs their consequences and the predefined threshold."
     },
     {
-      "q": "In the NIST AI RMF, what does the MAP function help a team do?",
+      "lessonId": "m6.1",
+      "q": "Leadership retires an AI stock-replenishment pilot after persistent forecast errors exceed its accepted risk boundary. Scheduled runs and stored recommendations still feed buyers’ order queues. Which retirement decision best stops its influence while preserving accountability?",
       "options": [
-        "Choose the cheapest model",
-        "Understand the system’s context, intended use, affected people, and risks",
-        "Replace every legal review",
-        "Approve a model based on one benchmark"
+        "Stop the model endpoint, preserve required records, and let buyers work through the existing recommendation queue",
+        "Disable runs and credentials, separate stored recommendations from ordering, preserve required records, and verify manual control",
+        "Hide the user interface, preserve required records, and keep background forecasts available for buyers who request them",
+        "Stop new forecasts, preserve required records, and allow the downstream order system to process the remaining recommendations"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Retirement must reach downstream actions and retained outputs, not only the model or interface. The accountable owner needs evidence that runs have stopped and buyers use the manual process; required records preserve the decision and incident history without keeping automation active."
     },
     {
-      "q": "A recruitment tool will be used in Toronto and Paris. What is the right governance starting point?",
+      "lessonId": "m6.2",
+      "q": "A company’s ISO/IEC 42001 certificate covers headquarters, but an acquired subsidiary runs the group’s largest customer AI service outside that scope. Which board statement is defensible?",
       "options": [
-        "Apply one US federal rule to both offices",
-        "Assess EU AI Act role and use category, GDPR personal-data processing, and the applicable Canadian privacy regime for the actual deployments",
-        "Assume the EU AI Act replaces GDPR",
-        "Apply Canada’s federal public-service automation directive to every private employer"
+        "The certificate assures the subsidiary if it uses the same central AI policy and approved model suppliers",
+        "The certificate assures group AI governance because headquarters owns the parent company’s policy decisions",
+        "The certificate covers headquarters; the subsidiary needs its own evidence and a decision about scope expansion",
+        "The certificate covers management controls, so operational service boundaries do not limit the assurance claim"
       ],
-      "answer": 1
+      "answer": 2,
+      "explanation": "Certification assesses conformity within the declared audited scope. Shared policies do not demonstrate that an excluded service operates the controls, and the certificate cannot serve as legal clearance or a guarantee of product safety."
+    },
+    {
+      "lessonId": "m6.2",
+      "q": "An internal audit finds that an AI supplier-change control has not run: the vendor updated its retrieval service, but the use record still points to tests of the prior version. The team has revised its change-review procedure. What evidence best supports closing the finding?",
+      "options": [
+        "A completed review of the actual update, affected regression results, and a later sampled change showing the trigger works",
+        "An approved procedure that identifies supplier-change triggers, evidence owners, and the required regression categories",
+        "A vendor statement that its latest service is backward compatible and continues to meet its published safety benchmark",
+        "A training record confirming that procurement and platform staff know how to enter supplier notices into the inventory"
+      ],
+      "answer": 0,
+      "explanation": "The finding concerns an unperformed operating control, so closure needs both the missed review and evidence the revised trigger operates. Procedure, training, and supplier statements support the process but do not demonstrate the organization tested the actual change."
+    },
+    {
+      "lessonId": "m6.2",
+      "q": "An AI management-system objective requires high-severity complaints to reach a decision owner within one day. Operating logs show 96% of all complaints meet that target, but 12 of 20 high-severity cases miss it. Investigation finds no qualified coverage outside business hours. What should management review decide?",
+      "options": [
+        "Retain the objective and improve the monthly aggregate dashboard, using its 96% result to track corrective-action progress",
+        "Retain the objective and fund additional model evaluation, using better answer quality to reduce the complaint workload",
+        "Retain the objective and revise the escalation policy, using staff acknowledgement as evidence the coverage gap is closed",
+        "Retain the objective and fund qualified coverage, name the owner, and test high-severity routing under off-hours conditions"
+      ],
+      "answer": 3,
+      "explanation": "The objective, risk, operating evidence, and root cause point to a coverage and authority gap that needs resources. Management review should commission a targeted correction and verify its effectiveness; an aggregate dashboard or revised policy cannot show that urgent cases now reach an empowered owner."
+    },
+    {
+      "lessonId": "m6.3",
+      "q": "An appointment assistant reduces average booking time, but it sends six of 80 users requesting step-free access to inaccessible clinics, versus one of 80 in the existing process. Other paths pass their gates. The agreed release rule permits no unresolved access failures on that path, which can be isolated; manual booking remains available. What should leadership authorize?",
+      "options": [
+        "Expand every path with a new access notice because the average booking-time benefit compensates for the small affected group",
+        "Expand the passing paths, retain manual accessible booking, and repair and retest the affected path before its launch",
+        "Expand the affected path with complaint sampling because manual booking remains available to users who discover an error",
+        "Suspend every path until the same aggregate booking-time target can be demonstrated for each user population"
+      ],
+      "answer": 1,
+      "explanation": "The new workflow worsens a consequential outcome for a defined group and misses that path’s agreed gate. Isolating it permits a bounded expansion elsewhere while service owners investigate, involve affected users, and validate the repair against the existing process."
+    },
+    {
+      "lessonId": "m6.3",
+      "q": "A procurement assistant drafts supplier-risk recommendations. Reviewers approve almost every draft, but interviews show that supporting evidence is hard to open and batch review allows little time per supplier. Which evaluation most directly establishes whether oversight can work?",
+      "options": [
+        "Compare approval rates between reviewers and require the slower group to match the faster group’s throughput",
+        "Retest the model on supplier-risk benchmarks and infer that strong scores explain the low rate of reviewer changes",
+        "Test seeded material errors at real workload, with usable source access and rejection authority, then measure corrections",
+        "Require reviewers to acknowledge the risk policy and compare their confidence ratings with the assistant’s recommendations"
+      ],
+      "answer": 2,
+      "explanation": "Effective oversight depends on whether people can detect and change material errors in the actual workflow. The test exposes the effects of source access, time, and authority; low changes, training acknowledgement, or model accuracy alone cannot demonstrate that control."
+    },
+    {
+      "lessonId": "m6.3",
+      "q": "A health service compares logging designs that privacy counsel considers permissible under the stated processing arrangements. The investigation target is at least 90% reconstructable incidents and the annual budget is $120,000. Tests and costs are shown below. Which design meets both conditions?",
+      "options": [
+        "Redacted routine logs plus restricted incident preservation: 92% reconstruction and $110,000 per year",
+        "Short-lived full transcripts with audited access: 96% reconstruction and $145,000 per year",
+        "Redacted excerpts and event metadata without incident preservation: 87% reconstruction and $95,000 per year",
+        "Restricted full transcripts for every flagged answer: 94% reconstruction and $132,000 per year"
+      ],
+      "answer": 0,
+      "explanation": "The first design meets the stated reconstruction target and budget, with a restricted route for serious-event evidence. The other proposals can be credible alternatives in different circumstances, but here each misses a measured condition; counsel’s scope assumptions still need continued monitoring."
+    },
+    {
+      "lessonId": "m6.4",
+      "q": "A company buys a supplier’s tool to rank Paris applicants and uses it without rebranding or material modification. What is the right starting point for its EU legal analysis?",
+      "options": [
+        "Treat the company as a general-purpose model provider because applicant rankings use a foundation model",
+        "Treat GDPR approval as the primary classification and apply AI Act duties only if the tool acts autonomously",
+        "Assess likely Annex III recruitment use and deployer duties with counsel, alongside separate GDPR obligations",
+        "Treat the supplier’s product category as decisive and carry its compliance claim into the company’s use register"
+      ],
+      "answer": 2,
+      "explanation": "Intended use and actual role drive classification; a recruitment-ranking deployment needs that specific analysis. Supplier statements do not settle deployer obligations, exceptions, or GDPR processing requirements, and counsel should validate the actual facts."
+    },
+    {
+      "lessonId": "m6.4",
+      "q": "A provincially regulated Vancouver retailer wants AI summaries of BC employees’ incident reports. It already has a PIPEDA-based register for customer commerce and proposes reusing that legal analysis for employee records. Which workplan is appropriate?",
+      "options": [
+        "Carry forward the customer register because payroll and incident handling are business activities of the same Canadian company",
+        "Map the employer, employee-record activity, province, sector, and vendor flow with counsel before assigning applicable duties",
+        "Apply the federal automated-decision directive because incident summaries may later influence workplace-management decisions",
+        "Use the BC location as the complete legal boundary and postpone vendor-processing questions until procurement renewal"
+      ],
+      "answer": 1,
+      "explanation": "An organization’s customer-commerce analysis does not automatically determine the rules for provincial employee records. Counsel needs the actual activity and processing flow, including relevant provincial and sector obligations; the federal public-sector directive cannot be presumed to govern this retailer."
+    },
+    {
+      "lessonId": "m6.4",
+      "q": "A company plans to rebrand and materially change a supplier’s EU recruitment tool. Its register currently covers ordinary use of the original tool. Which register update best supports the new release decision?",
+      "options": [
+        "Refresh official dates and keep the existing deployer role, then assign engineering owners to the old evidence list",
+        "Add the supplier’s general-purpose-model obligations, then adopt its current evidence list for the rebranded product",
+        "Add newly published proposals to the binding-duty list, then apply the earliest headline date to every EU use",
+        "Ask counsel to reassess role and category, separate enacted duties from proposals, and assign dated evidence gaps"
+      ],
+      "answer": 3,
+      "explanation": "Material changes and rebranding can affect the organization’s actual role, so the existing register cannot simply carry forward. A release-ready update connects current legal status and applicable dates to the system, counsel’s interpretation, evidence owners, and unresolved readiness gaps."
     }
   ],
   "homework": "Create an AI governance playbook with 3 risk tiers, required evidence per tier, approval roles, red-team/evaluation requirements, incident escalation, vendor review, and an AI-system registry.",
@@ -140,5 +244,5 @@
     ],
     "note": "Confirm current rules and applicability with legal and privacy specialists."
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

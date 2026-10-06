@@ -16,12 +16,19 @@ test('module and sublesson IDs are contiguous and independently addressable', ()
     const module = read(`modules/${moduleId}/module.json`);
     assert.equal(module.id, moduleId);
     assert.equal(module.quizVersion, summary.quizVersion);
-    assert.equal(module.quiz.length, moduleId === 'm3' ? 8 : 4);
+    assert.equal(module.quizVersion, 3);
+    assert.ok(module.quiz.length >= module.lessons.length && module.quiz.length <= module.lessons.length*3);
     assert.equal(new Set(module.quiz.map(item=>item.q)).size, module.quiz.length);
     module.quiz.forEach(item=>{
       assert.equal(item.options.length,4);
       assert.equal(new Set(item.options).size,4);
       assert.ok(Number.isInteger(item.answer) && item.answer >= 0 && item.answer < 4);
+      assert.ok(module.lessons.some(lesson=>lesson.id===item.lessonId));
+      assert.ok(item.explanation?.trim());
+    });
+    module.lessons.forEach(lesson=>{
+      const questions=module.quiz.filter(item=>item.lessonId===lesson.id);
+      assert.ok(questions.length >= 1 && questions.length <= 3, `${lesson.id} needs 1–3 questions`);
     });
     summary.lessons.forEach((lesson, li) => {
       const id = `${moduleId}.${li+1}`;
@@ -73,6 +80,7 @@ test('legacy progress migrates and a sublesson loads without a page reload', asy
   assert.match(node('section-view').innerHTML,new RegExp(module6Details.parts[0].sources[0][1].replace(/[.*+?^${}()|[\]\\]/g,'\\$&')));
   await vm.runInContext("renderModule('m7')",context);
   assert.match(node('section-view').innerHTML,/Previous score: 80% \(earlier quiz\)/);
+  assert.doesNotMatch(node('section-view').innerHTML,/<details class="quiz-feedback"/);
   vm.runInContext('renderDashboard()',context);
   assert.match(node('dashboard-view').innerHTML,/>0\/11<\/div><p class="muted">Retrieval practice/);
   await vm.runInContext("renderModule('m7')",context);
@@ -81,6 +89,32 @@ test('legacy progress migrates and a sublesson loads without a page reload', asy
   await vm.runInContext("gradeQuiz('m7')",context);
   const updated=JSON.parse(storage.get('caio-learning-progress-v1'));
   assert.equal(updated.quiz.m7,100);
-  assert.equal(updated.quizRevision.m7,2);
+  assert.equal(updated.quizRevision.m7,3);
   assert.equal(updated.quizHistory.m7[0].score,80);
+  assert.match(node('quiz-feedback').innerHTML,/Question 1 · Correct/);
+  assert.match(node('quiz-feedback').innerHTML,/Best answer:/);
+  assert.doesNotMatch(node('quiz-feedback').innerHTML,/undefined/);
+  assert.match(node('quiz-feedback').innerHTML,/#lesson\/m7\.1/);
+
+  // Retaking an expanded quiz preserves a score from the preceding quiz version.
+  vm.runInContext("state.quiz.m7=75;state.quizRevision.m7=2;state.quizHistory.m7=[];save()",context);
+  node('quiz-form').querySelector=()=>null;
+  await vm.runInContext("gradeQuiz('m7')",context);
+  assert.equal(JSON.parse(storage.get('caio-learning-progress-v1')).quiz.m7,75);
+  assert.equal(node('quiz-feedback').innerHTML,'');
+  node('quiz-form').querySelector=selector=>({value:answers[Number(selector.match(/q(\d+)/)[1])]});
+  await vm.runInContext("gradeQuiz('m7')",context);
+  const retaken=JSON.parse(storage.get('caio-learning-progress-v1'));
+  assert.equal(retaken.quizRevision.m7,3);
+  assert.equal(retaken.quizHistory.m7[0].revision,2);
+  assert.equal(retaken.quizHistory.m7[0].score,75);
+  node('quiz-form').querySelector=selector=>{
+    const qi=Number(selector.match(/q(\d+)/)[1]);
+    return {value:qi===0?(answers[0]+1)%4:answers[qi]};
+  };
+  await vm.runInContext("gradeQuiz('m7')",context);
+  const corrected=JSON.parse(storage.get('caio-learning-progress-v1'));
+  assert.equal(corrected.quiz.m7,Math.round((answers.length-1)/answers.length*100));
+  assert.equal(corrected.quizHistory.m7.length,1);
+  assert.match(node('quiz-feedback').innerHTML,/<details class="quiz-feedback" open><summary>Question 1 · Review/);
 });

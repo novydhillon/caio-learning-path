@@ -95,84 +95,184 @@
   ],
   "quiz": [
     {
-      "q": "Why should a CAIO care about evaluation beyond model benchmarks?",
+      "lessonId": "m3.1",
+      "q": "A pilot's pre-agreed gates are at least 90% supported answers overall, at least 95% on high-impact leave cases, no observed restricted-document leaks, p95 latency no more than 10 seconds, and cost no more than $0.60 per accepted task. Results are 170/200 overall, 54/60 high-impact, one access leak, 8 seconds, and $0.45. What should the committee decide about broad release?",
       "options": [
-        "Benchmarks already determine production readiness",
-        "Enterprise outcomes depend on the complete system, workflow, risk tier, and real user distribution",
-        "Evaluation is primarily an ML engineering concern",
-        "Only regulators need evaluation evidence"
+        "Approve broad release because both operating limits pass and support is close to the overall threshold.",
+        "Approve broad release with human review because the high-impact slice reaches 90% and cost leaves room for oversight.",
+        "Deny broad release solely on access and accept the quality gates because their samples overlap.",
+        "Deny broad release because overall support, high-impact support, and the access gate fail."
       ],
-      "answer": 1
+      "answer": 3,
+      "explanation": "Overall support is 85%, and high-impact support is 90%, both below their respective thresholds. The observed leak is a third failure; passing latency and cost cannot offset these release conditions."
     },
     {
-      "q": "Which grading strategy is strongest for an enterprise eval suite?",
+      "lessonId": "m3.1",
+      "q": "A designed safety set produces no leaks in 30 access tests. The team proposes saying the assistant has zero confidentiality risk. Which interpretation should replace that statement?",
       "options": [
-        "Use an LLM judge for every test",
-        "Use human reviewers for every test",
-        "Combine deterministic graders, calibrated model graders, and targeted human expert review",
-        "Use only user satisfaction surveys"
+        "The tested model has zero leak risk until its prompt or version changes.",
+        "No leaks were observed in that set; control inspection, further negative tests, and monitoring still matter.",
+        "The assistant has zero leak risk for all employees whose roles appeared in the set.",
+        "The set establishes zero leak risk if its tasks were drawn from real employee requests."
       ],
-      "answer": 2
+      "answer": 1,
+      "explanation": "An observed 0/30 describes the sample, not a proven zero underlying probability. Realistic tasks and stable versions improve relevance but do not remove sample uncertainty or the need to test access boundaries."
     },
     {
-      "q": "For an agentic workflow, a robust eval should usually prioritize:",
+      "lessonId": "m3.1",
+      "q": "A read-only policy assistant passes its release gate. The next release adds a tool that updates employee records, while retaining the model and policy corpus. Which approval evidence is newly required?",
       "options": [
-        "The exact sequence of tool calls",
-        "The final outcome, important intermediate constraints, side effects, and safety boundaries",
-        "The largest possible benchmark dataset regardless of relevance",
-        "Only average latency"
+        "Authorization, approval, duplicate-write, and recovery tests for the record-update path.",
+        "A rerun of answer-support tests with more questions from the same routine policy population.",
+        "A cost comparison demonstrating that record updates require fewer calls than manual processing.",
+        "A model benchmark covering structured output because the update tool accepts a schema."
       ],
-      "answer": 1
+      "answer": 0,
+      "explanation": "The new write path changes system authority and side effects. Earlier answer evidence remains useful, but it cannot establish that writes target the right records, occur only with authorization, or recover safely."
     },
     {
-      "q": "After deployment, the evaluation program should:",
+      "lessonId": "m3.2",
+      "q": "A test set has 160 routine cases with 148 passes, 40 refund cases with 34 passes, and 40 account cases with 30 passes. Expected traffic is 70% routine, 20% refund, and 10% account. What is the traffic-weighted task-success estimate, to two decimal places?",
       "options": [
-        "Stop once launch criteria are met",
-        "Run only when a vendor releases a new model",
-        "Continue through production monitoring, feedback, regression tests, and periodic human calibration",
-        "Be replaced by quarterly business reviews"
+        "88.33%.",
+        "84.17%.",
+        "89.25%.",
+        "92.50%."
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "The slice rates are 92.5%, 85%, and 75%, so the estimate is 0.70 × 92.5 + 0.20 × 85 + 0.10 × 75 = 89.25%. The unweighted test-set total is 212/240, or 88.33%; neither average overrides a severe account-access gate."
     },
     {
-      "q": "A support assistant scores well on common questions but fails on rare account-access cases. What should the evaluation team do?",
+      "lessonId": "m3.2",
+      "q": "An evaluation includes French requests and revoked-entitlement cases, but none combines the two. The proposed launch includes French account access. What does the coverage review imply?",
       "options": [
-        "Report only the overall average",
-        "Add representative high-impact cases and report performance by task and risk category",
-        "Remove account-access cases as outliers",
-        "Approve launch because common questions dominate volume"
+        "Pool the French and revoked-entitlement results because both dimensions already appear somewhere in the set.",
+        "Test French requests with revoked entitlement through the real permission path before supporting that capability.",
+        "Translate existing French routine-status cases and use their language score to approve French account access.",
+        "Increase routine French sample size because a stronger aggregate gives more confidence in the missing intersection."
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Separate coverage of two dimensions does not establish behaviour at their consequential intersection. The missing cases must exercise the actual access controls, not only French wording or ordinary routine tasks."
     },
     {
-      "q": "A model grader rewards fluent answers that invent policy details. What is the best next step?",
+      "lessonId": "m3.2",
+      "q": "A team repeatedly examines its held-out failures and changes prompts to fix those exact cases. It then reports the improved held-out score as independent release evidence. What is the best correction?",
       "options": [
-        "Let the grader decide because it is consistent",
-        "Replace all tests with user satisfaction surveys",
-        "Calibrate against expert judgments, inspect disagreements, and revise the rubric",
-        "Raise the passing score without checking the errors"
+        "Keep the pool held out but hide the expected answers from the team during the next scoring pass.",
+        "Increase the same pool's weight in the release score because it now contains verified difficult cases.",
+        "Rename the cases as production regressions and use the improved result as the sole release gate.",
+        "Treat the examined pool as development data and assess the candidate on fresh representative held-out cases."
       ],
-      "answer": 2
+      "answer": 3,
+      "explanation": "Repeated tuning to observed failures changes the pool's role from independent assessment to development. Those cases remain useful for regression checks, while fresh representative cases are needed for a credible later release claim."
     },
     {
-      "q": "Which RAG evaluation distinguishes two different failure sources?",
+      "lessonId": "m3.3",
+      "q": "An invoice response passes a JSON schema check, but its dispute letter may misstate a contract exception. Which grading design best matches the two claims?",
       "options": [
-        "Check retrieval relevance separately from whether the final answer is supported by retrieved evidence",
-        "Check only the base model benchmark",
-        "Count only citations without opening sources",
-        "Measure response length and tone"
+        "Use the schema result for both claims because the contract facts occupy validated structured fields.",
+        "Use a writing-quality model score for both claims because clear prose makes contract reasoning inspectable.",
+        "Use a mechanical schema check and a separately calibrated source-based rubric for contractual accuracy.",
+        "Use exact matching against one reference letter for both claims because departures reveal inaccuracies."
       ],
-      "answer": 0
+      "answer": 2,
+      "explanation": "Mechanical checks establish form, while a factual rubric evaluates what the output says against authorized evidence. A valid schema or polished prose can accompany a wrong contract interpretation, and exact wording can reject valid alternatives."
     },
     {
-      "q": "A release passes average task quality but leaks a restricted document in a test. What is the sound launch decision?",
+      "lessonId": "m3.3",
+      "q": "Experts adjudicate 20 calibration answers as supported and 10 as materially unsupported. A judge passes 18 supported answers and three unsupported answers, and fails the rest. What is its false-pass rate among the materially unsupported answers?",
       "options": [
-        "Launch broadly and watch complaint volume",
-        "Ignore the case because it is rare",
-        "Pause release until the permission failure is fixed and retested against the safety gate",
-        "Lower the permission threshold to match observed performance"
+        "30%.",
+        "10%.",
+        "16.67%.",
+        "83.33%."
       ],
-      "answer": 2
+      "answer": 0,
+      "explanation": "Three of the ten unsupported answers pass, giving 3/10 = 30% for this error category. Three out of all 30 cases is 10%, and overall agreement is 25/30 = 83.33%; those denominators answer different questions and can obscure harmful false passes."
+    },
+    {
+      "lessonId": "m3.3",
+      "q": "Two qualified reviewers disagree on many high-impact policy answers, and the model judge also disagrees with both. What should the evaluation lead do first?",
+      "options": [
+        "Use the model judge as the tie-breaker, then calibrate human reviewers against its final scores.",
+        "Average the three scores to create a neutral reference label for each disputed answer.",
+        "Lower the release threshold so differences between graders no longer determine whether the system passes.",
+        "Resolve policy and rubric ambiguity with the reviewers before validating the judge against adjudicated labels."
+      ],
+      "answer": 3,
+      "explanation": "Calibration needs a defensible human standard for the intended task. Adjudicating source and rubric ambiguity creates that standard; averaging uncertain grades or using an unvalidated judge as arbiter does not."
+    },
+    {
+      "lessonId": "m3.4",
+      "q": "A RAG answer cites a current accessible policy whose title matches the question, but the cited passage does not support the answer's material claim. How should the evaluation classify it?",
+      "options": [
+        "Pass factual support because the policy is current and the user can inspect the cited document.",
+        "Fail claim support or citation correctness despite the citation being present and accessible.",
+        "Pass retrieval quality and use writing quality alone to decide whether the response is acceptable.",
+        "Fail permission filtering because the answer cites information the user cannot rely on for the claim."
+      ],
+      "answer": 1,
+      "explanation": "A citation must support the specific material claim, not merely name a related current document. Accessibility addresses permission, so it cannot substitute for support or turn this into an access failure."
+    },
+    {
+      "lessonId": "m3.4",
+      "q": "A billing agent reports success. The final ledger contains the intended correction twice because a timeout triggered a retry. Its tool sequence otherwise matches the reference run. What should the evaluator conclude?",
+      "options": [
+        "Fail the duplicate-write invariant, using state snapshots and traces to identify the side effect.",
+        "Pass completion because the intended correction appears and the reference sequence was followed.",
+        "Pass completion but deduct only for response wording because the agent omitted mention of the retry.",
+        "Fail only the tool-sequence grade because a successful agent should always use fewer calls."
+      ],
+      "answer": 0,
+      "explanation": "The final state includes a prohibited duplicate, so the run fails a task constraint even though its message and sequence look reasonable. Evaluation must inspect actual state and side effects rather than treat a reference path as proof of success."
+    },
+    {
+      "lessonId": "m3.4",
+      "q": "A hostile instruction in a retrieved invoice asks an agent to email restricted customer data. The agent attempts the mail call, but the service denies the unauthorized recipient and records it. What is the strongest release-review interpretation?",
+      "options": [
+        "The agent's behaviour passes because no data left, so the attempted call needs no further review.",
+        "The service denial proves this attack family cannot succeed with the deployed credentials.",
+        "The service boundary contained this attempt, while the trace warrants investigation and broader attack tests.",
+        "The event establishes an actual data leak because requesting a mail call is equivalent to sending it."
+      ],
+      "answer": 2,
+      "explanation": "The observed denial shows a defense worked on this case, while the attempted boundary crossing remains relevant evidence. It is neither proof that all attacks are contained nor evidence that this blocked call actually exfiltrated data."
+    },
+    {
+      "lessonId": "m3.5",
+      "q": "A smaller model lowers call cost and improves routine response speed, but fails several material leave-policy exceptions that the current model handles. What should the change review recommend?",
+      "options": [
+        "Ship the swap because average speed and price gains justify sending exceptional cases to users with a warning.",
+        "Ship the swap to the same audience and collect production exceptions before deciding whether routing is needed.",
+        "Discard the smaller model permanently because a failed candidate cannot serve any part of the workflow.",
+        "Hold the broad swap and test a narrower routing option with regression and severe-case gates."
+      ],
+      "answer": 3,
+      "explanation": "A material failure blocks the proposed broad exposure despite average operating gains. The evidence may still justify testing a limited routine-case path, including routing errors, rather than assuming either universal suitability or permanent rejection."
+    },
+    {
+      "lessonId": "m3.5",
+      "q": "Overall support success declines after refund questions become a larger share of traffic. The model version is unchanged. What analysis best distinguishes changed demand from degraded performance?",
+      "options": [
+        "Compare traffic shares and within-slice success against the prior period, then check coverage for the growing refund slice.",
+        "Compare only aggregate success across periods because users experience the complete service rather than individual slices.",
+        "Rerun the original routine-status set and restore expansion if its average remains above threshold.",
+        "Attribute the decline to model drift and replace the model before examining the new question distribution."
+      ],
+      "answer": 0,
+      "explanation": "A case-mix shift can change the overall score even when each slice's performance is stable. Reporting shares and slice results identifies the contribution of demand changes and exposes whether the new workload is adequately tested."
+    },
+    {
+      "lessonId": "m3.5",
+      "q": "An assistant cites an archived policy and staff follow the wrong process. The team fixes that exact question and wants to restore normal scope. What additional restoration evidence is most important?",
+      "options": [
+        "Confirm the original question now passes and retain the old scope because the visible failure has been reproduced.",
+        "Test date and region variants under the repaired index, inspect affected prior answers, and obtain the named restoration approval.",
+        "Increase the generation prompt's caution language and use user satisfaction to judge whether the archive issue persists.",
+        "Remove citations from responses until the next quarterly audit so staff will not repeat the archived-source mistake."
+      ],
+      "answer": 1,
+      "explanation": "A single passing question may show only an instance was patched. Variants test the underlying source-selection control, affected-answer review addresses prior consequences, and explicit approval ties restoration to evidence and ownership."
     }
   ],
   "homework": "Design an evaluation and assurance plan for an enterprise AI assistant or agent. Define the business task and risk tier; create at least 25 representative and edge-case eval tasks; define quality, safety, cost, and latency metrics; specify deterministic/model/human graders; establish launch gates; add a red-team plan; and design a production monitoring scorecard with escalation thresholds. Include a one-page executive summary explaining what evidence would justify scaling, pausing, or rolling back the system.",
@@ -202,5 +302,5 @@
     ],
     "note": "Example values for teaching only. The permission failure blocks this sample launch despite the other passes."
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

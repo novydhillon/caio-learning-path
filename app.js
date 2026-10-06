@@ -100,7 +100,7 @@ async function renderModule(id,updateHash=true){
       <div class="card summary-box"><h4>Section summary</h4><p>${m.summary}</p><p class="muted">Use this as your review anchor after completing the section.</p></div>
       ${m.lessons.map((l,i)=>`<div class="card lesson"><div class="lesson-top"><div><p class="eyebrow">LESSON ${i+1} · ${l.duration}</p><h4>${l.title}</h4></div><span class="badge ${state.completed[l.id]?'done':''}">${state.completed[l.id]?'Completed':'Ready to read'}</span></div><p>${l.body}</p><button class="primary" onclick="openLesson('${l.id}')">Open lesson →</button><label class="checkline"><input type="checkbox" ${state.completed[l.id]?'checked':''} onchange="toggleLesson('${l.id}',this.checked)"> Mark lesson complete</label></div>`).join('')}
       <div class="card homework"><p class="eyebrow">APPLIED PRACTICE</p><h3>Homework</h3><p>${m.homework}</p><label class="checkline"><input type="checkbox" ${state.homework[m.id]?'checked':''} onchange="toggleHomework('${m.id}',this.checked)"> I completed this artifact</label></div>
-      <div class="card"><p class="eyebrow">RETRIEVAL PRACTICE</p><h3>Module quiz</h3><form id="quiz-form">${m.quiz.map((q,qi)=>`<div class="quiz-q"><strong>${qi+1}. ${q.q}</strong>${q.options.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"> ${o}</label>`).join('')}</div>`).join('')}<button type="button" class="primary" onclick="gradeQuiz('${m.id}')">Submit quiz</button><div id="quiz-result" class="quiz-result">${state.quiz[m.id]===undefined?'':state.quizRevision[m.id]===m.quizVersion?`Last score: ${state.quiz[m.id]}%`:`Previous score: ${state.quiz[m.id]}% (earlier quiz)`}</div></form></div>
+      <div class="card"><p class="eyebrow">RETRIEVAL PRACTICE</p><h3>Module quiz</h3><form id="quiz-form">${m.quiz.map((q,qi)=>`<div class="quiz-q"><strong>${qi+1}. ${escapeLessonText(q.q)}</strong>${q.options.map((o,oi)=>`<label class="option"><input type="radio" name="q${qi}" value="${oi}"> ${escapeLessonText(o)}</label>`).join('')}</div>`).join('')}<button type="button" class="primary" onclick="gradeQuiz('${m.id}')">Submit quiz</button><div id="quiz-result" class="quiz-result" role="status">${state.quiz[m.id]===undefined?'':state.quizRevision[m.id]===m.quizVersion?`Last score: ${state.quiz[m.id]}%`:`Previous score: ${state.quiz[m.id]}% (earlier quiz)`}</div><div id="quiz-feedback"></div></form></div>
       <div class="card"><h3>Module references</h3>${refs.length?`<ul class="resources">${refs.map(r=>`<li><a href="${r[1]}" target="_blank" rel="noopener noreferrer">${r[0]} ↗</a></li>`).join('')}</ul>`:'<p class="muted">No external references are listed for this module.</p>'}<p><a href="#references">View the full reference library →</a></p></div>
       <footer>${catalog.reviewSuggestion}</footer>`;
   }catch(error){if(request===requestNumber) showLoadError('section',`renderModule('${id}',false)`);console.error(error);}
@@ -154,8 +154,8 @@ async function gradeQuiz(id){
     const m=await getJSON(`modules/${id}/module.json`);
     if(el('quiz-form')!==form) return;
     let score=0,answered=0;
-    m.quiz.forEach((q,qi)=>{const choice=form.querySelector(`input[name="q${qi}"]:checked`);if(choice){answered++;if(Number(choice.value)===q.answer)score++;}});
-    if(answered<m.quiz.length){el('quiz-result').textContent='Answer every question before submitting.';return;}
+    const choices=m.quiz.map((q,qi)=>{const choice=form.querySelector(`input[name="q${qi}"]:checked`);if(choice){answered++;if(Number(choice.value)===q.answer)score++;return Number(choice.value);}return null;});
+    if(answered<m.quiz.length){el('quiz-result').textContent='Answer every question before submitting.';el('quiz-feedback').innerHTML='';return;}
     const result=Math.round(score/m.quiz.length*100);
     if(state.quiz[id]!==undefined && state.quizRevision[id]!==m.quizVersion){
       state.quizHistory ||= {};
@@ -163,6 +163,7 @@ async function gradeQuiz(id){
     }
     state.quiz[id]=result;state.quizRevision[id]=m.quizVersion;save();
     el('quiz-result').textContent=`Score: ${result}% — ${result>=80?'Pass. Explain each answer aloud before moving on.':'Review the lessons and retry; target 80% or higher.'}`;
+    el('quiz-feedback').innerHTML=m.quiz.map((q,qi)=>`<details class="quiz-feedback" ${choices[qi]===q.answer?'':'open'}><summary>Question ${qi+1} · ${choices[qi]===q.answer?'Correct':'Review'}</summary><p>${escapeLessonText(q.q)}</p><p>Your answer: ${escapeLessonText(q.options[choices[qi]])}</p><p><strong>Best answer:</strong> ${escapeLessonText(q.options[q.answer])}</p><p>${escapeLessonText(q.explanation)}</p><a href="#lesson/${q.lessonId}">Review lesson ${q.lessonId} →</a></details>`).join('');
   }catch(error){el('quiz-result').textContent='Could not load the quiz. Please retry.';console.error(error);}
 }
 async function renderReferences(updateHash=true){

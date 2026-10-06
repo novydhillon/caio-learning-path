@@ -40,44 +40,112 @@
   ],
   "quiz": [
     {
-      "q": "The best starting point for enterprise AI strategy is:",
+      "lessonId": "m4.1",
+      "q": "An insurer's objective is faster claims resolution without more reopenings. A summarizer cuts draft preparation time in one supervised team. Which claim is currently most defensible in the enterprise strategy?",
       "options": [
-        "A vendor capability list",
-        "The company strategy and value pools",
-        "A mandate to use GenAI everywhere",
-        "A list of available models"
+        "The pilot establishes faster claims resolution because drafting is a necessary step in every claim.",
+        "The pilot improved draft preparation in its tested scope; resolution time and reopenings still need comparative measurement.",
+        "The pilot establishes enterprise productivity because supervision reduced the risk of incorrect summaries.",
+        "The pilot establishes a cash saving because adjusters need fewer minutes to prepare each draft."
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "Task-level timing supports a narrow claim, while elapsed resolution time, reopening rates, and cash effects need their own evidence. A comparison and countermeasure prevent a local efficiency gain from being mistaken for the enterprise objective."
     },
     {
-      "q": "A portfolio should include:",
+      "lessonId": "m4.1",
+      "q": "A service firm plans Canada and EU pilots using customer records. Regional privacy and legal owners are named, but neither live-data scope is authorized. A redacted design study is already permitted. Which funding sequence best prevents an investment commitment from presuming data-use permission?",
       "options": [
-        "Only quick wins",
-        "Only transformational bets",
-        "A mix of near-term value and longer-horizon strategic bets",
-        "Only projects with immediate hard-dollar savings"
+        "Fund both live-data pilots, have regional owners classify each use, and make only production scale conditional on regional authorization and evidence gates.",
+        "Fund the Canadian live-data pilot plus an EU design study, have both regional owners classify uses, and obtain Canadian authorization at its first benefit review.",
+        "Fund the EU live-data pilot plus a Canadian design study, have both regional owners classify uses, and obtain EU authorization after its integration tests pass.",
+        "Fund the permitted design study, have regional owners classify each use, and make each live-data pilot conditional on its own authorization and evidence gate."
       ],
-      "answer": 2
+      "answer": 3,
+      "explanation": "The permitted study can generate design evidence without assuming authority to use customer records. Regional classification and authorization must shape the live-data pilots before those commitments proceed; naming owners and adding later scale gates does not authorize the earlier use."
     },
     {
-      "q": "Which AI proposal most clearly follows company strategy?",
+      "lessonId": "m4.1",
+      "q": "A pilot frees 2,000 annual staff hours after review, but headcount and spending will remain unchanged. The sponsor plans to use the hours to reduce backlog. How should the CFO-facing strategy describe the benefit?",
       "options": [
-        "A new chatbot because competitors have one",
-        "A claims assistant tied to a measured reduction in resolution time and an accountable claims owner",
-        "A mandate that every team use one foundation model",
-        "A pilot chosen solely for its impressive demo"
+        "Capacity released, with backlog outcomes measured separately and implementation and operating costs included.",
+        "Cash savings at the full loaded hourly rate, with backlog improvement recorded as an additional benefit.",
+        "Revenue improvement at the full loaded hourly rate, with operating costs charged to the platform budget.",
+        "No measurable benefit until staff spending falls, with released hours excluded from the investment case."
       ],
-      "answer": 1
+      "answer": 0,
+      "explanation": "Released hours can support a real capacity or service case without being realized cash savings. The sponsor must show what the capacity produces, and the full cost still belongs in the comparison."
     },
     {
-      "q": "Two portfolio candidates swap rank when the risk weight changes slightly. What should the CAIO do?",
+      "lessonId": "m4.2",
+      "q": "A spare-parts service takes a median three days to fulfill an order. Staff spend 12 minutes classifying it, but an approval handoff typically adds two days of waiting. A classifier can cut classification to four minutes; the business target is next-day fulfillment. What should discovery recommend?",
       "options": [
-        "Present the original ranking as certain",
-        "Remove risk from the scoring model",
-        "Show the sensitivity and fund targeted discovery to reduce uncertainty",
-        "Choose whichever proposal has the larger vendor discount"
+        "Prioritize the classifier and use its 67% touch-time reduction as the forecast improvement in elapsed fulfillment time.",
+        "Combine the classifier and handoff changes in one pilot, attributing any fulfillment improvement to the classifier's measured touch-time gain.",
+        "Test the approval handoff against the fulfillment target, and assess the classifier separately for the capacity released by its eight-minute reduction.",
+        "Defer the classifier until the approval handoff disappears, excluding its capacity benefit from consideration while elapsed time remains high."
       ],
-      "answer": 2
+      "answer": 2,
+      "explanation": "The two-day wait dominates elapsed time, so an eight-minute touch-time gain cannot establish next-day fulfillment. The classifier may still have a capacity case, while a separate handoff test targets the actual service constraint and makes attribution clearer."
+    },
+    {
+      "lessonId": "m4.2",
+      "q": "A team handles 72,000 requests yearly. The target drafting step applies to 40% of them, and expected adoption is 75% of eligible requests. Draft assistance saves six minutes but adds two minutes of review per adopted request. Assuming these are the only time effects, how much annual capacity is released?",
+      "options": [
+        "2,160 hours.",
+        "1,440 hours.",
+        "1,920 hours.",
+        "4,800 hours."
+      ],
+      "answer": 1,
+      "explanation": "There are 72,000 × 0.40 × 0.75 = 21,600 adopted requests, each releasing four net minutes. That yields 21,600 × 4 / 60 = 1,440 hours; omitting review or adoption overstates the benefit."
+    },
+    {
+      "lessonId": "m4.2",
+      "q": "Adviser search could produce $300,000 yearly value, but conflicting source versions make its benefit estimate uncertain. The next gate must establish whether current authorized sources can support useful answers. A $20,000 sampled source-and-workflow test can answer that; full cleanup costs $180,000. A ready FAQ pilot costs $15,000 with only $10,000 expected yearly value and cannot answer the search question. Which discovery spend best addresses the decision now?",
+      "options": [
+        "Fund the $20,000 sampled test, then use its result to decide whether cleanup and a search pilot warrant further investment.",
+        "Fund the $180,000 cleanup now, then test search usefulness once the source-version dependency has been removed.",
+        "Fund the $15,000 FAQ pilot first, then use its adoption results as the confidence measure for the adviser-search benefit estimate.",
+        "Defer both search and FAQ, holding the budget until the $300,000 estimate can be verified from existing records alone."
+      ],
+      "answer": 0,
+      "explanation": "The sampled test buys the specific evidence needed at lower cost than committing to full cleanup. The ready FAQ pilot tests a different workflow, while waiting for existing records cannot resolve an uncertainty that requires observing source-supported search use."
+    },
+    {
+      "lessonId": "m4.3",
+      "q": "A CAIO has $1 million. The mandate requires realizing the proven service gain this quarter and obtaining adviser-search evidence next quarter. Service scale costs $550,000; a search experiment costs $250,000 after a $200,000 shared permissions foundation. Each takes a full quarter. A separate platform team can build the foundation, while the two use-case specialists can implement only service or search in any quarter. Search begins only after the foundation is complete. Which feasible staging fits both deadlines?",
+      "options": [
+        "Build the foundation this quarter, run search next quarter, and schedule service scale in the following quarter.",
+        "Scale service this quarter, build the foundation next quarter, and run search in the following quarter.",
+        "Build the foundation this quarter, scale service next quarter, and run search in the following quarter.",
+        "Scale service and build the independently staffed foundation this quarter, then run search next quarter."
+      ],
+      "answer": 3,
+      "explanation": "Service needs the specialist slot this quarter, while the separate platform team can prepare the search dependency in parallel. Search can then use the next quarter's specialist slot; the other feasible sequences miss the service deadline, the search deadline, or both."
+    },
+    {
+      "lessonId": "m4.3",
+      "q": "Search outranks routing under the original weights, but their ranking reverses when more weight goes to data readiness. Search's broad-access permissions are unresolved, although a redacted-corpus discovery test is authorized. Routing meets a capped-pilot gate. Scale funding needs stronger evidence for either. What is the best current allocation?",
+      "options": [
+        "Fund a full search pilot on the original ranking, and ask its sponsor to resolve broad-access permissions before the first customer uses it.",
+        "Fund only the search discovery test, postponing the qualified routing pilot until the committee agrees on a ranking that survives every weight change.",
+        "Fund a capped routing pilot and an authorized search discovery test, with separate evidence and permissions gates before further commitments.",
+        "Fund equal pilot budgets for both candidates, restricting search to redacted data and assuming routing's existing pilot evidence covers its scale gate."
+      ],
+      "answer": 2,
+      "explanation": "The rank reversal makes the allocation sensitive to assumptions, while each candidate has a different authorized next stage. A routing pilot and limited search discovery buy useful evidence without extending unresolved permissions or confusing pilot readiness with scale approval."
+    },
+    {
+      "lessonId": "m4.3",
+      "q": "Candidates A and B meet all eligibility gates. Their strategy, value, feasibility, data-readiness, and adoption scores are A: 5, 3, 4, 2, 4 and B: 3, 4, 3, 5, 4. Original weights are 30%, 25%, 20%, 15%, 10%. Move ten percentage points from strategy to data readiness, holding the other weights fixed. What happens to their weighted ranking?",
+      "options": [
+        "A leads 3.75 to 3.65 originally; B leads 3.85 to 3.45 after the change.",
+        "B leads 3.65 to 3.55 originally; A leads 3.95 to 3.45 after the change.",
+        "A leads 3.75 to 3.65 originally; A still leads 3.95 to 3.45 after the change.",
+        "A leads 3.75 to 3.65 originally; they tie at 3.65 after the change."
+      ],
+      "answer": 0,
+      "explanation": "Original totals are A = 1.50 + 0.75 + 0.80 + 0.30 + 0.40 = 3.75 and B = 0.90 + 1.00 + 0.60 + 0.75 + 0.40 = 3.65. The new weights give A 3.45 and B 3.85, revealing sensitivity to the relative emphasis on strategy and data readiness rather than a settled ordering."
     }
   ],
   "homework": "Build a 12-use-case AI portfolio for a hypothetical company. Rank it using a transparent scoring model and select 3 lighthouse use cases, 5 scale candidates, and 4 experiments.",
@@ -105,5 +173,5 @@
     ],
     "note": "At each step, evidence determines whether funding grows."
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

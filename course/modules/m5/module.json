@@ -40,44 +40,112 @@
   ],
   "quiz": [
     {
-      "q": "An AI platform should centralize primarily:",
+      "lessonId": "m5.1",
+      "q": "A benefits assistant will give eligibility answers for Ontario employees. The archive mixes current and old policies. Which readiness audit most directly supports this proposed use?",
       "options": [
-        "Every business workflow",
-        "Reusable controls and capabilities",
-        "All product decisions",
-        "All datasets into one database"
+        "Sample eligibility cases and check current Ontario rules, access rights, conflicting versions, and correction owners",
+        "Sample documents across the archive and check extraction accuracy, duplicate rates, file completeness, and format consistency",
+        "Sample common searches and check retrieval relevance, citation resolution, response time, and employee satisfaction",
+        "Sample recent Ontario files and check source-owner signoff, successful ingestion, publication date, and index coverage"
       ],
-      "answer": 1
+      "answer": 0,
+      "explanation": "The first audit tests whether the data supports the actual eligibility decision, including exceptions and authorized sources. The other audits provide useful technical or stewardship evidence but can miss the wrong policy being applied to a person."
     },
     {
-      "q": "Why is evaluation a platform concern?",
+      "lessonId": "m5.1",
+      "q": "An employee loses payroll access, but a retrieval index and shared answer cache still contain the previous permissions. Which acceptance test best addresses the resulting risk?",
       "options": [
-        "It is only needed during model training",
-        "Shared evaluation makes quality measurable across releases and use cases",
-        "It removes the need for monitoring",
-        "It guarantees regulatory compliance"
+        "Confirm that the employee can no longer open payroll documents directly in the source application",
+        "Confirm that the next scheduled index rebuild removes the employee from the stored payroll access list",
+        "Confirm that current authorization blocks payroll retrieval and cached answers within the agreed revocation window",
+        "Confirm that payroll answers cite the source document and display its previous permission-update timestamp"
       ],
-      "answer": 1
+      "answer": 2,
+      "explanation": "Authorization must follow the request through retrieval, answers, citations, and caches. A source application test or index rebuild alone can leave another path open; the revocation window also needs an owner and evidence."
     },
     {
-      "q": "Before connecting HR policies to a retrieval assistant, what should the team check?",
+      "lessonId": "m5.1",
+      "q": "A benefits pilot has approved current Ontario policies, while archived material and French policies still contain unresolved conflicts. The Ontario source owner can maintain updates. Which recommendation best uses the available evidence?",
       "options": [
-        "Only file format and document count",
-        "Ownership, current versions, conflicting documents, access rights, and regional scope",
-        "Whether every document can be placed in a public index",
-        "Whether the largest model can memorize the files"
+        "Fund conversion of the entire archive first, using document volume as the readiness condition for the pilot",
+        "Approve a bounded Ontario pilot with access tests, explicit exclusions, a manual fallback, and a funded update process",
+        "Approve the two regions together, routing conflicting answers to reviewers until a later corpus cleanup is complete",
+        "Defer the whole pilot until every regional policy has the same metadata format and document-management workflow"
       ],
-      "answer": 1
+      "answer": 1,
+      "explanation": "A maintained authoritative subset can support a useful pilot while unresolved regions remain excluded. The recommendation should still include tests, fallback, stewardship cost, and review conditions; broad ingestion does not resolve conflicting rules."
     },
     {
-      "q": "A new embedding configuration makes answers worse. What enables a reliable rollback?",
+      "lessonId": "m5.2",
+      "q": "At forecast usage, buying a gateway costs $72,000 annually, $48,000 integration once, and $24,000 to exit at the end of year two. Building costs $198,000 in year one and $96,000 in year two. Both meet required controls. Ignore discounting, taxes, and other equal costs. Which two-year recommendation follows?",
       "options": [
-        "A record of the prior model, index, prompts, retrieval settings, and evaluation results",
-        "A screenshot of the chatbot",
-        "Deleting all prior evaluation cases",
-        "Waiting for users to stop using the system"
+        "Buy: $192,000 versus $294,000, saving $102,000; reassess if usage or required controls change",
+        "Buy: $216,000 versus $396,000, saving $180,000; reassess if usage or required controls change",
+        "Buy: $264,000 versus $294,000, saving $30,000; reassess if usage or required controls change",
+        "Buy: $216,000 versus $294,000, saving $78,000; reassess if usage or required controls change"
       ],
-      "answer": 0
+      "answer": 3,
+      "explanation": "Buying totals $144,000 in annual payments plus $48,000 integration and $24,000 exit, or $216,000; building totals $294,000. The $78,000 advantage applies at forecast load with these controls, so usage and unmet requirements remain reassessment triggers."
+    },
+    {
+      "lessonId": "m5.2",
+      "q": "Three business units repeatedly build their own model access, secrets, and cost telemetry. They serve different customers and maintain different source content. Which platform charter best fits this situation?",
+      "options": [
+        "Centralize model access and customer escalation rules; leave secrets and cost measurement with the units",
+        "Centralize model access, secrets, and telemetry; leave source ownership and workflow outcomes with the units",
+        "Centralize model access and source-content approval; leave evaluation tools and routing controls with the units",
+        "Centralize model access and all prompt-change approvals; leave service limits and incident ownership with the units"
+      ],
+      "answer": 1,
+      "explanation": "Repeated controls are good candidates for shared services, while domain content and business outcomes need accountable business owners. The charter should define interfaces and release conditions without making the platform team the owner of every product decision."
+    },
+    {
+      "lessonId": "m5.2",
+      "q": "A new model route meets gateway uptime, cost, and latency targets. The service application has not yet tested its answers or escalation behavior on the new route. What evidence is still needed before broad rollout?",
+      "options": [
+        "A platform benchmark comparing the new route with other models using the same token and latency limits",
+        "A supplier assurance report describing its model development process and general safety-test results",
+        "A second gateway load test showing that routing remains available during the application’s busiest period",
+        "Application evaluations and a staged rollout measuring task quality, escalation, corrections, and complaints"
+      ],
+      "answer": 3,
+      "explanation": "Platform health establishes that requests can be served, while the product team must establish usefulness and safety in its workflow. Representative application tests followed by a monitored canary can reveal failures that gateway metrics do not capture."
+    },
+    {
+      "lessonId": "m5.3",
+      "q": "After an embedding and retrieval release, a support assistant retrieves different passages and gives worse answers. Source documents, access permissions, and the language model are unchanged. Which artifact bundle should the release owner compare first to diagnose and restore the retrieval path?",
+      "options": [
+        "Model route, prompt revision, application build, output validator, and customer-facing response template",
+        "Source-document versions, permission snapshot, cache retention, identity configuration, and access-test suite",
+        "Embedding version, index snapshot, retrieval and reranking settings, and the release’s retrieval evaluation cases",
+        "Application build, tool permissions, policy bundle, incident thresholds, and the release’s tool-action test cases"
+      ],
+      "answer": 2,
+      "explanation": "The changed retrieval path is the leading diagnosis, so its embeddings, index, settings, and matching tests must be compared and restored together. A complete release manifest still retains the other artifacts; changing only the model or application would not restore the earlier retrieval behavior."
+    },
+    {
+      "lessonId": "m5.3",
+      "q": "A supplier-support assistant has a pre-agreed gate of no cross-customer disclosures. A new reranker improves routine answers but returns another customer’s private passage in one test. Which remediation sequence best supports reconsidering release?",
+      "options": [
+        "Block the candidate, fix the retrieval boundary, rerun cross-customer and legitimate-task tests, then consider a canary",
+        "Use a draft-only canary, add disclosure sampling to reviewer duties, then repair the boundary if a live case recurs",
+        "Remove that private source from the test corpus, rerun routine quality tests, then consider a regional canary",
+        "Retain the candidate, tighten output redaction, rerun public-document tests, then add tenant-boundary tests after launch"
+      ],
+      "answer": 0,
+      "explanation": "A known breach of the release gate requires fixing and retesting the protected boundary before exposure. Legitimate-task tests check the repair’s utility, while removing the case or relying on downstream sampling leaves the cross-customer retrieval failure unresolved."
+    },
+    {
+      "lessonId": "m5.3",
+      "q": "Monitoring finds that a benefits assistant still cites an old French policy after an update. Ontario answers pass targeted checks, the defect is isolated to the French source path, and manual HR search is available. What is the best immediate operating decision?",
+      "options": [
+        "Rollback the global model route, retain both regional indexes, and sample answers again during the next review",
+        "Keep both regional paths active, add a general freshness notice, and prioritize the French fix for the next release",
+        "Pause the French topic, use manual search, update and retest its source path, and review exposed French answers",
+        "Disable all regional indexes, rebuild them together, and reopen the whole service after a global uptime check"
+      ],
+      "answer": 2,
+      "explanation": "Containment should follow the demonstrated failure path while preserving service that remains within its tested boundary. Source freshness and prior-answer review matter here; a model rollback, broad rebuild, or notice alone does not repair the stale French index."
     }
   ],
   "homework": "Draw a reference enterprise AI platform for a regulated company. Include data plane, model plane, application plane, identity/security, evaluation, observability, and governance control points.",
@@ -104,5 +172,5 @@
       ]
     ]
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }

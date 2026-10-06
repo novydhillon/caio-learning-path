@@ -40,44 +40,112 @@
   ],
   "quiz": [
     {
-      "q": "A strong AI business case should measure:",
+      "q": "An assistant reduces preparation from 18 to 11 minutes and adds three minutes of checking on 4,800 monthly cases. Reopens rise from 3% to 6%; their additional workload is unmeasured. Staff levels are unchanged. What should the CFO accept as the current value claim?",
       "options": [
-        "Only model accuracy",
-        "Business outcome change versus a baseline",
-        "Number of prompts sent",
-        "Executive enthusiasm"
+        "560 gross hours released, valued as capacity while the reopen effect is investigated",
+        "560 hours released before checking, with a three-point discount applied for the reopen increase",
+        "320 net hours released, valued as payroll savings until reopen costs are quantified",
+        "320 hours released before extra reopen work, with expansion awaiting a net outcome assessment"
       ],
-      "answer": 1
+      "answer": 3,
+      "lessonId": "m8.1",
+      "explanation": "The observed time bridge is 4,800 × (18 − 11 − 3)/60 = 320 hours before additional reopen work. The reopen increase has no measured time cost yet, and unchanged staffing does not establish cash savings; those limits belong in the funding decision."
     },
     {
-      "q": "Why use stage gates?",
+      "q": "A pilot runs on routine tickets while the prior-period baseline includes all ticket types. The assisted queue is faster. What is the strongest next step before claiming enterprise value?",
       "options": [
-        "To guarantee every project scales",
-        "To increase investment as uncertainty is retired",
-        "To prevent experimentation",
-        "To avoid measuring value"
+        "Compare similar concurrent eligible cases and include failures, review, and downstream corrections",
+        "Extend the routine-ticket pilot until its average handling time stabilizes across more weeks",
+        "Adjust the prior average by the pilot adoption rate and compare cost per assisted ticket",
+        "Survey experienced users about time saved and reconcile their estimates with system logs"
       ],
-      "answer": 1
+      "answer": 0,
+      "lessonId": "m8.1",
+      "explanation": "The population and time period differ, so the speed difference may reflect case mix or another confounder. A comparable concurrent sample and whole-workflow measures strengthen attribution; a larger biased sample or user estimate does not repair that comparison."
     },
     {
-      "q": "An AI workflow handles 10,000 requests, but only 8,000 reach the agreed quality bar. What denominator fits cost per completed task?",
+      "q": "A forecasting tool claims CAD 120,000 and a replenishment assistant CAD 90,000 from the same observed CAD 150,000 reduction in warehouse write-downs. A routing tool independently produces CAD 40,000 of verified fuel savings. Which ledger entry avoids unsupported attribution while retaining the additive outcome?",
       "options": [
-        "10,000 requests",
-        "8,000 successful completions",
-        "Only the requests with no model cost",
-        "The number of tokens generated"
+        "CAD 145,000 total, halving both warehouse claims for overlap and then adding the independent fuel result",
+        "CAD 250,000 total, attributing each project’s stated share to its sponsor and verifying the sum with finance",
+        "CAD 190,000 of outcomes, with the warehouse benefit recorded once and its allocation between tools still unresolved",
+        "CAD 150,000 total, omitting fuel savings until one owner can reconcile the benefits of all three tools"
       ],
-      "answer": 1
+      "answer": 2,
+      "lessonId": "m8.1",
+      "explanation": "The observed warehouse outcome is CAD 150,000, not the CAD 210,000 sum of two overlapping claims; the independently verified CAD 40,000 fuel result is additive. Record the two outcomes with their evidence and financial category, then have the warehouse owner resolve attribution rather than applying an arbitrary overlap discount."
     },
     {
-      "q": "A prototype works on a small test set, but adoption and operational quality are unproven. What is the next funding decision?",
+      "q": "A pilot serves 12,000 requests, of which 9,000 meet the agreed quality bar. Model, retrieval, and platform cost CAD 31,500; review and support cost CAD 22,500. Setup is excluded. The old path costs CAD 5.80 per correct completion at the same quality. Which cost claim is supported?",
       "options": [
-        "Approve full enterprise rollout",
-        "Stop measuring because the model works",
-        "Fund a bounded production pilot with adoption, quality, and value gates",
-        "Measure prompt volume as the only success metric"
+        "CAD 6.00 per correct completion, so the operating-cost case alone does not yet support expansion",
+        "CAD 4.50 per correct completion, supporting expansion because all operating cost is included",
+        "CAD 3.50 per correct completion, supporting expansion because the model and platform cost less",
+        "CAD 6.00 per correct completion, supporting expansion if existing staff can absorb review without new hires"
       ],
-      "answer": 2
+      "answer": 0,
+      "lessonId": "m8.2",
+      "explanation": "Operating cost is CAD 54,000, and CAD 54,000 ÷ 9,000 = CAD 6.00 per correct completion. That exceeds the comparable CAD 5.80 old path; CAD 4.50 uses all requests as its denominator, and failed requests do not establish an offsetting benefit."
+    },
+    {
+      "q": "A month has 60,000 eligible cases. AI is attempted on 36,000 and correctly completes 27,000. AI costs CAD 3.25 per attempt plus CAD 42,000 fixed. Every failure and non-adopter uses the old path at CAD 7 per case and 95% success. There are no other costs, and quality is comparable. What whole-workflow comparison should finance use, rounded to cents?",
+      "options": [
+        "CAD 5.89 per correct completion versus CAD 7.37 on the old path, using AI successes as the unit",
+        "CAD 6.68 per correct completion versus CAD 7.37 on the old path, with fallback capacity still to verify",
+        "CAD 6.50 per correct completion versus CAD 7.00 on the old path, using eligible cases as the unit",
+        "CAD 7.37 per correct completion on both paths, since unsuccessful AI cases return to the old process"
+      ],
+      "answer": 1,
+      "lessonId": "m8.2",
+      "explanation": "There are 33,000 old-path cases: CAD 231,000 cost and 31,350 correct results. Combined cost is CAD 117,000 + CAD 42,000 + CAD 231,000 = CAD 390,000 for 58,350 correct results, or CAD 6.68; the old path is CAD 420,000 ÷ 57,000 = CAD 7.37, and the assumed fallback workload must be operationally feasible."
+    },
+    {
+      "q": "A vendor claims its CAD 20,000 annual model quote will beat the old workflow’s CAD 2.80 per correct outcome. For 50,000 first-year cases, include CAD 15,000 retrieval/monitoring, CAD 45,000 review, CAD 70,000 integration, and CAD 15,000 required exit provision. Assume 90% correct completion, no retries or other costs, and equal quality. What first-year challenge is supported, rounded to cents?",
+      "options": [
+        "CAD 3.30 per correct outcome exceeds the old path, using the 50,000 submitted cases as successful outcomes",
+        "CAD 3.33 per correct outcome exceeds the old path, assuming the exit provision is a contingent rather than included cost",
+        "CAD 1.78 per correct outcome supports the claim, because integration and exit belong outside unit economics",
+        "CAD 3.67 per correct outcome exceeds the old path, and the quote’s assumed success and retry terms still need validation"
+      ],
+      "answer": 3,
+      "lessonId": "m8.2",
+      "explanation": "All stated first-year costs total CAD 165,000, and the assumed 45,000 correct outcomes give CAD 3.67 each. The vendor’s model-only price omits material workflow and transition costs; verify its quality, completion, review, and retry assumptions before relying on this comparison."
+    },
+    {
+      "q": "A claims summarizer is faster, but its pre-release sample exceeds the material citation-error limit. Policy requires this limit to pass before any live claim use. Which proposed next tranche is consistent with that gate?",
+      "options": [
+        "Fund a 50-case live pilot with mandatory examiner review and a stop after the first uncaught citation error",
+        "Fund a live routine-case pilot with senior reviewers and audit every citation before the scale decision",
+        "Fund a retrieval fix and fresh representative non-live retest, with any live pilot conditional on a pass",
+        "Fund a non-live retest using the original sample after a retrieval fix, counting corrected cases as passed"
+      ],
+      "answer": 2,
+      "lessonId": "m8.3",
+      "explanation": "The stated gate must pass before live use, even for a small supervised pilot. A fresh representative retest examines whether the fix generalizes; regrading repaired cases from the original sample can overstate that evidence."
+    },
+    {
+      "q": "A payables assistant’s approved scope drafts internal explanations for a human reviewer. A spelling correction changes no meaning; another request adds supplier bank records and authorizes the assistant to initiate payment. Which change route best fits the evidence and authority model?",
+      "options": [
+        "Test both changes locally under the existing drafting gate, obtaining an access approval for bank records before payment starts",
+        "Test and log the spelling correction locally; reassess the new data and action boundary with the relevant release and control owners",
+        "Review both changes centrally under the same gate, carrying forward the earlier data approval because users remain internal",
+        "Review the payment feature as a vendor capability change, leaving its residual business risk with the existing human reviewer"
+      ],
+      "answer": 1,
+      "lessonId": "m8.3",
+      "explanation": "A meaning-preserving correction can fit a defined local change class, while sensitive data and payment initiation change the use’s risk and authority boundaries. An internal audience or vendor feature approval does not transfer the earlier drafting authorization to that action; the affected owners need a new evidence-based decision."
+    },
+    {
+      "q": "A committee has CAD 500,000. A CAD 60,000 internal discovery pilot and CAD 180,000 customer pilot have evidence plans and acceptable scoped controls. A proposed CAD 400,000 decision aid lacks data rights; a CAD 40,000 discovery test could resolve those rights. Which allocation best funds learning without committing to the unresolved build?",
+      "options": [
+        "Fund the decision-aid build and internal pilot, using the remaining CAD 40,000 to validate rights during construction",
+        "Fund the two scoped pilots and reserve the rest for a decision-aid build once its sponsor confirms access verbally",
+        "Fund the two scoped pilots and the rights test, retaining CAD 220,000 contingent on their separate results",
+        "Fund all three at smaller build budgets, using their combined findings to set one later portfolio scale gate"
+      ],
+      "answer": 2,
+      "lessonId": "m8.3",
+      "explanation": "The three bounded evidence tranches total CAD 280,000, leaving CAD 220,000 uncommitted. The rights test can reverse the decision-aid recommendation before build spending; separate gates preserve the distinct conditions and owners of each investment."
     }
   ],
   "homework": "Build a 3-year financial model for an AI customer-service program with adoption, deflection, staffing impact, model cost, platform cost, change cost, and downside scenarios.",
@@ -105,5 +173,5 @@
     ],
     "note": "At each step, evidence determines whether funding grows."
   },
-  "quizVersion": 2
+  "quizVersion": 3
 }
